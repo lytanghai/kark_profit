@@ -3,13 +3,10 @@ package com.money.kark_profit.service;
 import com.money.kark_profit.constants.ApplicationCode;
 import com.money.kark_profit.exception.DatabaseException;
 import com.money.kark_profit.exception.SystemException;
-import com.money.kark_profit.model.Configuration;
-import com.money.kark_profit.model.ProfitLossModel;
+import com.money.kark_profit.model.ConfigurationModel;
 import com.money.kark_profit.repository.ConfigRepository;
 import com.money.kark_profit.transform.request.ConfigurationRequest;
-import com.money.kark_profit.transform.request.ProfitLossReq;
 import com.money.kark_profit.transform.response.ConfigurationResponse;
-import com.money.kark_profit.transform.response.ProfitLossResponse;
 import com.money.kark_profit.utils.PayloadUtils;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.persistence.criteria.Predicate;
@@ -38,23 +35,23 @@ public class ConfigurationService {
         if(configRepository.findByName(configReq.getName()).isPresent())
             throw new DatabaseException(ApplicationCode.DBE_03122, configReq.getName() + " Already exists");
 
-        Configuration configuration = new Configuration();
-        configuration.setStatus(true);
-        configuration.setCreatedAt(new Date());
-        configuration.setName(configReq.getName());
-        configuration.setValue(configReq.getValue());
-        configRepository.save(configuration);
+        ConfigurationModel configurationModel = new ConfigurationModel();
+        configurationModel.setStatus(true);
+        configurationModel.setCreatedAt(new Date());
+        configurationModel.setName(configReq.getName());
+        configurationModel.setValue(configReq.getValue());
+        configRepository.save(configurationModel);
 
         return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, null);
     }
 
-    public ResponseBuilderUtils<Page<Configuration>> listingConfig(ConfigurationRequest req) {
+    public ResponseBuilderUtils<Page<ConfigurationModel>> listingConfig(ConfigurationRequest req) {
         int page = req.getPage() == null ? 0 : req.getPage();
         int size = req.getSize() == null ? 10 : req.getSize();
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
 
-        Specification<Configuration> spec = (root, query, cb) -> {
+        Specification<ConfigurationModel> spec = (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
             if (req.getName() != null)
                 predicates.add(cb.equal(root.get("name"), req.getName()));
@@ -71,7 +68,7 @@ public class ConfigurationService {
             return cb.and(predicates.toArray(new Predicate[0]));
         };
 
-        Page<Configuration> pageResult = configRepository.findAll(spec, pageable);
+        Page<ConfigurationModel> pageResult = configRepository.findAll(spec, pageable);
 
         ConfigurationResponse profitLossResponse = ConfigurationResponse
                 .builder()
@@ -93,8 +90,8 @@ public class ConfigurationService {
     public ResponseBuilderUtils<Void> deleteConfiguration(ConfigurationRequest configurationRequest) {
         PayloadUtils.getNonNullFields(configurationRequest, List.of("sn"));
         try {
-            Configuration configuration = configRepository.findById(configurationRequest.getId()).get();
-            if (configuration == null)
+            ConfigurationModel configurationModel = configRepository.findById(configurationRequest.getId()).get();
+            if (configurationModel == null)
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
 
             configRepository.deleteById(configurationRequest.getId());
@@ -111,7 +108,7 @@ public class ConfigurationService {
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.UPDATED, null);
 
         try {
-            Configuration profitLossModel = configRepository.findById(configurationRequest.getId()).get();
+            ConfigurationModel profitLossModel = configRepository.findById(configurationRequest.getId()).get();
             if (profitLossModel == null)
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
 

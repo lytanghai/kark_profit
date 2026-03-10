@@ -5,7 +5,7 @@ import com.money.kark_profit.exception.DatabaseException;
 import com.money.kark_profit.exception.SystemException;
 import com.money.kark_profit.model.ProfitLossModel;
 import com.money.kark_profit.repository.ProfitLossRepository;
-import com.money.kark_profit.transform.request.ProfitLossReq;
+import com.money.kark_profit.transform.request.ProfitLossRequest;
 import com.money.kark_profit.transform.response.ProfitLossResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import com.money.kark_profit.utils.DateUtils;
@@ -32,14 +32,14 @@ public class ProfitLossService {
 
     private final ProfitLossRepository  profitLossRepository;
 
-    public ResponseBuilderUtils<Void> insertNewPnL(ProfitLossReq profitLossReq) {
-        PayloadUtils.getNonNullFields(profitLossReq, List.of("symbol", "lot_size", "pnl", "currency"));
+    public ResponseBuilderUtils<Void> insertNewPnL(ProfitLossRequest profitLossRequest) {
+        PayloadUtils.getNonNullFields(profitLossRequest, List.of("symbol", "lot_size", "pnl", "currency"));
 
         ProfitLossModel profitLossModel = new ProfitLossModel();
-        profitLossModel.setCurrency(profitLossReq.getCurrency());
-        profitLossModel.setPnl(profitLossReq.getPnl());
-        profitLossModel.setSymbol(profitLossReq.getSymbol());
-        profitLossModel.setLotSize(profitLossReq.getLotSize());
+        profitLossModel.setCurrency(profitLossRequest.getCurrency());
+        profitLossModel.setPnl(profitLossRequest.getPnl());
+        profitLossModel.setSymbol(profitLossRequest.getSymbol());
+        profitLossModel.setLotSize(profitLossRequest.getLotSize());
         profitLossModel.setDate(DateUtils.formatPhnomPenhTime(new Date()));
 
         profitLossRepository.save(profitLossModel);
@@ -47,7 +47,7 @@ public class ProfitLossService {
         return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, null);
     }
 
-    public ResponseBuilderUtils<Page<ProfitLossModel>> listing(ProfitLossReq req) {
+    public ResponseBuilderUtils<Page<ProfitLossModel>> listing(ProfitLossRequest req) {
         int page = req.getPage() == null ? 0 : req.getPage();
         int size = req.getSize() == null ? 10 : req.getSize();
 
@@ -92,14 +92,14 @@ public class ProfitLossService {
         );
     }
 
-    public ResponseBuilderUtils<Void> deletePnL(ProfitLossReq profitLossReq) {
-        PayloadUtils.getNonNullFields(profitLossReq, List.of("sn"));
+    public ResponseBuilderUtils<Void> deletePnL(ProfitLossRequest profitLossRequest) {
+        PayloadUtils.getNonNullFields(profitLossRequest, List.of("sn"));
         try {
-            ProfitLossModel profitLossModel = profitLossRepository.findBySn(profitLossReq.getSn());
+            ProfitLossModel profitLossModel = profitLossRepository.findBySn(profitLossRequest.getSn());
             if (profitLossModel == null) {
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
             }
-            profitLossRepository.deleteById(profitLossReq.getSn());
+            profitLossRepository.deleteById(profitLossRequest.getSn());
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.DELETED, null);
         } catch (DataAccessException e) {
             throw new DatabaseException("Failed to delete pnl record");
@@ -108,27 +108,27 @@ public class ProfitLossService {
         }
     }
 
-    public ResponseBuilderUtils<Void> updatePnL(ProfitLossReq profitLossReq) {
-        if(profitLossReq == null)
+    public ResponseBuilderUtils<Void> updatePnL(ProfitLossRequest profitLossRequest) {
+        if(profitLossRequest == null)
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.UPDATED, null);
 
         try {
-            ProfitLossModel profitLossModel = profitLossRepository.findBySn(profitLossReq.getSn());
+            ProfitLossModel profitLossModel = profitLossRepository.findBySn(profitLossRequest.getSn());
             if (profitLossModel == null) {
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
             }
 
-            if(profitLossReq.getPnl() != null)
-                profitLossModel.setPnl(profitLossReq.getPnl());
+            if(profitLossRequest.getPnl() != null)
+                profitLossModel.setPnl(profitLossRequest.getPnl());
 
-            if(profitLossReq.getLotSize() != null)
-                profitLossModel.setLotSize(profitLossReq.getLotSize());
+            if(profitLossRequest.getLotSize() != null)
+                profitLossModel.setLotSize(profitLossRequest.getLotSize());
 
-            if(profitLossReq.getCurrency() != null)
-                profitLossModel.setCurrency(profitLossReq.getCurrency());
+            if(profitLossRequest.getCurrency() != null)
+                profitLossModel.setCurrency(profitLossRequest.getCurrency());
 
-            if(profitLossReq.getSymbol() != null)
-                profitLossModel.setSymbol(profitLossReq.getSymbol());
+            if(profitLossRequest.getSymbol() != null)
+                profitLossModel.setSymbol(profitLossRequest.getSymbol());
 
             profitLossRepository.save(profitLossModel);
 

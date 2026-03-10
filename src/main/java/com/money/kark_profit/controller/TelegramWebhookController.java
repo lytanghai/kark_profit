@@ -1,6 +1,6 @@
 package com.money.kark_profit.controller;
 
-import com.money.kark_profit.transform.request.TelegramUpdate;
+import com.money.kark_profit.transform.request.TelegramUpdateRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +15,7 @@ public class TelegramWebhookController {
 
     //https://api.telegram.org/bot6146637472:AAEF3MsqfUsFD4PXc81Ro4tYpiNyu4ajwQI/setWebhook?url=https://disciplinary-maren-tanghai-2617c143.koyeb.app/telegram/webhook
     @PostMapping("/webhook")
-    public ResponseEntity<Void> onUpdate(@RequestBody TelegramUpdate update) {
+    public ResponseEntity<Void> onUpdate(@RequestBody TelegramUpdateRequest update) {
 
         if (update.getMessage() != null) {
             String text = update.getMessage().getText();

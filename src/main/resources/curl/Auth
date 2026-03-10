@@ -1,0 +1,33 @@
+1. Register
+curl --request POST \
+  --url http://localhost:8080/kark-profit/auth/register \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --cookie JSESSIONID=9A1B0DC902CFC171593917CFA4F6DB42 \
+  --data '{
+	"username": "admin",
+	"password": "user12345"
+}'
+
+2. Login
+curl --request POST \
+  --url http://localhost:8080/kark-profit/auth/login \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --cookie JSESSIONID=9A1B0DC902CFC171593917CFA4F6DB42 \
+  --data '{
+	"username": "admin",
+	"password": "user12345"
+}'
+
+3. Change Password
+curl --request POST \
+  --url http://localhost:8080/kark-profit/auth/change-password \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --cookie JSESSIONID=9A1B0DC902CFC171593917CFA4F6DB42 \
+  --data '{
+	"old_password":"user12345",
+	"username": "admin",
+	"new_password": "user123456"
+}'

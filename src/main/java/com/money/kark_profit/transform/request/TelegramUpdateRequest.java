@@ -3,7 +3,7 @@ package com.money.kark_profit.transform.request;
 import lombok.Data;
 
 @Data
-public class TelegramUpdate {
+public class TelegramUpdateRequest {
     private Message message;
 
     @Data

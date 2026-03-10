@@ -2,7 +2,7 @@ package com.money.kark_profit.cache.registry;
 
 import com.money.kark_profit.cache.ConfigurationCache;
 import com.money.kark_profit.constants.ApplicationCache;
-import com.money.kark_profit.model.Configuration;
+import com.money.kark_profit.model.ConfigurationModel;
 import com.money.kark_profit.repository.ConfigRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -21,7 +21,7 @@ public class ConfigurationCacheRegistry {
     public void loadingComponent() {
         log.info("loading service transaction mapping component to cache ...");
 
-        Configuration telegramConfig = configRepository.findByName(ApplicationCache.TELEGRAM_CHAT_ID).get();
+        ConfigurationModel telegramConfig = configRepository.findByName(ApplicationCache.TELEGRAM_CHAT_ID).get();
 
         if(ObjectUtils.isEmpty(telegramConfig)) {
             log.info("failed to initialize sys application feature cache due {}", telegramConfig);

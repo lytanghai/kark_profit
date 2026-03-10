@@ -11,3 +11,12 @@ public class KarkProfitApplication {
 	}
 
 }
+
+//TODO
+/**
+ * 1. Update JWT Secret Key to Config
+ * 2. Update Request & Response of Auth Api
+ * 3. Convert XML to DTO class
+ * 4. Update Try Catch to display error message on Auth Api
+ * 5. Impl Circuit Breaker and set config in table
+ * */

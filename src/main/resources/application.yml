@@ -3,9 +3,9 @@ spring:
     name: kark-profit
 
   datasource:
-    url: jdbc:postgresql://aws-1-ap-south-1.pooler.supabase.com:6543/postgres
-    username: postgres.akqbuskviaxgpmzogytu
-    password: 309927605Hai@
+    url: ${supabase_url}
+    username: ${username}
+    password: ${password}
   jpa:
     hibernate:
       ddl-auto: none   # auto create/update tables

@@ -19,4 +19,7 @@ public class KarkProfitApplication {
  * 3. Convert XML to DTO class
  * 4. Update Try Catch to display error message on Auth Api
  * 5. Impl Circuit Breaker and set config in table
+ *     url: jdbc:postgresql://aws-1-ap-south-1.pooler.supabase.com:6543/postgres
+ *     username: postgres.akqbuskviaxgpmzogytu
+ *     password: 309927605Hai@
  * */

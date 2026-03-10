@@ -1,0 +1,39 @@
+1. Insert New Record
+curl --request POST \
+  --url http://localhost:8080/kark-profit/config/create \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --data '{
+	"name":"",
+	"value":""
+}'
+
+2. Update Record
+curl --request POST \
+  --url http://localhost:8080/kark-profit/config/update \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --data '{
+	"id": 1,
+	"name": "0",
+	"value": "10"
+}'
+
+3. Listing Record
+curl --request POST \
+  --url http://localhost:8080/kark-profit/config/list \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --data '{
+	"page":"0",
+	"size":"10"
+}'
+
+4. Delete Record
+curl --request POST \
+  --url http://localhost:8080/kark-profit/config/update \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --data '{
+	"id": 1
+}'

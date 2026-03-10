@@ -1,0 +1,10 @@
+--1 Create profit_loss_model
+
+CREATE TABLE profit_loss_model (
+    sn SERIAL PRIMARY KEY,
+    symbol VARCHAR(10),
+    lot_size DOUBLE PRECISION,
+    pnl DOUBLE PRECISION,
+    currency VARCHAR(5),
+    date VARCHAR(20)
+);

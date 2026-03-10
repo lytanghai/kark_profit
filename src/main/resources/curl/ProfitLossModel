@@ -1,0 +1,44 @@
+1. Insert New Record
+curl --request POST \
+  --url http://localhost:8080/kark-profit/pnl/create \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --data '{
+	"symbol": "XAU",
+	"currency": "USDC",
+	"lot_size": 0.01,
+	"pnl": 10.60
+}'
+
+2. Update Record
+curl --request POST \
+  --url http://localhost:8080/kark-profit/pnl/update \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --data '{
+	"sn": 1,
+	"symbol": "XAU",
+	"lot_size": "0",
+	"currency": "USDC",
+	"pnl": 5.5
+}'
+
+3. Listing Record
+curl --request POST \
+  --url http://localhost:8080/kark-profit/pnl/fetch \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --data '{
+	"size": 10,
+	"page":"0",
+	"currency":"USDC"
+}'
+
+4. Delete Record
+curl --request POST \
+  --url http://localhost:8080/kark-profit/pnl/delete \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --data '{
+	"sn": 1
+}'

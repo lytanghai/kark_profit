@@ -16,7 +16,7 @@ import com.money.kark_profit.utils.PayloadUtils;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -31,32 +31,22 @@ import java.util.List;
 
 /**FOR MASTER USER ONLY***/
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ConfigurationService {
 
-    private final JwtUtils jwtUtils;
-    private final ConfigurationRepository configurationRepository;
     private final UserProfileRepository userProfileRepository;
-
-    private Integer extractUserId(HttpServletRequest httpServletRequest) {
-        String username = jwtUtils.extractUsername(httpServletRequest.getHeader("Authorization"));
-        if(username != null || !username.isBlank()) {
-            UserProfileModel userProfileModel = userProfileRepository.findByUsername(username).get();
-            if(userProfileModel != null)
-                return userProfileModel.getId();
-        }
-        return -1;
-    }
+    private final ConfigurationRepository configurationRepository;
+    private final UserService userService;
 
     private boolean validatePermission(HttpServletRequest request) {
-        int userId = extractUserId(request);
-        if(userId == -1) {
+        int userId = userService.extractUserId(request);
+        if(userId == -1)
             throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
-        }
+
         UserProfileModel userProfileModel = userProfileRepository.findById(userId).get();
-        if(userProfileModel == null) {
+        if(userProfileModel == null)
             throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
-        }
+
         if(!userProfileModel.getUsername().equals(ConfigurationCache.getByKeyName(ApplicationCache.MASTER_ADMIN_USERNAME).getValue()))
             throw new DatabaseException(ApplicationCode.DBE_998 ,ApplicationCode.DBE_998_MSG);
 

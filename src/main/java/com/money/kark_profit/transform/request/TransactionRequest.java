@@ -24,4 +24,8 @@ public class TransactionRequest {
     @JsonProperty("user_id")
     private Integer userId;
     private String type;
+
+    public void setType(String type) {
+        this.type = (type == null) ? null : type.toUpperCase();
+    }
 }

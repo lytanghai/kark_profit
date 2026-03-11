@@ -5,7 +5,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<TransactionModel, Integer>, JpaSpecificationExecutor<TransactionModel> {
@@ -14,4 +18,14 @@ public interface TransactionRepository extends JpaRepository<TransactionModel, I
     TransactionModel findBySnAndUserId(Integer sn, Integer userId);
 
     void deleteBySn(Integer sn);
+
+
+    @Query(value = "SELECT * FROM transaction t " +
+            "WHERE t.user_id = :userId " +
+            "AND EXTRACT(YEAR FROM t.date) = :year " +
+            "AND EXTRACT(MONTH FROM t.date) = :month",
+            nativeQuery = true)
+    List<TransactionModel> queryMonthlyTxn(@Param("userId") Integer userId,
+                                           @Param("year") Integer year,
+                                           @Param("month") Integer month);
 }

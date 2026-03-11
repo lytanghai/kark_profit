@@ -2,6 +2,8 @@ package com.money.kark_profit.service;
 
 import com.money.kark_profit.constants.ApplicationCode;
 import com.money.kark_profit.model.UserProfileModel;
+import com.money.kark_profit.repository.ConfigurationRepository;
+import com.money.kark_profit.repository.TransactionRepository;
 import com.money.kark_profit.repository.UserProfileRepository;
 import com.money.kark_profit.transform.request.ChangePasswordRequest;
 import com.money.kark_profit.transform.request.LoginRequest;
@@ -19,8 +21,8 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class AuthService {
 
-    private final UserProfileRepository userProfileRepository;
     private final JwtUtils jwtUtils;
+    private final UserProfileRepository userProfileRepository;
     private final PasswordEncoder passwordEncoder;
 
     public ResponseBuilderUtils<AuthResponse> register(RegisterRequest request) {

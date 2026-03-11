@@ -4,15 +4,12 @@ import com.money.kark_profit.constants.ApplicationCode;
 import com.money.kark_profit.exception.DatabaseException;
 import com.money.kark_profit.exception.SystemException;
 import com.money.kark_profit.model.TransactionModel;
-import com.money.kark_profit.model.UserProfileModel;
 import com.money.kark_profit.repository.TransactionRepository;
-import com.money.kark_profit.repository.UserProfileRepository;
 import com.money.kark_profit.transform.request.TransactionRequest;
 import com.money.kark_profit.transform.response.TransactionResponse;
-import com.money.kark_profit.utils.JwtUtils;
-import com.money.kark_profit.utils.ResponseBuilderUtils;
 import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.PayloadUtils;
+import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -32,24 +29,12 @@ import java.util.List;
 
 @Service
 @Slf4j
-@RequiredArgsConstructor
 @Transactional
+@RequiredArgsConstructor
 public class TransactionService {
 
-    private final JwtUtils jwtUtils;
     private final TransactionRepository transactionRepository;
-    private final UserProfileRepository userProfileRepository;
-
-    private Integer extractUserId(HttpServletRequest httpServletRequest) {
-        String username = jwtUtils.extractUsername(httpServletRequest.getHeader("Authorization"));
-        if(username != null || !username.isBlank()) {
-            UserProfileModel userProfileModel = userProfileRepository.findByUsername(username).get();
-            if(userProfileModel != null) {
-                return userProfileModel.getId();
-            }
-        }
-        return -1;
-    }
+    private final UserService userService;
 
     public ResponseBuilderUtils<Void> insertNewPnL(TransactionRequest transactionRequest, HttpServletRequest httpServletRequest) {
         PayloadUtils.getNonNullFields(transactionRequest, List.of("symbol", "lot_size", "pnl", "currency"));
@@ -62,7 +47,7 @@ public class TransactionService {
         transactionModel.setDate(DateUtils.formatPhnomPenhTime(new Date()));
         transactionModel.setType(transactionRequest.getType());
 
-        Integer userId = extractUserId(httpServletRequest);
+        Integer userId = userService.extractUserId(httpServletRequest);
         if(userId != null) {
             transactionModel.setUserId(userId);
         } else {
@@ -74,7 +59,7 @@ public class TransactionService {
     }
 
     public ResponseBuilderUtils<Page<TransactionModel>> listing(TransactionRequest req, HttpServletRequest request) {
-        Integer userId = extractUserId(request);
+        Integer userId = userService.extractUserId(request);
         if(userId == -1)
             throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
 
@@ -85,31 +70,26 @@ public class TransactionService {
 
         Specification<TransactionModel> spec = (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
-
-            // Always use Java entity field names, not DB column names
-            if (userId != null) {
+            if (userId != null)
                 predicates.add(cb.equal(root.get("userId"), userId));
-            }
 
-            if (req.getCurrency() != null) {
+            if(req.getType() != null)
+                predicates.add(cb.equal(root.get("type"), req.getType()));
+
+            if (req.getCurrency() != null)
                 predicates.add(cb.equal(root.get("currency"), req.getCurrency()));
-            }
 
-            if (req.getSymbol() != null) {
+            if (req.getSymbol() != null)
                 predicates.add(cb.equal(root.get("symbol"), req.getSymbol()));
-            }
 
-            if (req.getLotSize() != null) {
+            if (req.getLotSize() != null)
                 predicates.add(cb.equal(root.get("lotSize"), req.getLotSize()));
-            }
 
-            if (req.getPnl() != null) {
+            if (req.getPnl() != null)
                 predicates.add(cb.equal(root.get("pnl"), req.getPnl()));
-            }
 
-            if (req.getDate() != null) {
+            if (req.getDate() != null)
                 predicates.add(cb.equal(root.get("date"), req.getDate()));
-            }
 
             return cb.and(predicates.toArray(new Predicate[0]));
         };
@@ -133,16 +113,17 @@ public class TransactionService {
     }
 
     public ResponseBuilderUtils<Void> deletePnL(TransactionRequest transactionRequest, HttpServletRequest request) {
-        Integer userId = extractUserId(request);
+        Integer userId = userService.extractUserId(request);
+
         if(userId == -1)
             throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
 
         PayloadUtils.getNonNullFields(transactionRequest, List.of("sn"));
         try {
             TransactionModel transactionModel = transactionRepository.findBySnAndUserId(transactionRequest.getSn(), userId);
-            if (transactionModel == null) {
+            if (transactionModel == null)
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
-            }
+
             transactionRepository.deleteBySn(transactionRequest.getSn());
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.DELETED, null);
         } catch (DataAccessException e) {
@@ -156,15 +137,14 @@ public class TransactionService {
         if(transactionRequest == null)
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.UPDATED, null);
 
-        Integer userId = extractUserId(request);
+        Integer userId = userService.extractUserId(request);
         if(userId == -1)
             throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
 
         try {
             TransactionModel transactionModel = transactionRepository.findBySnAndUserId(transactionRequest.getSn(), userId);
-            if (transactionModel == null) {
+            if (transactionModel == null)
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
-            }
 
             if(transactionRequest.getPnl() != null)
                 transactionModel.setPnl(transactionRequest.getPnl());
@@ -177,6 +157,9 @@ public class TransactionService {
 
             if(transactionRequest.getSymbol() != null)
                 transactionModel.setSymbol(transactionRequest.getSymbol());
+
+            if(transactionRequest.getType() != null)
+                transactionModel.setSymbol(transactionRequest.getType());
 
             transactionRepository.save(transactionModel);
 

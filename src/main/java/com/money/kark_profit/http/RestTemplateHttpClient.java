@@ -21,14 +21,16 @@ public class RestTemplateHttpClient {
 
     /* ---------------- GET REQUEST ---------------- */
 
-    public <T> T get(String url, MultiValueMap<String, String> queryParams, Class<T> responseType) {
+    public <T> T get(String url, MultiValueMap<String, String> queryParams, HttpHeaders httpHeaders, Class<T> responseType) {
         try {
             String fullUrl = UriComponentsBuilder
                     .fromUriString(url)
                     .queryParams(queryParams != null ? queryParams : new LinkedMultiValueMap<>())
                     .toUriString();
 
-            HttpHeaders httpHeaders = new HttpHeaders();
+            if(httpHeaders == null){
+                httpHeaders = new HttpHeaders();
+            }
             HttpEntity<Void> entity = new HttpEntity<>(httpHeaders);
             ResponseEntity<T> response = restTemplate.exchange(
                     fullUrl,

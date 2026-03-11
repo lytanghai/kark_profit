@@ -1,11 +1,14 @@
 package com.money.kark_profit.service;
 
-import com.money.kark_profit.model.UserModel;
-import com.money.kark_profit.repository.UserRepository;
+import com.money.kark_profit.constants.ApplicationCode;
+import com.money.kark_profit.model.UserProfileModel;
+import com.money.kark_profit.repository.UserProfileRepository;
 import com.money.kark_profit.transform.request.ChangePasswordRequest;
 import com.money.kark_profit.transform.request.LoginRequest;
 import com.money.kark_profit.transform.request.RegisterRequest;
+import com.money.kark_profit.transform.response.AuthResponse;
 import com.money.kark_profit.utils.JwtUtils;
+import com.money.kark_profit.utils.ResponseBuilderUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,47 +19,63 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class AuthService {
 
-    private final UserRepository userRepository;
+    private final UserProfileRepository userProfileRepository;
     private final JwtUtils jwtUtils;
     private final PasswordEncoder passwordEncoder;
 
-    public String register(RegisterRequest request) {
+    public ResponseBuilderUtils<AuthResponse> register(RegisterRequest request) {
 
-        if (userRepository.findByUsername(request.getUsername()).isPresent()) {
+        if (userProfileRepository.findByUsername(request.getUsername()).isPresent())
             throw new RuntimeException("Username already exists");
-        }
 
-        UserModel user = new UserModel();
+        UserProfileModel user = new UserProfileModel();
         user.setUsername(request.getUsername());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setStatus(true);
         user.setCreatedAt(new Date());
         user.setLastUpdatedAt(new Date());
 
-        userRepository.save(user);
+        userProfileRepository.save(user);
 
-        return jwtUtils.generateToken(user.getUsername());
+        jwtUtils.generateToken(user.getUsername());
+
+        AuthResponse authResponse = AuthResponse.builder()
+                .username(request.getUsername())
+                .token(jwtUtils.generateToken(user.getUsername()))
+                .build();
+
+        return new ResponseBuilderUtils<>(
+                ApplicationCode.HTTP_200,
+                ApplicationCode.REGISTERED,
+                authResponse
+        );
     }
 
-    public String login(LoginRequest request) {
+    public ResponseBuilderUtils<AuthResponse> login(LoginRequest request) {
 
-        UserModel user = userRepository.findByUsername(request.getUsername())
+        UserProfileModel user = userProfileRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+        if (!passwordEncoder.matches(request.getPassword(), user.getPassword()))
             throw new RuntimeException("Invalid password");
-        }
 
-        if (!user.getStatus()) {
+        if (!user.getStatus())
             throw new RuntimeException("User inactive");
-        }
 
-        return jwtUtils.generateToken(user.getUsername());
+        AuthResponse authResponse = AuthResponse.builder()
+                .username(request.getUsername())
+                .token(jwtUtils.generateToken(user.getUsername()))
+                .build();
+
+        return new ResponseBuilderUtils<>(
+                ApplicationCode.HTTP_200,
+                ApplicationCode.LOGIN,
+                authResponse
+        );
     }
 
-    public void changePassword(ChangePasswordRequest request) {
-
-        UserModel user = userRepository.findByUsername(request.getUsername())
+    public ResponseBuilderUtils<Void> changePassword(ChangePasswordRequest request) {
+        UserProfileModel user = userProfileRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
         if (!passwordEncoder.matches(request.getOldPassword(), user.getPassword())) {
@@ -66,6 +85,8 @@ public class AuthService {
         user.setPassword(passwordEncoder.encode(request.getNewPassword()));
         user.setLastUpdatedAt(new Date());
 
-        userRepository.save(user);
+        userProfileRepository.save(user);
+
+        return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.MODIFY_USER, null);
     }
 }

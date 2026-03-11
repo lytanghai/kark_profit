@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Entity
-@Table(name = "config")
+@Table(name = "configuration")
 @Data
 public class ConfigurationModel {
 

@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class ProfitLossRequest {
+public class TransactionRequest {
     private String symbol;
     private String currency;
     @JsonProperty("lot_size")
@@ -20,4 +20,8 @@ public class ProfitLossRequest {
     private Date date;
     private Integer page;
     private Integer size = 10;
+
+    @JsonProperty("user_id")
+    private Integer userId;
+    private String type;
 }

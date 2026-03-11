@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ConfigRepository extends JpaRepository<ConfigurationModel, Integer>, JpaSpecificationExecutor<ConfigurationModel> {
+public interface ConfigurationRepository extends JpaRepository<ConfigurationModel, Integer>, JpaSpecificationExecutor<ConfigurationModel> {
     Optional<ConfigurationModel> findByName(String name);
 }

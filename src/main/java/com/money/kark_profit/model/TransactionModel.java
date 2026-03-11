@@ -6,9 +6,9 @@ import lombok.Data;
 import java.util.Date;
 
 @Entity
-@Table(name = "profit_loss_model")
+@Table(name = "transaction")
 @Data
-public class ProfitLossModel {
+public class TransactionModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,5 +28,11 @@ public class ProfitLossModel {
 
     @Column(name = "date")
     private Date date;
+
+    @Column(name = "type")
+    private String type;
+
+    @Column(name = "user_id")
+    private Integer userId;
 
 }

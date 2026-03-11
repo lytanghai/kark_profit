@@ -1,6 +1,11 @@
 spring:
   application:
     name: kark-profit
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+  profiles:
+    active: local
 
   datasource:
     url: ${supabase_url}

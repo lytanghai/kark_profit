@@ -6,13 +6,13 @@ import lombok.Data;
 import java.util.Date;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user_profile")
 @Data
-public class UserModel {
+public class UserProfileModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(unique = true)
     private String username;

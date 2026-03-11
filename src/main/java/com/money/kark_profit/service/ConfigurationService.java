@@ -4,7 +4,7 @@ import com.money.kark_profit.constants.ApplicationCode;
 import com.money.kark_profit.exception.DatabaseException;
 import com.money.kark_profit.exception.SystemException;
 import com.money.kark_profit.model.ConfigurationModel;
-import com.money.kark_profit.repository.ConfigRepository;
+import com.money.kark_profit.repository.ConfigurationRepository;
 import com.money.kark_profit.transform.request.ConfigurationRequest;
 import com.money.kark_profit.transform.response.ConfigurationResponse;
 import com.money.kark_profit.utils.PayloadUtils;
@@ -27,12 +27,12 @@ import java.util.List;
 @AllArgsConstructor
 public class ConfigurationService {
 
-    private final ConfigRepository configRepository;
+    private final ConfigurationRepository configurationRepository;
 
     public ResponseBuilderUtils<Void> createConfig(ConfigurationRequest configReq) {
         PayloadUtils.getNonNullFields(configReq, List.of("name", "value"));
 
-        if(configRepository.findByName(configReq.getName()).isPresent())
+        if(configurationRepository.findByName(configReq.getName()).isPresent())
             throw new DatabaseException(ApplicationCode.DBE_03122, configReq.getName() + " Already exists");
 
         ConfigurationModel configurationModel = new ConfigurationModel();
@@ -40,7 +40,7 @@ public class ConfigurationService {
         configurationModel.setCreatedAt(new Date());
         configurationModel.setName(configReq.getName());
         configurationModel.setValue(configReq.getValue());
-        configRepository.save(configurationModel);
+        configurationRepository.save(configurationModel);
 
         return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, null);
     }
@@ -68,9 +68,9 @@ public class ConfigurationService {
             return cb.and(predicates.toArray(new Predicate[0]));
         };
 
-        Page<ConfigurationModel> pageResult = configRepository.findAll(spec, pageable);
+        Page<ConfigurationModel> pageResult = configurationRepository.findAll(spec, pageable);
 
-        ConfigurationResponse profitLossResponse = ConfigurationResponse
+        ConfigurationResponse transactionResponse = ConfigurationResponse
                 .builder()
                 .totalElement(pageResult.getTotalElements())
                 .numberOfElement(pageResult.getNumberOfElements())
@@ -83,18 +83,18 @@ public class ConfigurationService {
         return new ResponseBuilderUtils<>(
                 ApplicationCode.HTTP_200,
                 ApplicationCode.FETCH,
-                profitLossResponse
+                transactionResponse
         );
     }
 
     public ResponseBuilderUtils<Void> deleteConfiguration(ConfigurationRequest configurationRequest) {
         PayloadUtils.getNonNullFields(configurationRequest, List.of("sn"));
         try {
-            ConfigurationModel configurationModel = configRepository.findById(configurationRequest.getId()).get();
+            ConfigurationModel configurationModel = configurationRepository.findById(configurationRequest.getId()).get();
             if (configurationModel == null)
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
 
-            configRepository.deleteById(configurationRequest.getId());
+            configurationRepository.deleteById(configurationRequest.getId());
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.DELETED, null);
         } catch (DataAccessException e) {
             throw new DatabaseException("Failed to delete configuration record");
@@ -108,20 +108,20 @@ public class ConfigurationService {
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.UPDATED, null);
 
         try {
-            ConfigurationModel profitLossModel = configRepository.findById(configurationRequest.getId()).get();
-            if (profitLossModel == null)
+            ConfigurationModel transactionModel = configurationRepository.findById(configurationRequest.getId()).get();
+            if (transactionModel == null)
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
 
             if(configurationRequest.getName() != null)
-                profitLossModel.setName(configurationRequest.getName());
+                transactionModel.setName(configurationRequest.getName());
 
             if(configurationRequest.getValue() != null)
-                profitLossModel.setValue(configurationRequest.getValue());
+                transactionModel.setValue(configurationRequest.getValue());
 
             if(configurationRequest.getStatus() != null)
-                profitLossModel.setStatus(configurationRequest.getStatus());
+                transactionModel.setStatus(configurationRequest.getStatus());
 
-            configRepository.save(profitLossModel);
+            configurationRepository.save(transactionModel);
 
         } catch (DataAccessException e) {
             throw new DatabaseException("Failed to update configuration record");

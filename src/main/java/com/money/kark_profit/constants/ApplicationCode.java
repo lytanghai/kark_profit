@@ -10,6 +10,11 @@ public class ApplicationCode {
     public static String DELETED = "DELETED SUCCESSFULLY";
     public static String UPDATED = "UPDATED SUCCESSFULLY";
     public static String FETCH = "FETCH SUCCESSFULLY";
+    public static String REGISTERED = "REGISTER SUCCESSFULLY";
+    public static String LOGIN = "LOGIN SUCCESSFULLY";
+    public static String MODIFY_USER = "MODIFIED SUCCESSFULLY";
+
+    
 
     /** FAILURE **/
     public static String FAILURE = "FAILURE";

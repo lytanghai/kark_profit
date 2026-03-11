@@ -1,10 +1,12 @@
 package com.money.kark_profit.cache;
 
 import com.money.kark_profit.model.ConfigurationModel;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Slf4j
 public final class ConfigurationCache {
 
     private static final Map<String, ConfigurationModel> mappingCache = new ConcurrentHashMap<>();
@@ -13,6 +15,7 @@ public final class ConfigurationCache {
     private ConfigurationCache() { }
 
     public static ConfigurationModel getByKeyName(String keyName) {
+        log.info("loading configuration key {}", keyName);
         return mappingCache.get(keyName);
     }
 

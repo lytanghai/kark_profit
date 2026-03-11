@@ -9,3 +9,11 @@ curl --request POST \
 	"category": "gold",
 	"last_updated": "12h"
 }'
+
+2. Forex Factory
+curl --request GET \
+  --url http://localhost:8080/kark-profit/market/event \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW5naGFpLmx5IiwiaWF0IjoxNzczMjAzMTk1LCJleHAiOjE3NzMyODk1OTV9.BWmax1Xu0FQnTZN1efV74U9kg3SlhBEqDx2Ie_vGj6Y' \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --cookie JSESSIONID=1A54706A370B0FA6559A2B040B4BE996

@@ -1,9 +1,11 @@
 package com.money.kark_profit.service.provider;
 
+import com.money.kark_profit.cache.EconomicEventsCache;
 import com.money.kark_profit.cache.StringCache;
 import com.money.kark_profit.constants.ApplicationCode;
 import com.money.kark_profit.http.RestTemplateHttpClient;
 import com.money.kark_profit.transform.request.MarketNewsRequest;
+import com.money.kark_profit.transform.response.EventCalendarResponse;
 import com.money.kark_profit.transform.response.MarketNewsResponse;
 import com.money.kark_profit.transform.response.xml.GoogleNewsXmlResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
@@ -14,6 +16,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.ObjectMapper;
 
 import java.util.*;
 
@@ -22,6 +26,7 @@ import java.util.*;
 @Slf4j
 public class PublicNewsProvider {
     private static String GOOGLE_NEWS = "https://news.google.com/rss/search";
+    private static String FOREX_FACTORY = "https://nfs.faireconomy.media/ff_calendar_thisweek.json";
     private static String AGENT_HEADER = "Mozilla/5.0";
 
     private final RestTemplateHttpClient restHttp;
@@ -105,6 +110,21 @@ public class PublicNewsProvider {
                 ApplicationCode.FETCH,
                 response
         );
+    }
+
+    public ResponseBuilderUtils<List<EventCalendarResponse>> fetchForexFactory() {
+        String economicEventsJson = EconomicEventsCache.getEconomicEvents(restHttp, FOREX_FACTORY);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        List<EventCalendarResponse> events = objectMapper.readValue(
+                economicEventsJson, new TypeReference<List<EventCalendarResponse>>() {}
+        );
+
+        return new ResponseBuilderUtils<>(
+                ApplicationCode.HTTP_200,
+                ApplicationCode.FETCH,
+                events);
+
     }
 
 }

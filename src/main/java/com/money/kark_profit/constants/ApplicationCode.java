@@ -18,6 +18,10 @@ public class ApplicationCode {
 
     /** FAILURE **/
     public static String FAILURE = "FAILURE";
+
+    public static String DBE_998 = "DBE_998";
+    public static String DBE_998_MSG = "This user has no permission to performance this action!";
+
     public static String DBE_001 = "DBE_001";
     public static String DBE_001_MSG = "Record not found!";
 

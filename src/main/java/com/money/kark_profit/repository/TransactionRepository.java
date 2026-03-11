@@ -11,5 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface TransactionRepository extends JpaRepository<TransactionModel, Integer>, JpaSpecificationExecutor<TransactionModel> {
     Page<TransactionModel> findAll(Pageable pageable);
 
-    TransactionModel findBySn(Integer sn);
+    TransactionModel findBySnAndUserId(Integer sn, Integer userId);
+
+    void deleteBySn(Integer sn);
 }

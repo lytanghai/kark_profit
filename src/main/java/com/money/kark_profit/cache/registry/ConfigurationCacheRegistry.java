@@ -2,7 +2,6 @@ package com.money.kark_profit.cache.registry;
 
 import com.money.kark_profit.cache.ConfigurationCache;
 import com.money.kark_profit.constants.ApplicationCache;
-import com.money.kark_profit.model.ConfigurationModel;
 import com.money.kark_profit.repository.ConfigurationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -20,11 +19,8 @@ public class ConfigurationCacheRegistry {
     public void loadingComponent() {
         log.info("loading service transaction mapping component to cache ...");
 
-        ConfigurationModel telegramConfig = configurationRepository.findByName(ApplicationCache.TELEGRAM_CHAT_ID).get();
-        ConfigurationModel masterKey = configurationRepository.findByName(ApplicationCache.MASTER_KEY).get();
-
-        log.info("result: {}", telegramConfig);
-        ConfigurationCache.initCache(telegramConfig);
-        ConfigurationCache.initCache(masterKey);
+        ConfigurationCache.initCache(configurationRepository.findByName(ApplicationCache.TELEGRAM_CHAT_ID).get());
+        ConfigurationCache.initCache(configurationRepository.findByName(ApplicationCache.MASTER_KEY).get());
+        ConfigurationCache.initCache(configurationRepository.findByName(ApplicationCache.MASTER_ADMIN_USERNAME).get());
     }
 }

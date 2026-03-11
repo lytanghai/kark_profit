@@ -24,6 +24,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,11 +33,12 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Transactional
 public class TransactionService {
 
     private final JwtUtils jwtUtils;
     private final TransactionRepository transactionRepository;
-    private final UserProfileRepository  userProfileRepository;
+    private final UserProfileRepository userProfileRepository;
 
     private Integer extractUserId(HttpServletRequest httpServletRequest) {
         String username = jwtUtils.extractUsername(httpServletRequest.getHeader("Authorization"));
@@ -46,7 +48,7 @@ public class TransactionService {
                 return userProfileModel.getId();
             }
         }
-        return null;
+        return -1;
     }
 
     public ResponseBuilderUtils<Void> insertNewPnL(TransactionRequest transactionRequest, HttpServletRequest httpServletRequest) {
@@ -68,11 +70,14 @@ public class TransactionService {
         }
 
         transactionRepository.save(transactionModel);
-
         return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, null);
     }
 
-    public ResponseBuilderUtils<Page<TransactionModel>> listing(TransactionRequest req) {
+    public ResponseBuilderUtils<Page<TransactionModel>> listing(TransactionRequest req, HttpServletRequest request) {
+        Integer userId = extractUserId(request);
+        if(userId == -1)
+            throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
+
         int page = req.getPage() == null ? 0 : req.getPage();
         int size = req.getSize() == null ? 10 : req.getSize();
 
@@ -80,20 +85,31 @@ public class TransactionService {
 
         Specification<TransactionModel> spec = (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
-            if (req.getCurrency() != null)
+
+            // Always use Java entity field names, not DB column names
+            if (userId != null) {
+                predicates.add(cb.equal(root.get("userId"), userId));
+            }
+
+            if (req.getCurrency() != null) {
                 predicates.add(cb.equal(root.get("currency"), req.getCurrency()));
+            }
 
-            if (req.getSymbol() != null)
+            if (req.getSymbol() != null) {
                 predicates.add(cb.equal(root.get("symbol"), req.getSymbol()));
+            }
 
-            if (req.getLotSize() != null)
-                predicates.add(cb.equal(root.get("lot_size"), req.getLotSize()));
+            if (req.getLotSize() != null) {
+                predicates.add(cb.equal(root.get("lotSize"), req.getLotSize()));
+            }
 
-            if (req.getPnl() != null)
+            if (req.getPnl() != null) {
                 predicates.add(cb.equal(root.get("pnl"), req.getPnl()));
+            }
 
-            if (req.getDate() != null)
+            if (req.getDate() != null) {
                 predicates.add(cb.equal(root.get("date"), req.getDate()));
+            }
 
             return cb.and(predicates.toArray(new Predicate[0]));
         };
@@ -116,14 +132,18 @@ public class TransactionService {
         );
     }
 
-    public ResponseBuilderUtils<Void> deletePnL(TransactionRequest transactionRequest) {
+    public ResponseBuilderUtils<Void> deletePnL(TransactionRequest transactionRequest, HttpServletRequest request) {
+        Integer userId = extractUserId(request);
+        if(userId == -1)
+            throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
+
         PayloadUtils.getNonNullFields(transactionRequest, List.of("sn"));
         try {
-            TransactionModel transactionModel = transactionRepository.findBySn(transactionRequest.getSn());
+            TransactionModel transactionModel = transactionRepository.findBySnAndUserId(transactionRequest.getSn(), userId);
             if (transactionModel == null) {
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
             }
-            transactionRepository.deleteById(transactionRequest.getSn());
+            transactionRepository.deleteBySn(transactionRequest.getSn());
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.DELETED, null);
         } catch (DataAccessException e) {
             throw new DatabaseException("Failed to delete pnl record");
@@ -132,12 +152,16 @@ public class TransactionService {
         }
     }
 
-    public ResponseBuilderUtils<Void> updatePnL(TransactionRequest transactionRequest) {
+    public ResponseBuilderUtils<Void> updatePnL(TransactionRequest transactionRequest, HttpServletRequest request) {
         if(transactionRequest == null)
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.UPDATED, null);
 
+        Integer userId = extractUserId(request);
+        if(userId == -1)
+            throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
+
         try {
-            TransactionModel transactionModel = transactionRepository.findBySn(transactionRequest.getSn());
+            TransactionModel transactionModel = transactionRepository.findBySnAndUserId(transactionRequest.getSn(), userId);
             if (transactionModel == null) {
                 throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
             }

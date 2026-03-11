@@ -12,30 +12,29 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/pnl")
+@RequestMapping("/transaction")
 @RequiredArgsConstructor
 public class TransactionController {
 
     private final TransactionService transactionService;
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseBuilderUtils> insertNewPnL(@RequestBody TransactionRequest transactionRequest,
-                                                             HttpServletRequest request) {
+    public ResponseEntity<ResponseBuilderUtils> insertNewPnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
         return new ResponseEntity<>(transactionService.insertNewPnL(transactionRequest, request), HttpStatus.OK);
     }
 
     @PostMapping("/update")
-    public ResponseEntity<ResponseBuilderUtils> updatePnL(@RequestBody TransactionRequest transactionRequest) {
-        return new ResponseEntity<>(transactionService.updatePnL(transactionRequest), HttpStatus.OK);
+    public ResponseEntity<ResponseBuilderUtils> updatePnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
+        return new ResponseEntity<>(transactionService.updatePnL(transactionRequest, request), HttpStatus.OK);
     }
 
     @PostMapping("/fetch")
-    public ResponseEntity<ResponseBuilderUtils<Page<TransactionModel>>> fetchPnL(@RequestBody TransactionRequest transactionRequest) {
-        return new ResponseEntity<>(transactionService.listing(transactionRequest), HttpStatus.OK);
+    public ResponseEntity<ResponseBuilderUtils<Page<TransactionModel>>> fetchPnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
+        return new ResponseEntity<>(transactionService.listing(transactionRequest, request), HttpStatus.OK);
     }
 
     @PostMapping("/delete")
-    public ResponseEntity<ResponseBuilderUtils> deletePnL(@RequestBody TransactionRequest transactionRequest) {
-        return new ResponseEntity<>(transactionService.deletePnL(transactionRequest), HttpStatus.OK);
+    public ResponseEntity<ResponseBuilderUtils> deletePnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
+        return new ResponseEntity<>(transactionService.deletePnL(transactionRequest, request), HttpStatus.OK);
     }
 }

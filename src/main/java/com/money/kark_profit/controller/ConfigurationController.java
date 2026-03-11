@@ -4,6 +4,7 @@ package com.money.kark_profit.controller;
 import com.money.kark_profit.service.ConfigurationService;
 import com.money.kark_profit.transform.request.ConfigurationRequest;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,20 +21,20 @@ public class ConfigurationController {
     private final ConfigurationService configurationService;
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseBuilderUtils> createConfig(@RequestBody ConfigurationRequest configuration) {
-        return new ResponseEntity<>(configurationService.createConfig(configuration), HttpStatus.OK);
+    public ResponseEntity<ResponseBuilderUtils> createConfig(@RequestBody ConfigurationRequest configuration, HttpServletRequest request) {
+        return new ResponseEntity<>(configurationService.createConfig(configuration, request), HttpStatus.OK);
     }
     @PostMapping("/delete")
-    public ResponseEntity<ResponseBuilderUtils> deleteConfiguration(@RequestBody ConfigurationRequest configurationRequest) {
-        return new ResponseEntity<>(configurationService.deleteConfiguration(configurationRequest), HttpStatus.OK);
+    public ResponseEntity<ResponseBuilderUtils> deleteConfiguration(@RequestBody ConfigurationRequest configurationRequest, HttpServletRequest request) {
+        return new ResponseEntity<>(configurationService.deleteConfiguration(configurationRequest, request), HttpStatus.OK);
     }
     @PostMapping("/update")
-    public ResponseEntity<ResponseBuilderUtils> updateConfiguration(@RequestBody ConfigurationRequest configurationRequest) {
-        return new ResponseEntity<>(configurationService.updateConfiguration(configurationRequest), HttpStatus.OK);
+    public ResponseEntity<ResponseBuilderUtils> updateConfiguration(@RequestBody ConfigurationRequest configurationRequest, HttpServletRequest request) {
+        return new ResponseEntity<>(configurationService.updateConfiguration(configurationRequest, request), HttpStatus.OK);
     }
     @PostMapping("/list")
-    public ResponseEntity<ResponseBuilderUtils> listing(@RequestBody ConfigurationRequest configuration) {
-        return new ResponseEntity<>(configurationService.listingConfig(configuration), HttpStatus.OK);
+    public ResponseEntity<ResponseBuilderUtils> listing(@RequestBody ConfigurationRequest configuration, HttpServletRequest request) {
+        return new ResponseEntity<>(configurationService.listingConfig(configuration, request), HttpStatus.OK);
     }
 
 }

@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -28,4 +29,11 @@ public interface TransactionRepository extends JpaRepository<TransactionModel, I
     List<TransactionModel> queryMonthlyTxn(@Param("userId") Integer userId,
                                            @Param("year") Integer year,
                                            @Param("month") Integer month);
+
+    @Query(value = "SELECT * FROM Transaction t WHERE t.user_id = :userId AND t.date >= :fromDate AND t.date <= :toDate", nativeQuery = true)
+    List<TransactionModel> findByUserIdSince(
+            @Param("userId") Integer userId,
+            @Param("fromDate") LocalDateTime fromDate,
+            @Param("toDate") LocalDateTime toDate
+    );
 }

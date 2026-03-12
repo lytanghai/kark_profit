@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class MonthlyPnLResponseDto {
+public class MonthlyPnLResponse {
 
     private Integer year;
     private Integer month;

@@ -5,7 +5,7 @@ import com.money.kark_profit.service.TransactionService;
 import com.money.kark_profit.service.feature.PerformanceService;
 import com.money.kark_profit.transform.request.PerformanceRequest;
 import com.money.kark_profit.transform.request.TransactionRequest;
-import com.money.kark_profit.transform.response.MonthlyPnLResponseDto;
+import com.money.kark_profit.transform.response.MonthlyPnLResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +27,7 @@ public class TransactionController {
 
     /**PERFORMANCE****/
     @PostMapping("/monthly/performance")
-    public ResponseEntity<ResponseBuilderUtils<MonthlyPnLResponseDto>> get(HttpServletRequest request, @RequestBody PerformanceRequest performanceRequest) {
+    public ResponseEntity<ResponseBuilderUtils<MonthlyPnLResponse>> get(HttpServletRequest request, @RequestBody PerformanceRequest performanceRequest) {
         return new ResponseEntity<>(performanceService.groupPnLByDay(request, performanceRequest), HttpStatus.OK);
     }
 

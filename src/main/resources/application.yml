@@ -3,7 +3,11 @@ spring:
     name: kark-profit
   jackson:
     property-naming-strategy: SNAKE_CASE
+  cache:
+    type: caffeine
 
+  caffeine:
+    spec: maximumSize=500,expireAfterWrite=15m
   profiles:
     active: local
 

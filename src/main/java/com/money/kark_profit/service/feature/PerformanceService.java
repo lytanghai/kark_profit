@@ -5,7 +5,7 @@ import com.money.kark_profit.model.TransactionModel;
 import com.money.kark_profit.repository.TransactionRepository;
 import com.money.kark_profit.service.UserService;
 import com.money.kark_profit.transform.request.PerformanceRequest;
-import com.money.kark_profit.transform.response.MonthlyPnLResponseDto;
+import com.money.kark_profit.transform.response.MonthlyPnLResponse;
 import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,7 +29,7 @@ public class PerformanceService {
         return transactionRepository.queryMonthlyTxn(userId, year, month);
     }
 
-    public ResponseBuilderUtils<MonthlyPnLResponseDto> groupPnLByDay(HttpServletRequest request, PerformanceRequest performanceRequest) {
+    public ResponseBuilderUtils<MonthlyPnLResponse> groupPnLByDay(HttpServletRequest request, PerformanceRequest performanceRequest) {
         int year = performanceRequest.getYear();
         int month = performanceRequest.getMonth();
 
@@ -79,13 +79,13 @@ public class PerformanceService {
             }
         }
 
-        List<MonthlyPnLResponseDto.DailyPnLDto> days = new ArrayList<>();
+        List<MonthlyPnLResponse.DailyPnLDto> days = new ArrayList<>();
 
         for (Map.Entry<Integer, Double> entry : dailyPnL.entrySet()) {
-            days.add(new MonthlyPnLResponseDto.DailyPnLDto(entry.getKey(), entry.getValue()));
+            days.add(new MonthlyPnLResponse.DailyPnLDto(entry.getKey(), entry.getValue()));
         }
 
-        MonthlyPnLResponseDto response = MonthlyPnLResponseDto.builder()
+        MonthlyPnLResponse response = MonthlyPnLResponse.builder()
                 .year(year)
                 .month(month)
                 .days(days)

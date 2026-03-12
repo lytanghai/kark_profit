@@ -12,6 +12,7 @@ import com.money.kark_profit.transform.response.ReportResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -28,13 +29,15 @@ public class ReportService {
 
     private final TransactionRepository transactionRepository;
     private final UserProfileRepository userProfileRepository;
-    private final UserService userService;
 
+    @Cacheable(
+            value = "reportCache", // a new cache name
+            key = "#userId + '-' + #reportRequest.lastNDay"
+    )
     public ResponseBuilderUtils<List<ReportResponse>> generateReport(
             ReportRequest reportRequest,
-            HttpServletRequest httpServletRequest
-    ) {
-        Integer userId = userService.extractUserId(httpServletRequest);
+            int userId,
+            HttpServletRequest httpServletRequest) {
 
         // Verify user
         UserProfileModel userProfile = userProfileRepository.findById(userId).orElse(null);
@@ -43,50 +46,72 @@ public class ReportService {
         }
 
         // Fetch transactions for last N days
-        List<TransactionModel> transactions = getTransactionsLastNDays(userId, reportRequest.getLastNDay());
+        List<TransactionModel> transactions =
+                getTransactionsLastNDays(userId, reportRequest.getLastNDay());
+
+        /*
+         * Calculate total deposit & withdrawal globally
+         * (not per symbol)
+         */
+        BigDecimal totalDeposit = transactions.stream()
+                .filter(t -> "DEPOSIT".equalsIgnoreCase(t.getType()))
+                .map(t -> Optional.ofNullable(t.getPnl())
+                        .map(BigDecimal::valueOf)
+                        .orElse(BigDecimal.ZERO))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        BigDecimal totalWithdrawal = transactions.stream()
+                .filter(t -> "WITHDRAWAL".equalsIgnoreCase(t.getType()))
+                .map(t -> Optional.ofNullable(t.getPnl())
+                        .map(BigDecimal::valueOf)
+                        .orElse(BigDecimal.ZERO))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         // Group transactions by symbol
         Map<String, List<TransactionModel>> transactionsBySymbol = transactions.stream()
+                .filter(t -> t.getSymbol() != null) // ignore deposit/withdrawal rows
                 .collect(Collectors.groupingBy(TransactionModel::getSymbol));
 
         List<ReportResponse> reports = new ArrayList<>();
 
         for (Map.Entry<String, List<TransactionModel>> entry : transactionsBySymbol.entrySet()) {
+
             String symbol = entry.getKey();
             List<TransactionModel> symbolTxns = entry.getValue();
 
             BigDecimal totalProfit = BigDecimal.ZERO;
             BigDecimal totalLoss = BigDecimal.ZERO;
-            BigDecimal netProfit = BigDecimal.ZERO;
-            BigDecimal totalDeposit = BigDecimal.ZERO;
-            BigDecimal totalWithdrawal = BigDecimal.ZERO;
 
             Map<LocalDate, BigDecimal> dailyPnL = new HashMap<>();
 
             for (TransactionModel t : symbolTxns) {
-                BigDecimal pnl = Optional.ofNullable(t.getPnl()).map(BigDecimal::valueOf).orElse(BigDecimal.ZERO);
+
+                BigDecimal pnl = Optional.ofNullable(t.getPnl())
+                        .map(BigDecimal::valueOf)
+                        .orElse(BigDecimal.ZERO);
 
                 if ("LOSS".equalsIgnoreCase(t.getType())) {
                     totalLoss = totalLoss.add(pnl);
-                    pnl = pnl.negate(); // negative for daily PnL
-                } else if ("DEPOSIT".equalsIgnoreCase(t.getType())) {
-                    totalDeposit = totalDeposit.add(Optional.ofNullable(t.getLotSize()).map(BigDecimal::valueOf).orElse(BigDecimal.ZERO));
-                } else if ("WITHDRAWAL".equalsIgnoreCase(t.getType())) {
-                    totalWithdrawal = totalWithdrawal.add(Optional.ofNullable(t.getLotSize()).map(BigDecimal::valueOf).orElse(BigDecimal.ZERO));
-                } else {
+                    pnl = pnl.negate();
+                }
+                else if ("PROFIT".equalsIgnoreCase(t.getType())) {
                     totalProfit = totalProfit.add(pnl);
                 }
+                else {
+                    continue;
+                }
 
-                // Daily PnL
-                LocalDate date = t.getDate().toInstant()
+                LocalDate date = t.getDate()
+                        .toInstant()
                         .atZone(ZoneId.systemDefault())
                         .toLocalDate();
-                dailyPnL.put(date, dailyPnL.getOrDefault(date, BigDecimal.ZERO).add(pnl));
+
+                dailyPnL.put(date,
+                        dailyPnL.getOrDefault(date, BigDecimal.ZERO).add(pnl));
             }
 
-            netProfit = totalProfit.subtract(totalLoss);
+            BigDecimal netProfit = totalProfit.subtract(totalLoss);
 
-            // Most gained/loss date
             String mostGainedDate = dailyPnL.entrySet().stream()
                     .max(Map.Entry.comparingByValue())
                     .map(e -> e.getKey().toString())
@@ -97,18 +122,27 @@ public class ReportService {
                     .map(e -> e.getKey().toString())
                     .orElse(null);
 
-            // Build report
+            BigDecimal totalProfitDiv = totalProfit.divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
+            BigDecimal totalLossDiv = totalLoss.divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
+            BigDecimal profitDiv = netProfit.divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
+
+            BigDecimal totalDepositDiv = totalDeposit.divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
+            BigDecimal totalWithdrawalDiv = totalWithdrawal.divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
             ReportResponse report = ReportResponse.builder()
                     .symbol(symbol)
-                    .currency("USD") // assuming USD for all, can be dynamic
-                    .totalProfit(totalProfit.divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP))
-                    .totalLoss(totalLoss.divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP))
-                    .profit(netProfit.divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP))
-                    .totalDeposit(totalDeposit)
-                    .totalWithdrawal(totalWithdrawal)
+                    .currency("USD")
+                    .totalProfit(totalProfitDiv)
+                    .totalLoss(totalLossDiv)
+                    .profit(profitDiv)
+                    .totalDeposit(totalDepositDiv)
+                    .totalWithdrawal(totalWithdrawalDiv)
                     .mostGainedDate(mostGainedDate)
                     .mostLossDate(mostLossDate)
-                    .result(netProfit.compareTo(BigDecimal.ZERO) > 0 ? "WIN" : "LOSS")
+                    .result(profitDiv.compareTo(BigDecimal.ZERO) > 0
+                            ? "WIN"
+                            : profitDiv.compareTo(BigDecimal.ZERO) < 0
+                            ? "LOSE"
+                            : "DRAW")
                     .build();
 
             reports.add(report);

@@ -1,11 +1,9 @@
-1. INSERT INTO public."configuration"
-   (id, "name", value, status, created_at, last_updated_at)
-   VALUES(1, 'ADMIN_TELEGRAM_USER_ID', '678134373', true, now(), null);
-
-2. INSERT INTO public."configuration"
+INSERT INTO public."configuration"
+     (id, "name", value, status, created_at, last_updated_at)
+     VALUES(1, 'ADMIN_TELEGRAM_USER_ID', '678134373', true, now(), null);
+INSERT INTO public."configuration"
    (id, "name", value, status, created_at, last_updated_at)
    VALUES(2, 'MASTER_KEY', 'b3f0dfe36a9b45b1b7b2d54c1a8d4c07b3f0dfe36a9b45b1b7b2d54c1a8d4c07', true, now(), null);
-
-3. INSERT INTO public."configuration"
+INSERT INTO public."configuration"
       (id, "name", value, status, created_at, last_updated_at)
       VALUES(3, 'MASTER_ADMIN_USERNAME', 'tanghai.ly', true, now(), null);

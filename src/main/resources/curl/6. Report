@@ -1,0 +1,29 @@
+curl --request POST \
+  --url http://localhost:8080/kark-profit/report/generate \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW5naGFpLmx5IiwiaWF0IjoxNzczMzAxMTQ4LCJleHAiOjE3NzMzODc1NDh9.tFKOXzBMgdouGE68MyJrofJcPzPmWydQU50l7c6qeMI' \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --cookie JSESSIONID=1A54706A370B0FA6559A2B040B4BE996 \
+  --data '{
+	"last_n_day": 31
+}'
+
+Response:
+{
+	"code": "200",
+	"message": "FETCH SUCCESSFULLY",
+	"data": [
+		{
+			"currency": "USD",
+			"most_gained_date": "2026-03-02",
+			"most_loss_date": "2026-03-12",
+			"profit": -415686.7120,
+			"result": "LOSE",
+			"symbol": "XAU",
+			"total_deposit": 50.0060,
+			"total_loss": 421944.7480,
+			"total_profit": 6258.0360,
+			"total_withdrawal": 40.0060
+		}
+	]
+}

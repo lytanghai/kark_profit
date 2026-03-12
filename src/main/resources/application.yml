@@ -6,8 +6,6 @@ spring:
   cache:
     type: caffeine
 
-  caffeine:
-    spec: maximumSize=500,expireAfterWrite=15m
   profiles:
     active: local
 

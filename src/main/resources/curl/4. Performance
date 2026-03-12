@@ -1,0 +1,145 @@
+curl --request POST \
+  --url http://localhost:8080/kark-profit/performance/monthly \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW5naGFpLmx5IiwiaWF0IjoxNzczMzAxMTQ4LCJleHAiOjE3NzMzODc1NDh9.tFKOXzBMgdouGE68MyJrofJcPzPmWydQU50l7c6qeMI' \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --cookie JSESSIONID=1A54706A370B0FA6559A2B040B4BE996 \
+  --data '{
+	"month":"3",
+	"year":"2026"
+}'
+Response:
+{
+	"code": "200",
+	"message": "CREATED SUCCESSFULLY",
+	"data": {
+		"days": [
+			{
+				"day": 1,
+				"pnl": 0.0
+			},
+			{
+				"day": 2,
+				"pnl": 0.0
+			},
+			{
+				"day": 3,
+				"pnl": 0.0
+			},
+			{
+				"day": 4,
+				"pnl": 0.0
+			},
+			{
+				"day": 5,
+				"pnl": 0.0
+			},
+			{
+				"day": 6,
+				"pnl": 0.0
+			},
+			{
+				"day": 7,
+				"pnl": 0.0
+			},
+			{
+				"day": 8,
+				"pnl": 0.0
+			},
+			{
+				"day": 9,
+				"pnl": 0.0
+			},
+			{
+				"day": 10,
+				"pnl": 0.0
+			},
+			{
+				"day": 11,
+				"pnl": -169.4
+			},
+			{
+				"day": 12,
+				"pnl": 0.0
+			},
+			{
+				"day": 13,
+				"pnl": 0.0
+			},
+			{
+				"day": 14,
+				"pnl": 0.0
+			},
+			{
+				"day": 15,
+				"pnl": 0.0
+			},
+			{
+				"day": 16,
+				"pnl": 0.0
+			},
+			{
+				"day": 17,
+				"pnl": 0.0
+			},
+			{
+				"day": 18,
+				"pnl": 0.0
+			},
+			{
+				"day": 19,
+				"pnl": 0.0
+			},
+			{
+				"day": 20,
+				"pnl": 0.0
+			},
+			{
+				"day": 21,
+				"pnl": 0.0
+			},
+			{
+				"day": 22,
+				"pnl": 0.0
+			},
+			{
+				"day": 23,
+				"pnl": 0.0
+			},
+			{
+				"day": 24,
+				"pnl": 0.0
+			},
+			{
+				"day": 25,
+				"pnl": 0.0
+			},
+			{
+				"day": 26,
+				"pnl": 0.0
+			},
+			{
+				"day": 27,
+				"pnl": 0.0
+			},
+			{
+				"day": 28,
+				"pnl": 0.0
+			},
+			{
+				"day": 29,
+				"pnl": 0.0
+			},
+			{
+				"day": 30,
+				"pnl": 0.0
+			},
+			{
+				"day": 31,
+				"pnl": 0.0
+			}
+		],
+		"month": 3,
+		"year": 2026
+	}
+}

@@ -9,9 +9,17 @@ curl --request POST \
 	"symbol": "XAU",
 	"currency": "USDC",
 	"lot_size": 0.01,
+	"inp_date":"03/03/2026", --optional
 	"pnl": 100.60,
 	"type":"loss"
 }'
+Response:
+{
+	"code": "200",
+	"message": "CREATED SUCCESSFULLY",
+	"data": null
+}
+
 
 2. Update Record
 curl --request POST \
@@ -27,6 +35,12 @@ curl --request POST \
 	"currency": "USDC",
 	"pnl": 5.5
 }'
+Response:
+{
+	"code": "200",
+	"message": "UPDATED SUCCESSFULLY",
+	"data": null
+}
 
 3. Listing Record
 curl --request POST \
@@ -40,6 +54,79 @@ curl --request POST \
 	"page":"0",
 	"currency":"USDC"
 }'
+Response:
+{
+	"code": "200",
+	"message": "FETCH SUCCESSFULLY",
+	"data": {
+		"content": [
+			{
+				"currency": "USDC",
+				"date": "2026-03-02T07:58:29.962Z",
+				"lot_size": 0.01,
+				"pnl": 104300.6,
+				"sn": 7,
+				"symbol": "XAU",
+				"type": "PROFIT",
+				"user_id": 2
+			},
+			{
+				"currency": "USDC",
+				"date": "2026-03-02T07:57:27.553Z",
+				"lot_size": 0.01,
+				"pnl": 104300.6,
+				"sn": 6,
+				"symbol": "XAU",
+				"type": "PROFIT",
+				"user_id": 2
+			},
+			{
+				"currency": "USDC",
+				"date": "2026-03-12T07:56:31.517Z",
+				"lot_size": 0.01,
+				"pnl": 104300.6,
+				"sn": 4,
+				"symbol": "XAU",
+				"type": "PROFIT",
+				"user_id": 2
+			},
+			{
+				"currency": "USDC",
+				"date": "2026-03-12T07:56:04.916Z",
+				"lot_size": 0.01,
+				"pnl": 104300.6,
+				"sn": 3,
+				"symbol": "XAU",
+				"type": "PROFIT",
+				"user_id": 2
+			},
+			{
+				"currency": "USDC",
+				"date": "2026-03-12T07:56:00.603Z",
+				"lot_size": 0.01,
+				"pnl": 104300.6,
+				"sn": 2,
+				"symbol": "XAU",
+				"type": "PROFIT",
+				"user_id": 2
+			},
+			{
+				"currency": "USDC",
+				"date": "2026-03-12T07:54:15.091Z",
+				"lot_size": 0.01,
+				"pnl": 104300.6,
+				"sn": 1,
+				"symbol": "XAU",
+				"type": "PROFIT",
+				"user_id": 2
+			}
+		],
+		"number_of_element": 6,
+		"size": 10,
+		"total_element": 6,
+		"total_page": 1
+	}
+}
 
 4. Delete Record
 curl --request POST \
@@ -51,3 +138,9 @@ curl --request POST \
   --data '{
 	"sn": 11
 }'
+Response:
+{
+	"code": "200",
+	"message": "DELETED SUCCESSFULLY",
+	"data": null
+}

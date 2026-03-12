@@ -1,6 +1,7 @@
 package com.money.kark_profit.controller;
 
 import com.money.kark_profit.service.TransactionService;
+import com.money.kark_profit.service.UserService;
 import com.money.kark_profit.service.feature.ReportService;
 import com.money.kark_profit.transform.request.ReportRequest;
 import com.money.kark_profit.transform.response.ReportResponse;
@@ -39,10 +40,13 @@ public class ReportController {
     // else DRAW
 
     private final ReportService reportService;
+    private final UserService userService;
+
 
     @PostMapping("/generate")
     private ResponseEntity<ResponseBuilderUtils<List<ReportResponse>>> generateReport(@RequestBody ReportRequest reportRequest, HttpServletRequest httpServletRequest) {
-        return new ResponseEntity<>(reportService.generateReport(reportRequest, httpServletRequest), HttpStatus.OK);
+        return new ResponseEntity<>(reportService.generateReport(
+                reportRequest, userService.extractUserId(httpServletRequest), httpServletRequest), HttpStatus.OK);
     }
 
 

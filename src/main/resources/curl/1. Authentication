@@ -3,12 +3,21 @@ curl --request POST \
   --url http://localhost:8080/kark-profit/auth/register \
   --header 'Content-Type: application/json' \
   --header 'User-Agent: insomnia/10.1.1' \
-  --cookie JSESSIONID=9A1B0DC902CFC171593917CFA4F6DB42 \
+  --cookie JSESSIONID=1A54706A370B0FA6559A2B040B4BE996 \
   --data '{
-	"username": "admin",
-	"password": "user12345"
+	"username": "tanghai.ly",
+	"password": "93606872"
 }'
-
+RESPONSE:
+{
+	"code": "200",
+	"message": "REGISTER SUCCESSFULLY",
+	"data": {
+		"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW5naGFpLmx5IiwiaWF0IjoxNzczMzAxMTA4LCJleHAiOjE3NzMzODc1MDh9.K5MmA7-_9jkluK6P4cTbSK4Z1nT5i55HB9T0X_60H64",
+		"username": "tanghai.ly"
+	}
+}
+//----------------------------------------------------------------------------------
 2. Login
 curl --request POST \
   --url http://localhost:8080/kark-profit/auth/login \
@@ -19,7 +28,16 @@ curl --request POST \
 	"username": "admin",
 	"password": "user12345"
 }'
-
+RESPONSE:
+{
+	"code": "200",
+	"message": "LOGIN SUCCESSFULLY",
+	"data": {
+		"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW5naGFpLmx5IiwiaWF0IjoxNzczMzAxMTQ4LCJleHAiOjE3NzMzODc1NDh9.tFKOXzBMgdouGE68MyJrofJcPzPmWydQU50l7c6qeMI",
+		"username": "tanghai.ly"
+	}
+}
+//--------------------------------------
 3. Change Password
 curl --request POST \
   --url http://localhost:8080/kark-profit/auth/change-password \
@@ -31,3 +49,9 @@ curl --request POST \
 	"username": "admin",
 	"new_password": "user123456"
 }'
+RESPONSE:
+{
+	"code": "200",
+	"message": "MODIFIED SUCCESSFULLY",
+	"data": null
+}

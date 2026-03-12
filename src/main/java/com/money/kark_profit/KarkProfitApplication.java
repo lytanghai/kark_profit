@@ -25,9 +25,9 @@ public class KarkProfitApplication {
 //TODO
 /**
  * 1. Update JWT Secret Key to Config
- * 2. Update Request & Response of Auth Api
+ * 2. Update Request & Response of 1. Authentication Api
  * 3. Convert XML to DTO class
- * 4. Update Try Catch to display error message on Auth Api
+ * 4. Update Try Catch to display error message on 1. Authentication Api
  * 5. Impl Circuit Breaker and set config in table
  *     url: jdbc:postgresql://aws-1-ap-south-1.pooler.supabase.com:6543/postgres
  *     username: postgres.akqbuskviaxgpmzogytu

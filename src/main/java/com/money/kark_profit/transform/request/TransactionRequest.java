@@ -12,6 +12,8 @@ public class TransactionRequest {
     @JsonProperty("lot_size")
     private Double lotSize;
     private Double pnl;
+    @JsonProperty("inp_date")
+    private String inpDate;
 
     //for delete
     private Integer sn;

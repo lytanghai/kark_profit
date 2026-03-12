@@ -47,6 +47,10 @@ public class TransactionService {
         transactionModel.setDate(DateUtils.formatPhnomPenhTime(new Date()));
         transactionModel.setType(transactionRequest.getType());
 
+        if(transactionRequest.getInpDate() != null){
+            transactionModel.setDate(DateUtils.parseDateWithCurrentTime(transactionRequest.getInpDate()));
+        }
+
         Integer userId = userService.extractUserId(httpServletRequest);
         if(userId != null) {
             transactionModel.setUserId(userId);

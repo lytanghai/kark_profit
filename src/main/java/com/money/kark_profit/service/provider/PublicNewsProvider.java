@@ -4,10 +4,11 @@ import com.money.kark_profit.cache.EconomicEventsCache;
 import com.money.kark_profit.cache.StringCache;
 import com.money.kark_profit.constants.ApplicationCode;
 import com.money.kark_profit.http.RestTemplateHttpClient;
-import com.money.kark_profit.transform.request.MarketNewsRequest;
+import com.money.kark_profit.transform.request.InsightRequest;
 import com.money.kark_profit.transform.response.EventCalendarResponse;
-import com.money.kark_profit.transform.response.MarketNewsResponse;
+import com.money.kark_profit.transform.response.InsightResponse;
 import com.money.kark_profit.transform.response.xml.GoogleNewsXmlResponse;
+import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import com.money.kark_profit.utils.XmlConverterUtils;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +32,7 @@ public class PublicNewsProvider {
 
     private final RestTemplateHttpClient restHttp;
 
-    public ResponseBuilderUtils<MarketNewsResponse> fetchGoogleNews(MarketNewsRequest request) {
+    public ResponseBuilderUtils<InsightResponse> fetchGoogleNews(InsightRequest request) {
 
         // Generate a unique cache key per query
         String cacheKey = "GOOGLE_NEWS_"
@@ -70,7 +71,7 @@ public class PublicNewsProvider {
         }
 
         // Map RSS to response
-        MarketNewsResponse response = new MarketNewsResponse();
+        InsightResponse response = new InsightResponse();
         response.setCategory(
                 Optional.ofNullable(rssFeed.getChannel())
                         .map(GoogleNewsXmlResponse.Channel::getTitle)
@@ -78,13 +79,13 @@ public class PublicNewsProvider {
                         .orElse(null)
         );
 
-        List<MarketNewsResponse.MarketNews> news =
+        List<InsightResponse.InsightNews> news =
                 Optional.ofNullable(rssFeed.getChannel())
                         .map(GoogleNewsXmlResponse.Channel::getItems)
                         .orElse(Collections.emptyList())
                         .stream()
                         .map(item -> {
-                            MarketNewsResponse.MarketNews obj = new MarketNewsResponse.MarketNews();
+                            InsightResponse.InsightNews obj = new InsightResponse.InsightNews();
 
                             String title = item.getTitle();
                             if (title != null) {
@@ -117,8 +118,12 @@ public class PublicNewsProvider {
 
         ObjectMapper objectMapper = new ObjectMapper();
         List<EventCalendarResponse> events = objectMapper.readValue(
-                economicEventsJson, new TypeReference<List<EventCalendarResponse>>() {}
-        );
+                        economicEventsJson,
+                        new TypeReference<List<EventCalendarResponse>>() {}
+                ).stream()
+                .filter(e -> "USD".equals(e.getCountry()))
+                .peek(e -> e.setDate(DateUtils.localTimeConverter(e.getDate())))
+                .toList();
 
         return new ResponseBuilderUtils<>(
                 ApplicationCode.HTTP_200,

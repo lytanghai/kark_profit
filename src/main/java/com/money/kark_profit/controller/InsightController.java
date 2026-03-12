@@ -1,9 +1,9 @@
 package com.money.kark_profit.controller;
 
 import com.money.kark_profit.service.provider.PublicNewsProvider;
-import com.money.kark_profit.transform.request.MarketNewsRequest;
+import com.money.kark_profit.transform.request.InsightRequest;
 import com.money.kark_profit.transform.response.EventCalendarResponse;
-import com.money.kark_profit.transform.response.MarketNewsResponse;
+import com.money.kark_profit.transform.response.InsightResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/market")
+@RequestMapping("/insight")
 @RequiredArgsConstructor
-public class MarketController {
+public class InsightController {
 
     private final PublicNewsProvider provider;
 
     @PostMapping("/news")
-    public ResponseEntity<ResponseBuilderUtils<MarketNewsResponse>> googleNews(@RequestBody MarketNewsRequest marketNewsRequest) {
-        return new ResponseEntity<>(provider.fetchGoogleNews(marketNewsRequest), HttpStatus.OK);
+    public ResponseEntity<ResponseBuilderUtils<InsightResponse>> googleNews(@RequestBody InsightRequest insightRequest) {
+        return new ResponseEntity<>(provider.fetchGoogleNews(insightRequest), HttpStatus.OK);
     }
 
     @GetMapping("/event")

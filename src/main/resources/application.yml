@@ -8,10 +8,6 @@ spring:
 
 #  profiles:
 #    active: local
-app:
-  cors:
-    allowed-origins: ${cors.url}
-    allowed-methods: GET,POST
 
   datasource:
     url: ${datasource.url}
@@ -28,6 +24,11 @@ app:
 server:
   servlet:
     context-path: /kark-profit
+
+app:
+  cors:
+    allowed-origins: ${cors.url}
+    allowed-methods: GET,POST
 
 telegram:
   bot:

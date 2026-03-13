@@ -8,11 +8,15 @@ spring:
 
   profiles:
     active: local
+app:
+  cors:
+    allowed-origins: ${cors.url}
+    allowed-methods: GET,POST
 
   datasource:
-    url: ${supabase_url}
-    username: ${username}
-    password: ${password}
+    url: ${datasource.url}
+    username: ${datasource.username}
+    password: ${datasource.password}
   jpa:
     hibernate:
       ddl-auto: none   # auto create/update tables
@@ -27,5 +31,5 @@ server:
 
 telegram:
   bot:
-    token: 123
-    chat-id: 123
+    token: ${telegram.bot.token:123}
+    chat-id: ${telegram.bot.chat-id:123}

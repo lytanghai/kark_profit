@@ -26,6 +26,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -96,9 +100,20 @@ public class TransactionService {
             if (req.getPnl() != null)
                 predicates.add(cb.equal(root.get("pnl"), req.getPnl()));
 
-            if (req.getDate() != null)
-                predicates.add(cb.equal(root.get("date"), req.getDate()));
+            if (req.getDate() != null) {
+                LocalDate localDate = req.getDate().toInstant()
+                        .atZone(ZoneId.systemDefault())
+                        .toLocalDate();
 
+                LocalDateTime startOfDay = localDate.atStartOfDay();
+                LocalDateTime endOfDay = localDate.atTime(LocalTime.MAX);
+
+                predicates.add(cb.between(
+                        root.get("date"),
+                        java.sql.Timestamp.valueOf(startOfDay),
+                        java.sql.Timestamp.valueOf(endOfDay)
+                ));
+            }
             return cb.and(predicates.toArray(new Predicate[0]));
         };
 
@@ -158,7 +173,6 @@ public class TransactionService {
     }
 
     public ResponseBuilderUtils<Void> updatePnL(TransactionRequest transactionRequest, HttpServletRequest request) {
-        System.out.println("CALLING TO UPDATE : updatePnL");
         if(transactionRequest == null)
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.UPDATED, null);
 

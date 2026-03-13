@@ -9,6 +9,7 @@ import com.money.kark_profit.transform.response.TransactionListingResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/transaction")
 @RequiredArgsConstructor
+@Slf4j
 public class TransactionController {
     private final TransactionService transactionService;
     private final PerformanceService performanceService;
@@ -32,6 +34,7 @@ public class TransactionController {
 
     @PostMapping("/fetch")
     public ResponseEntity<ResponseBuilderUtils<Page<TransactionListingResponse>>> fetchPnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
+        log.info("REQ {}", transactionRequest);
         return new ResponseEntity<>(transactionService.listing(transactionRequest, request), HttpStatus.OK);
     }
     /**PERFORMANCE****/

@@ -39,7 +39,7 @@ public class InsightController {
         return new ResponseEntity<>(provider.fetchGoogleNews(insightRequest), HttpStatus.OK);
     }
 
-    @GetMapping("/event")
+    @GetMapping("/events")
     public ResponseEntity<ResponseBuilderUtils<List<EventCalendarResponse>>> forexFactory() {
         return new ResponseEntity<>(provider.fetchForexFactory(), HttpStatus.OK);
     }

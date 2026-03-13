@@ -6,8 +6,8 @@ spring:
   cache:
     type: caffeine
 
-#  profiles:
-#    active: local
+  profiles:
+    active: local
 
   datasource:
     url: ${datasource.url}

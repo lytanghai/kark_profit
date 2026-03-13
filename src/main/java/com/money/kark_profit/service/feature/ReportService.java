@@ -39,14 +39,24 @@ public class ReportService {
             HttpServletRequest httpServletRequest) {
 
         // Verify user
-        UserProfileModel userProfile = userProfileRepository.findById(userId).orElse(null);
+        UserProfileModel userProfile = null;
+        try {
+            userProfile = userProfileRepository.findById(userId).orElse(null);
+        }catch (Exception e) {
+            throw new DatabaseException(ApplicationCode.DBE_ERR_001, ApplicationCode.DBE_ERR_001_MSG);
+        }
         if (userProfile == null) {
             throw new DatabaseException(ApplicationCode.DBE_001, ApplicationCode.DBE_001_MSG);
         }
 
         // Fetch transactions for last N days
-        List<TransactionModel> transactions =
-                getTransactionsLastNDays(userId, reportRequest.getLastNDay());
+        List<TransactionModel> transactions = null;
+        try {
+            transactions  = getTransactionsLastNDays(userId, reportRequest.getLastNDay());
+
+        } catch (Exception e) {
+            throw new DatabaseException(ApplicationCode.DBE_ERR_001, ApplicationCode.DBE_ERR_001_MSG);
+        }
 
         /*
          * Calculate total deposit & withdrawal globally

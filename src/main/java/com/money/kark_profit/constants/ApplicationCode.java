@@ -25,6 +25,9 @@ public class ApplicationCode {
     public static String DBE_001 = "DBE_001";
     public static String DBE_001_MSG = "Record not found!";
 
+    public static String DBE_ERR_001 = "DBE_ERR_001";
+    public static String DBE_ERR_001_MSG = "General Database Error!";
+
     public static String DBE_03122 = "DBE_03122";
     public static String DBE_03122_MSG = "Record already exists!";
 }

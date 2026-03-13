@@ -1,5 +1,4 @@
-# Build stage
-FROM gradle:8.5-jdk17-alpine AS builder
+FROM gradle:9.0-jdk17-alpine AS builder
 WORKDIR /app
 COPY build.gradle settings.gradle gradlew ./
 COPY gradle gradle

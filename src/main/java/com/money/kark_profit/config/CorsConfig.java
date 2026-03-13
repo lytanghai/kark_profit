@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CorsConfig {
 
-    @Value("${app.cors.allowed-origins:http://localhost:5173}")
+    @Value("${app.cors.allowed-origins:https://byte-income.onrender.com}")
     private String allowedOrigins;
 
     @Value("${app.cors.allowed-methods:GET,POST}")

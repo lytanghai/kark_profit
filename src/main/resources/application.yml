@@ -27,7 +27,7 @@ server:
 
 app:
   cors:
-    allowed-origins: ${cors.url}
+    allowed-origins: https://byte-income.onrender.com
     allowed-methods: GET,POST
 
 telegram:

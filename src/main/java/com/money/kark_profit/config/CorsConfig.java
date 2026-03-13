@@ -9,12 +9,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CorsConfig {
 
-    @Value("${app.cors.allowed-origins:https://byte-income.onrender.com}")
-    private String allowedOrigins;
-
-    @Value("${app.cors.allowed-methods:GET,POST}")
-    private String allowedMethods;
-
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
@@ -22,8 +16,11 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
 
                 registry.addMapping("/**")
-                        .allowedOrigins(allowedOrigins.split(","))
-                        .allowedMethods(allowedMethods.split(","))
+                        .allowedOrigins(
+                                "http://localhost:5173",
+                                "https://byte-income.onrender.com"
+                        )
+                        .allowedMethods("GET", "POST", "OPTIONS")
                         .allowCredentials(true);
             }
         };

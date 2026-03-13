@@ -25,11 +25,6 @@ server:
   servlet:
     context-path: /kark-profit
 
-app:
-  cors:
-    allowed-origins: https://byte-income.onrender.com
-    allowed-methods: GET,POST
-
 telegram:
   bot:
     token: ${telegram.bot.token:123}

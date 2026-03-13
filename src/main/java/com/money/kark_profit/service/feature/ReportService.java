@@ -6,7 +6,6 @@ import com.money.kark_profit.model.TransactionModel;
 import com.money.kark_profit.model.UserProfileModel;
 import com.money.kark_profit.repository.TransactionRepository;
 import com.money.kark_profit.repository.UserProfileRepository;
-import com.money.kark_profit.service.UserService;
 import com.money.kark_profit.transform.request.ReportRequest;
 import com.money.kark_profit.transform.response.ReportResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;

@@ -25,7 +25,8 @@ public class NewsAggregatorProvider {
     public List<NewsArticleResponse> getAllNews() {
         List<NewsArticleResponse> news = new java.util.ArrayList<>();
         news.addAll(fetch("https://feeds.bbci.co.uk/news/rss.xml", "BBC"));
-        news.addAll(fetch("https://www.reuters.com/world/rss", "Reuters"));
+        news.addAll(fetch("https://theguardian.com/us-news/rss", "BBC"));
+//        news.addAll(fetch("https://www.reuters.com/world/rss", "Reuters"));
         news.addAll(fetch("https://www.aljazeera.com/xml/rss/all.xml", "AlJazeera"));
 
         return news.stream()

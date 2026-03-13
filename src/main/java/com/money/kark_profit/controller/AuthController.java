@@ -1,12 +1,16 @@
 package com.money.kark_profit.controller;
 
+import com.money.kark_profit.model.TransactionModel;
+import com.money.kark_profit.model.UserProfileModel;
 import com.money.kark_profit.service.AuthService;
 import com.money.kark_profit.transform.request.ChangePasswordRequest;
 import com.money.kark_profit.transform.request.LoginRequest;
 import com.money.kark_profit.transform.request.RegisterRequest;
 import com.money.kark_profit.transform.response.AuthResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +28,16 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<ResponseBuilderUtils<AuthResponse>> register(@RequestBody RegisterRequest request) {
         return new ResponseEntity<>(authService.register(request), HttpStatus.OK);
+    }
+
+    @PostMapping("/user/listing")
+    public ResponseEntity<ResponseBuilderUtils<Page<UserProfileModel>>> register(@RequestBody RegisterRequest registerRequest, HttpServletRequest request) {
+        return new ResponseEntity<>(authService.listing(registerRequest, request), HttpStatus.OK);
+    }
+
+    @PostMapping("/user/delete")
+    public ResponseEntity<ResponseBuilderUtils> delete(@RequestBody RegisterRequest registerRequest, HttpServletRequest request) {
+        return new ResponseEntity<>(authService.delete(registerRequest, request), HttpStatus.OK);
     }
 
     @PostMapping("/login")

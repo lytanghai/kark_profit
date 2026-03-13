@@ -1,5 +1,7 @@
 package com.money.kark_profit.service;
 
+import com.money.kark_profit.constants.ApplicationCode;
+import com.money.kark_profit.exception.DatabaseException;
 import com.money.kark_profit.model.UserProfileModel;
 import com.money.kark_profit.repository.UserProfileRepository;
 import com.money.kark_profit.utils.JwtUtils;
@@ -17,9 +19,12 @@ public class UserService {
     public Integer extractUserId(HttpServletRequest httpServletRequest) {
         String username = jwtUtils.extractUsername(httpServletRequest.getHeader("Authorization"));
         if(username != null || !username.isBlank()) {
-            UserProfileModel userProfileModel = userProfileRepository.findByUsername(username).get();
-            if(userProfileModel != null)
+            UserProfileModel userProfileModel = userProfileRepository.findByUsername(username).orElse(null);
+            if(userProfileModel == null) {
+                throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
+            } else {
                 return userProfileModel.getId();
+            }
         }
         return -1;
     }

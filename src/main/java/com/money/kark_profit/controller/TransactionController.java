@@ -1,11 +1,11 @@
 package com.money.kark_profit.controller;
 
-import com.money.kark_profit.model.TransactionModel;
 import com.money.kark_profit.service.TransactionService;
 import com.money.kark_profit.service.feature.PerformanceService;
 import com.money.kark_profit.transform.request.PerformanceRequest;
 import com.money.kark_profit.transform.request.TransactionRequest;
 import com.money.kark_profit.transform.response.MonthlyPnLResponse;
+import com.money.kark_profit.transform.response.TransactionListingResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +31,7 @@ public class TransactionController {
     }
 
     @PostMapping("/fetch")
-    public ResponseEntity<ResponseBuilderUtils<Page<TransactionModel>>> fetchPnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
+    public ResponseEntity<ResponseBuilderUtils<Page<TransactionListingResponse>>> fetchPnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
         return new ResponseEntity<>(transactionService.listing(transactionRequest, request), HttpStatus.OK);
     }
     /**PERFORMANCE****/

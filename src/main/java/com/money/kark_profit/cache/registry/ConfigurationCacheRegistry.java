@@ -17,7 +17,7 @@ public class ConfigurationCacheRegistry {
     }
 
     public void loadingComponent() {
-        log.info("loading service transaction mapping component to cache ...");
+        log.info("loading service transaction mapping component to cache ...! fetching from db");
 
         ConfigurationCache.initCache(configurationRepository.findByName(ApplicationCache.TELEGRAM_CHAT_ID).get());
         ConfigurationCache.initCache(configurationRepository.findByName(ApplicationCache.MASTER_KEY).get());

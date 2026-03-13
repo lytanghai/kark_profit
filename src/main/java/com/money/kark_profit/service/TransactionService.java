@@ -6,6 +6,7 @@ import com.money.kark_profit.exception.SystemException;
 import com.money.kark_profit.model.TransactionModel;
 import com.money.kark_profit.repository.TransactionRepository;
 import com.money.kark_profit.transform.request.TransactionRequest;
+import com.money.kark_profit.transform.response.TransactionListingResponse;
 import com.money.kark_profit.transform.response.TransactionResponse;
 import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.PayloadUtils;
@@ -23,9 +24,12 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -62,7 +66,7 @@ public class TransactionService {
         return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, null);
     }
 
-    public ResponseBuilderUtils<Page<TransactionModel>> listing(TransactionRequest req, HttpServletRequest request) {
+    public ResponseBuilderUtils<Page<TransactionListingResponse>> listing(TransactionRequest req, HttpServletRequest request) {
         Integer userId = userService.extractUserId(request);
         if(userId == -1)
             throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
@@ -100,13 +104,29 @@ public class TransactionService {
 
         Page<TransactionModel> pageResult = transactionRepository.findAll(spec, pageable);
 
-        TransactionResponse transactionResponse = TransactionResponse
-                .builder()
+        List<TransactionListingResponse> transformedList = pageResult.getContent().stream()
+                .map(m -> {
+                    BigDecimal pnl = new BigDecimal(m.getPnl())
+                            .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
+                    return TransactionListingResponse.builder()
+                            .sn(m.getSn())
+                            .currency(m.getCurrency())
+                            .date(m.getDate())
+                            .lotSize(m.getLotSize())
+                            .pnl(pnl.doubleValue()) // transformed value
+                            .symbol(m.getSymbol())
+                            .type(m.getType())
+                            .userId(m.getUserId())
+                            .build();
+                })
+                .collect(Collectors.toList());
+
+        TransactionResponse transactionResponse = TransactionResponse.builder()
                 .totalElement(pageResult.getTotalElements())
                 .numberOfElement(pageResult.getNumberOfElements())
                 .size(pageResult.getSize())
                 .totalPage(pageResult.getTotalPages())
-                .content(pageResult.getContent())
+                .content(transformedList)
                 .build();
 
         return new ResponseBuilderUtils<>(
@@ -138,6 +158,7 @@ public class TransactionService {
     }
 
     public ResponseBuilderUtils<Void> updatePnL(TransactionRequest transactionRequest, HttpServletRequest request) {
+        System.out.println("CALLING TO UPDATE : updatePnL");
         if(transactionRequest == null)
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.UPDATED, null);
 

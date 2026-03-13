@@ -73,7 +73,7 @@ public class PerformanceService {
 
                 BigDecimal total = BigDecimal.valueOf(dailyPnL.get(day))
                         .add(BigDecimal.valueOf(value))
-                        .setScale(2, RoundingMode.HALF_UP);
+                        .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
 
                 dailyPnL.put(day, total.doubleValue());
             }

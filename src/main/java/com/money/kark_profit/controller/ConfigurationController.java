@@ -6,6 +6,7 @@ import com.money.kark_profit.transform.request.ConfigurationRequest;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
+@Slf4j
 @RequestMapping("/config")
 public class ConfigurationController {
 

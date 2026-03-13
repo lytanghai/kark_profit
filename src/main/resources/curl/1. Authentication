@@ -2,8 +2,6 @@
 curl --request POST \
   --url http://localhost:8080/kark-profit/auth/register \
   --header 'Content-Type: application/json' \
-  --header 'User-Agent: insomnia/10.1.1' \
-  --cookie JSESSIONID=1A54706A370B0FA6559A2B040B4BE996 \
   --data '{
 	"username": "tanghai.ly",
 	"password": "93606872"
@@ -22,8 +20,6 @@ RESPONSE:
 curl --request POST \
   --url http://localhost:8080/kark-profit/auth/login \
   --header 'Content-Type: application/json' \
-  --header 'User-Agent: insomnia/10.1.1' \
-  --cookie JSESSIONID=9A1B0DC902CFC171593917CFA4F6DB42 \
   --data '{
 	"username": "admin",
 	"password": "user12345"
@@ -53,5 +49,67 @@ RESPONSE:
 {
 	"code": "200",
 	"message": "MODIFIED SUCCESSFULLY",
+	"data": null
+}
+
+4. Listing
+curl --request POST \
+  --url http://localhost:8080/kark-profit/auth/user/listing \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtb2NrVUkiLCJpYXQiOjE3NzMzNjk2MTQsImV4cCI6MTc3MzQ1NjAxNH0.5rU5j9HgNZ91ohNWOnBci4t6iJi2A3BSL99dGIH0TOo' \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --cookie JSESSIONID=1A54706A370B0FA6559A2B040B4BE996 \
+  --data '{
+	"page": 0
+}'
+RESPONSE:
+{
+	"code": "200",
+	"message": "FETCH SUCCESSFULLY",
+	"data": {
+		"content": [
+			{
+				"created_at": "2026-03-10T17:00:00.000Z",
+				"id": 6,
+				"last_updated_at": "2026-03-10T17:00:00.000Z",
+				"password": "xxx",
+				"status": true,
+				"username": "mock.user"
+			},
+			{
+				"created_at": "2026-03-10T17:00:00.000Z",
+				"id": 5,
+				"last_updated_at": "2026-03-10T17:00:00.000Z",
+				"password": "xxx",
+				"status": true,
+				"username": "tanghai.ly"
+			},
+			{
+				"created_at": "2026-03-10T17:00:00.000Z",
+				"id": 4,
+				"last_updated_at": "2026-03-10T17:00:00.000Z",
+				"password": "xxx",
+				"status": true,
+				"username": "admin2"
+			}
+		],
+		"number_of_element": 3,
+		"size": 10,
+		"total_element": 3,
+		"total_page": 1
+	}
+}
+
+5. Delete
+curl --request POST \
+  --url http://localhost:8080/kark-profit/auth/delete \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"id": 1
+}'
+RESPONSE:
+{
+	"code": "200",
+	"message": "DELETED SUCCESSFULLY",
 	"data": null
 }

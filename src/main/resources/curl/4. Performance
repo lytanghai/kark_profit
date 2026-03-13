@@ -1,9 +1,7 @@
 curl --request POST \
-  --url http://localhost:8080/kark-profit/performance/monthly \
+  --url http://localhost:8080/kark-profit/transaction/monthly/performance \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW5naGFpLmx5IiwiaWF0IjoxNzczMzAxMTQ4LCJleHAiOjE3NzMzODc1NDh9.tFKOXzBMgdouGE68MyJrofJcPzPmWydQU50l7c6qeMI' \
   --header 'Content-Type: application/json' \
-  --header 'User-Agent: insomnia/10.1.1' \
-  --cookie JSESSIONID=1A54706A370B0FA6559A2B040B4BE996 \
   --data '{
 	"month":"3",
 	"year":"2026"

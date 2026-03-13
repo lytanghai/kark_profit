@@ -14,13 +14,10 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-
-                registry.addMapping("/**")
-                        .allowedOrigins(
-                                "http://localhost:5173",
-                                "https://byte-income.onrender.com"
-                        )
-                        .allowedMethods("GET", "POST", "OPTIONS")
+                registry.addMapping("/**") // allow all paths
+                        .allowedOrigins("https://byte-income.onrender.com")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
                         .allowCredentials(true);
             }
         };

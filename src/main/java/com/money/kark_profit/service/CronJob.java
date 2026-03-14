@@ -14,7 +14,7 @@ public class CronJob {
 
     private final String url = "https://alert-engine-h1mv.onrender.com/health";
 
-    @Scheduled(fixedRate = 100000)
+//    @Scheduled(fixedRate = 100000)
     public void sendMessage() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("User-Agent", "Mozilla/5.0");

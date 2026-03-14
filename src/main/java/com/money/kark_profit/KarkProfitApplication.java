@@ -10,7 +10,7 @@ import java.util.TimeZone;
 
 @SpringBootApplication
 @EnableCaching
-@EnableScheduling
+//@EnableScheduling
 public class KarkProfitApplication {
 
 	public static void main(String[] args) {

@@ -38,7 +38,6 @@ public class PublicController {
         return "SUCCESS";
     }
 
-//    @Scheduled(cron = "*/20 * * * * *")
     public SystemHealth checkSystemHealth() {
         Runtime runtime = Runtime.getRuntime();
 

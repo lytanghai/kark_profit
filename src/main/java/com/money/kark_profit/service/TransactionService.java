@@ -45,12 +45,12 @@ public class TransactionService {
     private final UserService userService;
 
     public ResponseBuilderUtils<Void> insertNewPnL(TransactionRequest transactionRequest, HttpServletRequest httpServletRequest) {
-        PayloadUtils.getNonNullFields(transactionRequest, List.of("symbol", "lot_size", "pnl", "currency"));
+        PayloadUtils.getNonNullFields(transactionRequest, List.of("type", "currency"));
 
         TransactionModel transactionModel = new TransactionModel();
         transactionModel.setCurrency(transactionRequest.getCurrency());
         transactionModel.setPnl(transactionRequest.getPnl());
-        transactionModel.setSymbol(transactionRequest.getSymbol());
+        transactionModel.setSymbol(transactionRequest.getSymbol() == null ? "XAU" : transactionRequest.getSymbol());
         transactionModel.setLotSize(transactionRequest.getLotSize());
         transactionModel.setDate(DateUtils.formatPhnomPenhTime(new Date()));
         transactionModel.setType(transactionRequest.getType());
@@ -121,14 +121,14 @@ public class TransactionService {
 
         List<TransactionListingResponse> transformedList = pageResult.getContent().stream()
                 .map(m -> {
-                    BigDecimal pnl = new BigDecimal(m.getPnl())
-                            .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
+//                    BigDecimal pnl = new BigDecimal(m.getPnl())
+//                            .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
                     return TransactionListingResponse.builder()
                             .sn(m.getSn())
                             .currency(m.getCurrency())
                             .date(m.getDate())
                             .lotSize(m.getLotSize())
-                            .pnl(pnl.doubleValue()) // transformed value
+                            .pnl(m.getPnl()) // transformed value
                             .symbol(m.getSymbol())
                             .type(m.getType())
                             .userId(m.getUserId())

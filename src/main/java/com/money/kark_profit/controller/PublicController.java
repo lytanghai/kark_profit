@@ -33,7 +33,12 @@ public class PublicController {
 
     @GetMapping("/system-health")
     public String getSystemHealth() {
-        userProfileRepository.findById(2);
+//        try {
+//            userProfileRepository.findById(2);
+//        }catch (Exception e) {
+//
+//        }
+
         checkSystemHealth();
         return "SUCCESS";
     }

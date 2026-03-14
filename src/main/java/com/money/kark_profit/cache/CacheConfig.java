@@ -19,7 +19,7 @@ public class CacheConfig {
 
         // Default cache spec (applied to all caches not explicitly registered)
         cacheManager.setCaffeine(Caffeine.newBuilder()
-                .expireAfterWrite(15, TimeUnit.MINUTES)
+                .expireAfterWrite(10, TimeUnit.MINUTES)
                 .maximumSize(500));                     // default max entries
 
         // Custom cache: reportCache (5 min TTL)

@@ -1,19 +1,25 @@
 package com.money.kark_profit.controller;
+
+import com.money.kark_profit.repository.UserProfileRepository;
 import com.sun.management.OperatingSystemMXBean;
 import lombok.Builder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import java.lang.management.ManagementFactory;
+import java.util.Random;
 
 @RestController
 @Slf4j
 @RequestMapping("/public")
 public class PublicController {
+
+    @Autowired
+    private UserProfileRepository userProfileRepository;
 
     @Data
     @Builder
@@ -28,6 +34,10 @@ public class PublicController {
 
     @GetMapping("/system-health")
     public SystemHealth getSystemHealth() {
+        Random random = new Random();
+        if(random.nextInt(2) + 1 == 1)
+            userProfileRepository.findById(2);
+
         return checkSystemHealth();
     }
 

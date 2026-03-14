@@ -1,0 +1,56 @@
+name: Production Health Check
+
+on:
+  schedule:
+    # Runs every 10 minutes - before Render's 15-minute timeout
+    - cron: '*/10 * * * *'
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [ main ]  # Optional: check after deployment
+
+jobs:
+  ping-production:
+    name: Ping Production Application
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Production Health Endpoint
+        run: |
+          PROD_URL="https://kark-profit.onrender.com/kark-profit/public/system-health"
+          echo "🏥 Checking health endpoint: $PROD_URL"
+          echo "⏰ Time: $(date)"
+          
+          # Send HTTP HEAD request (lightweight)
+          curl -I \
+            --silent \
+            --output /dev/null \
+            --write-out "%{http_code} - %{url_effective}\n" \
+            --connect-timeout 15 \
+            --max-time 30 \
+            --retry 3 \
+            --retry-delay 5 \
+            --retry-max-time 40 \
+            "$PROD_URL"
+
+      - name: Verify Response
+        run: |
+          PROD_URL="https://kark-profit.onrender.com/kark-profit/public/system-health"
+          
+          # Get full response with status code
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            --connect-timeout 15 \
+            --max-time 30 \
+            "$PROD_URL")
+          
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+          
+          echo "✅ HTTP Status: $HTTP_CODE"
+          
+          if [[ $HTTP_CODE -eq 200 ]]; then
+            echo "✅ Health check passed!"
+            echo "Response: $BODY"
+          else
+            echo "❌ Health check failed with status $HTTP_CODE"
+            exit 1
+          fi

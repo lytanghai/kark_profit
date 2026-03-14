@@ -2,11 +2,13 @@ name: Production Health Check
 
 on:
   schedule:
-    # Runs every 10 minutes - before Render's 15-minute timeout
-    - cron: '*/10 * * * *'
+    # Multiple cron expressions for redundancy
+    - cron: '*/10 * * * *'   # At 0,10,20,30,40,50 minutes
+    - cron: '5,15,25,35,45,55 * * * *'  # 5 minutes offset (backup)
+    - cron: '2,12,22,32,42,52 * * * *'  # 2 minutes offset (second backup)
   workflow_dispatch:  # Manual trigger
   push:
-    branches: [ main ]  # Optional: check after deployment
+    branches: [ main ]
 
 jobs:
   ping-production:
@@ -21,36 +23,21 @@ jobs:
           echo "⏰ Time: $(date)"
           
           # Send HTTP HEAD request (lightweight)
-          curl -I \
+          RESPONSE_CODE=$(curl -I \
             --silent \
             --output /dev/null \
-            --write-out "%{http_code} - %{url_effective}\n" \
+            --write-out "%{http_code}" \
             --connect-timeout 15 \
             --max-time 30 \
             --retry 3 \
             --retry-delay 5 \
-            --retry-max-time 40 \
-            "$PROD_URL"
-
-      - name: Verify Response
-        run: |
-          PROD_URL="https://kark-profit.onrender.com/kark-profit/public/system-health"
-          
-          # Get full response with status code
-          RESPONSE=$(curl -s -w "\n%{http_code}" \
-            --connect-timeout 15 \
-            --max-time 30 \
             "$PROD_URL")
           
-          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
-          BODY=$(echo "$RESPONSE" | sed '$d')
+          echo "HTTP Status: $RESPONSE_CODE"
           
-          echo "✅ HTTP Status: $HTTP_CODE"
-          
-          if [[ $HTTP_CODE -eq 200 ]]; then
+          if [[ $RESPONSE_CODE -eq 200 ]]; then
             echo "✅ Health check passed!"
-            echo "Response: $BODY"
           else
-            echo "❌ Health check failed with status $HTTP_CODE"
+            echo "❌ Health check failed with status $RESPONSE_CODE"
             exit 1
           fi

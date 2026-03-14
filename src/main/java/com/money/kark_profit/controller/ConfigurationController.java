@@ -36,6 +36,7 @@ public class ConfigurationController {
     }
     @PostMapping("/list")
     public ResponseEntity<ResponseBuilderUtils> listing(@RequestBody ConfigurationRequest configuration, HttpServletRequest request) {
+        log.info("incoming request to view config listing");
         return new ResponseEntity<>(configurationService.listingConfig(configuration, request), HttpStatus.OK);
     }
 

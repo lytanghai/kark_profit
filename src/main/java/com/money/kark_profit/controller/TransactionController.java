@@ -29,12 +29,13 @@ public class TransactionController {
     /**PERFORMANCE****/
     @PostMapping("/monthly/performance")
     public ResponseEntity<ResponseBuilderUtils<MonthlyPnLResponse>> get(HttpServletRequest request, @RequestBody PerformanceRequest performanceRequest) {
+        log.info("incoming request to check monthly performance");
         return new ResponseEntity<>(performanceService.groupPnLByDay(request, performanceRequest), HttpStatus.OK);
     }
 
     @PostMapping("/fetch")
     public ResponseEntity<ResponseBuilderUtils<Page<TransactionListingResponse>>> fetchPnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
-        log.info("REQ {}", transactionRequest);
+        log.info("incoming request to fetch {}", transactionRequest);
         return new ResponseEntity<>(transactionService.listing(transactionRequest, request), HttpStatus.OK);
     }
     /**PERFORMANCE****/

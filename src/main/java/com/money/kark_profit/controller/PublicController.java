@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.management.ManagementFactory;
-import java.util.Random;
 
 @RestController
 @Slf4j
@@ -34,10 +33,7 @@ public class PublicController {
 
     @GetMapping("/system-health")
     public SystemHealth getSystemHealth() {
-        Random random = new Random();
-        if(random.nextInt(2) + 1 == 1)
-            userProfileRepository.findById(2);
-
+        userProfileRepository.findById(2);
         return checkSystemHealth();
     }
 

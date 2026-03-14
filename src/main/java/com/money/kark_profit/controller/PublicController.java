@@ -32,9 +32,10 @@ public class PublicController {
     }
 
     @GetMapping("/system-health")
-    public SystemHealth getSystemHealth() {
+    public String getSystemHealth() {
         userProfileRepository.findById(2);
-        return checkSystemHealth();
+        checkSystemHealth();
+        return "SUCCESS";
     }
 
 //    @Scheduled(cron = "*/20 * * * * *")

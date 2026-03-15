@@ -37,7 +37,6 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-@Transactional
 @RequiredArgsConstructor
 public class TransactionService {
 
@@ -70,6 +69,7 @@ public class TransactionService {
         return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, null);
     }
 
+    @Transactional(readOnly = true)
     public ResponseBuilderUtils<Page<TransactionListingResponse>> listing(TransactionRequest req, HttpServletRequest request) {
         Integer userId = userService.extractUserId(request);
         if(userId == -1)
@@ -151,6 +151,7 @@ public class TransactionService {
         );
     }
 
+    @Transactional(rollbackFor = {DatabaseException.class, SystemException.class})
     public ResponseBuilderUtils<Void> deletePnL(TransactionRequest transactionRequest, HttpServletRequest request) {
         Integer userId = userService.extractUserId(request);
 
@@ -172,6 +173,7 @@ public class TransactionService {
         }
     }
 
+    @Transactional
     public ResponseBuilderUtils<Void> updatePnL(TransactionRequest transactionRequest, HttpServletRequest request) {
         if(transactionRequest == null)
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.UPDATED, null);

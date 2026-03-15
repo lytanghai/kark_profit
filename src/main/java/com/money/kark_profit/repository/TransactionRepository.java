@@ -30,7 +30,7 @@ public interface TransactionRepository extends JpaRepository<TransactionModel, I
                                            @Param("year") Integer year,
                                            @Param("month") Integer month);
 
-    @Query(value = "SELECT * FROM Transaction t WHERE t.user_id = :userId AND t.date >= :fromDate AND t.date <= :toDate", nativeQuery = true)
+    @Query(value = "SELECT * FROM transaction t WHERE t.user_id = :userId AND t.date >= :fromDate AND t.date <= :toDate", nativeQuery = true)
     List<TransactionModel> findByUserIdSince(
             @Param("userId") Integer userId,
             @Param("fromDate") LocalDateTime fromDate,

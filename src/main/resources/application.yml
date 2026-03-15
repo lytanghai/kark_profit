@@ -6,8 +6,8 @@ spring:
   cache:
     type: caffeine
 
-#  profiles:
-#    active: local
+  profiles:
+    active: local
 
   datasource:
     url: ${datasource.url}
@@ -24,8 +24,3 @@ spring:
 server:
   servlet:
     context-path: /kark-profit
-
-telegram:
-  bot:
-    token: ${telegram.bot.token:123}
-    chat-id: ${telegram.bot.chat-id:123}

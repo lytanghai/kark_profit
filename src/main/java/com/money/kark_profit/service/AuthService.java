@@ -81,9 +81,14 @@ public class AuthService {
         if (!user.getStatus())
             throw new RuntimeException("User inactive");
 
+        String token = jwtUtils.generateToken(user.getUsername());
+        Date expiresAt = jwtUtils.getExpirationDate(token);
+
+
         AuthResponse authResponse = AuthResponse.builder()
                 .username(request.getUsername())
-                .token(jwtUtils.generateToken(user.getUsername()))
+                .token(token)
+                .expiresAt(expiresAt)
                 .build();
 
         return new ResponseBuilderUtils<>(

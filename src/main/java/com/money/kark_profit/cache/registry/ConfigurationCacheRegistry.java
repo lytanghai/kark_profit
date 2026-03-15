@@ -22,5 +22,6 @@ public class ConfigurationCacheRegistry {
         ConfigurationCache.initCache(configurationRepository.findByName(ApplicationCache.TELEGRAM_CHAT_ID).get());
         ConfigurationCache.initCache(configurationRepository.findByName(ApplicationCache.MASTER_KEY).get());
         ConfigurationCache.initCache(configurationRepository.findByName(ApplicationCache.MASTER_ADMIN_USERNAME).get());
+        ConfigurationCache.initCache(configurationRepository.findByName(ApplicationCache.TOKEN_LIFE_SPAN).get());
     }
 }

@@ -7,3 +7,6 @@ INSERT INTO public."configuration"
 INSERT INTO public."configuration"
       (id, "name", value, status, created_at, last_updated_at)
       VALUES(3, 'MASTER_ADMIN_USERNAME', 'tanghai.ly', true, now(), null);
+INSERT INTO public."configuration"
+      (id, "name", value, status, created_at, last_updated_at)
+      VALUES(4, 'TOKEN_LIFE_SPAN', '1800000', true, now(), null);

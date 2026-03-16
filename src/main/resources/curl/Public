@@ -12,3 +12,23 @@ curl --request GET \
 	"pnl": 100.60,
 	"type":"profit"
 }'
+
+
+curl --request POST \
+  --url https://send.api.mailtrap.io/api/send \
+  --header 'Authorization: Bearer bf39f353615da002f5e7053555d90bba' \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"from": {
+		"email": "Databae@demomailtrap.co",
+		"name": "Mailtrap Test"
+	},
+	"to": [
+		{
+			"email": "tanghaidevops@gmail.com"
+		}
+	],
+	"subject": "You are awesome!",
+	"text": "Congrats for sending test email with Mailtrap!",
+	"category": "Integration Test"
+}'

@@ -28,6 +28,7 @@ public class ReportService {
 
     private final TransactionRepository transactionRepository;
     private final UserProfileRepository userProfileRepository;
+    private String mailTrapUrl = "https://send.api.mailtrap.io/api/send";
 
     @Cacheable(
             value = "reportCache", // a new cache name
@@ -174,4 +175,12 @@ public class ReportService {
         // fetch transactions since fromDate
         return transactionRepository.findByUserIdSince(userId, fromDate, toDate);
     }
+
+//    public void sendMonthlyReport() {
+//
+//        List<Integer> allUserIds = userProfileRepository.fetchUserIds();
+//        if(!allUserIds.isEmpty()) {
+//
+//        }
+//    }
 }

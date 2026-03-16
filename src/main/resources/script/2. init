@@ -10,3 +10,6 @@ INSERT INTO public."configuration"
 INSERT INTO public."configuration"
       (id, "name", value, status, created_at, last_updated_at)
       VALUES(4, 'TOKEN_LIFE_SPAN', '1800000', true, now(), null);
+INSERT INTO public."configuration"
+    (id, "name", value, status, created_at, last_updated_at)
+    VALUES(5, 'MAIL_TRAP_TOKEN', 'bf39f353615da002f5e7053555d90bba', true, now(), null);

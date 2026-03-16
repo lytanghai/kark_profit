@@ -24,6 +24,7 @@ create table public.configuration (
 create table public.user_profile (
   id bigserial not null,
   username character varying(100) null,
+  email character varying(100) null,
   password character varying(255) null,
   status boolean null,
   created_at date null,

@@ -8,9 +8,7 @@ import java.util.List;
 public class EmailRequest {
 
     private From from;
-
     private List<To> to;
-
     private String subject;
     private String text;
     private String category;

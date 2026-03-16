@@ -31,6 +31,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -49,6 +50,8 @@ public class AuthService {
 
         UserProfileModel user = new UserProfileModel();
         user.setUsername(request.getUsername());
+        if(!Objects.isNull(request.getEmail()))
+            user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setStatus(true);
         user.setCreatedAt(new Date());
@@ -71,9 +74,14 @@ public class AuthService {
     }
 
     public ResponseBuilderUtils<AuthResponse> login(LoginRequest request) {
-
-        UserProfileModel user = userProfileRepository.findByUsername(request.getUsername())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+        UserProfileModel user = null;
+        if(request.getEmail() != null) {
+            user = userProfileRepository.findByEmail(request.getEmail())
+                    .orElseThrow(() -> new RuntimeException("User not found"));
+        } else {
+            user = userProfileRepository.findByUsername(request.getUsername())
+                    .orElseThrow(() -> new RuntimeException("User not found"));
+        }
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword()))
             throw new RuntimeException("Invalid password");
@@ -87,6 +95,7 @@ public class AuthService {
 
         AuthResponse authResponse = AuthResponse.builder()
                 .username(request.getUsername())
+                .email(request.getEmail())
                 .token(token)
                 .expiresAt(expiresAt)
                 .build();
@@ -140,6 +149,9 @@ public class AuthService {
                 List<Predicate> predicates = new ArrayList<>();
                 if (req.getUsername() != null)
                     predicates.add(cb.equal(root.get("username"), req.getUsername()));
+
+                if (req.getEmail() != null)
+                    predicates.add(cb.equal(root.get("email"), req.getEmail()));
 
                 if (req.getStatus() != null)
                     predicates.add(cb.equal(root.get("status"), req.getStatus()));

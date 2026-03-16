@@ -49,10 +49,11 @@ public class RestTemplateHttpClient {
 
     /* ---------------- POST REQUEST ---------------- */
 
-    public <T> T post(String url, Object requestBody, Class<T> responseType) {
+    public <T> T post(String url, Object requestBody, String token, Class<T> responseType) {
         try {
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+            httpHeaders.setBearerAuth(token);
 
             HttpEntity<Object> entity = new HttpEntity<>(requestBody, httpHeaders);
 

@@ -1,17 +1,23 @@
 package com.money.kark_profit.service.feature;
 
+import com.money.kark_profit.cache.ConfigurationCache;
 import com.money.kark_profit.constants.ApplicationCode;
 import com.money.kark_profit.exception.DatabaseException;
+import com.money.kark_profit.http.RestTemplateHttpClient;
 import com.money.kark_profit.model.TransactionModel;
 import com.money.kark_profit.model.UserProfileModel;
 import com.money.kark_profit.repository.TransactionRepository;
 import com.money.kark_profit.repository.UserProfileRepository;
+import com.money.kark_profit.transform.interfaze.UserSummary;
+import com.money.kark_profit.transform.request.EmailRequest;
 import com.money.kark_profit.transform.request.ReportRequest;
 import com.money.kark_profit.transform.response.ReportResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -24,11 +30,16 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class ReportService {
 
     private final TransactionRepository transactionRepository;
     private final UserProfileRepository userProfileRepository;
+    private final RestTemplateHttpClient restTemplateHttpClient;
     private String mailTrapUrl = "https://send.api.mailtrap.io/api/send";
+    private String fromEmail = "Databae@demomailtrap.co";
+    private String subject = "Databae Trading Monthly Report";
+    private String report = "Databae Trading Monthly Report";
 
     @Cacheable(
             value = "reportCache", // a new cache name
@@ -176,11 +187,173 @@ public class ReportService {
         return transactionRepository.findByUserIdSince(userId, fromDate, toDate);
     }
 
-//    public void sendMonthlyReport() {
-//
-//        List<Integer> allUserIds = userProfileRepository.fetchUserIds();
-//        if(!allUserIds.isEmpty()) {
-//
-//        }
-//    }
+    private double normalizeAmount(TransactionModel t) {
+        if (t.getPnl() == null) {
+            return 0;
+        }
+
+        if ("USDC".equalsIgnoreCase(t.getCurrency())) {
+            return t.getPnl() * 100; // convert to cents
+        }
+
+        return t.getPnl(); // USD stays the same
+    }
+
+    private void sendReport(List<TransactionModel> transactions, String username, String email) {
+        int totalTransactions = transactions.size();
+
+        double totalDeposit = transactions.stream()
+                .filter(t -> "DEPOSIT".equalsIgnoreCase(t.getType()))
+                .mapToDouble(this::normalizeAmount)
+                .sum();
+
+        double totalWithdrawal = transactions.stream()
+                .filter(t -> "WITHDRAWAL".equalsIgnoreCase(t.getType()))
+                .mapToDouble(this::normalizeAmount)
+                .sum();
+
+        double totalProfit = transactions.stream()
+                .filter(t -> t.getPnl() != null && t.getPnl() > 0)
+                .mapToDouble(this::normalizeAmount)
+                .sum();
+
+        double totalLoss = transactions.stream()
+                .filter(t -> t.getPnl() != null && t.getPnl() < 0)
+                .mapToDouble(this::normalizeAmount)
+                .sum();
+
+        double netPnL = totalProfit + totalLoss;
+
+        String mostTradedSymbol = transactions.stream()
+                .collect(Collectors.groupingBy(TransactionModel::getSymbol, Collectors.counting()))
+                .entrySet()
+                .stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse("N/A");
+
+        String emailBody = String.format("""
+        Monthly Trading Account Summary
+        
+        Dear %s,
+        
+        Please find below the summary of your account activity for this month.
+        
+        -----------------------------------------
+        Account Activity Summary
+        -----------------------------------------
+        
+        Total Transactions : %d
+        Most Traded Symbol : %s
+        
+        Total Deposit      : %.2f
+        Total Withdrawal   : %.2f
+        
+        
+        Trading Performance
+        -----------------------------------------
+        
+        Total Profit       : %.2f
+        Total Loss         : %.2f
+        
+        Net P&L            : %.2f
+        
+        -----------------------------------------
+        
+        Thank you for trading with us.
+        
+        Best regards,
+        Databae Team
+        """,
+                username,
+                totalTransactions,
+                mostTradedSymbol,
+                totalDeposit,
+                totalWithdrawal,
+                totalProfit,
+                totalLoss,
+                netPnL
+        );
+
+        EmailRequest emailRequest = new EmailRequest();
+
+        EmailRequest.From from = new  EmailRequest.From();
+        from.setEmail(fromEmail);
+        from.setName("DataBae Team");
+
+        EmailRequest.To to = new EmailRequest.To();
+        to.setEmail(email);
+
+        emailRequest.setFrom(from);
+        emailRequest.setTo(List.of(to));
+        emailRequest.setSubject(subject);
+        emailRequest.setCategory(report);
+        emailRequest.setText(emailBody);
+
+        restTemplateHttpClient.post(
+                mailTrapUrl,
+                emailRequest,
+                ConfigurationCache.getByKeyName("MAIL_TRAP_TOKEN").getValue(),
+                String.class);
+        log.info("Email Request Sent!");
+    }
+
+    @Scheduled(cron = "0 5 0 1 * ?") // 5 minutes past midnight on 1st day of month
+//    @Scheduled(cron = "0 * * * * *") //every min for testing
+    public void sendMonthlyReports() {
+        Date[] dateRange = getPreviousMonthRange();
+        Date startDate = dateRange[0];
+        Date endDate = dateRange[1];
+
+        log.info("Starting monthly report generation for period: {} to {}",
+                startDate, endDate);
+
+        List<UserSummary> userList = userProfileRepository.fetchUsers();
+
+        log.info("Found {} users with transactions in this period", userList.size());
+
+        for (UserSummary user : userList) {
+            try {
+
+                // Fetch transactions for this user in the date range
+                List<TransactionModel> transactions = transactionRepository
+                        .findByUserIdAndDateBetween(user.getId(), startDate, endDate);
+
+                log.info("User {} has {} transactions in this period",
+                        user, transactions.size());
+
+                // Send email
+                sendReport(transactions, user.getUsername(), user.getEmail());
+
+            } catch (Exception e) {
+                log.error("Failed to send email to user {}: {}",
+                        user, e.getMessage(), e);
+            }
+        }
+
+        log.info("Monthly report generation completed");
+    }
+
+    private Date[] getPreviousMonthRange() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, -1);
+
+        // Start of month (00:00:00)
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        Date startDate = cal.getTime();
+
+        // End of month (23:59:59)
+        cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+        cal.set(Calendar.HOUR_OF_DAY, 23);
+        cal.set(Calendar.MINUTE, 59);
+        cal.set(Calendar.SECOND, 59);
+        cal.set(Calendar.MILLISECOND, 999);
+        Date endDate = cal.getTime();
+
+        return new Date[]{startDate, endDate};
+    }
 }

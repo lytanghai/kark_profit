@@ -17,6 +17,8 @@ public class UserProfileModel {
     @Column(unique = true)
     private String username;
 
+    private String email;
+
     private String password;
 
     private Boolean status;

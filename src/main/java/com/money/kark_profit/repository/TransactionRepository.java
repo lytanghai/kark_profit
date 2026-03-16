@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -36,4 +37,16 @@ public interface TransactionRepository extends JpaRepository<TransactionModel, I
             @Param("fromDate") LocalDateTime fromDate,
             @Param("toDate") LocalDateTime toDate
     );
+
+    // Find transactions by user ID and date range
+    @Query(value = "SELECT * FROM transaction t " +
+            "WHERE t.user_id = :userId " +
+            "AND t.date >= :startDate AND t.date <= :endDate " +
+            "ORDER BY t.date DESC", nativeQuery = true)
+    List<TransactionModel> findByUserIdAndDateBetween(
+            @Param("userId") Integer userId,
+            @Param("startDate") Date startDate,
+            @Param("endDate") Date endDate
+    );
+
 }

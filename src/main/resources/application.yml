@@ -11,7 +11,7 @@ spring:
     active: local
 
   transaction:
-    default-timeout=30:
+    default-timeout: 30
     rollback-on-commit-failure: true
   datasource:
     url: ${datasource.url}

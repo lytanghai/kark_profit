@@ -13,7 +13,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
@@ -73,7 +72,6 @@ public class PerformanceService {
 
                 BigDecimal total = BigDecimal.valueOf(dailyPnL.get(day))
                         .add(BigDecimal.valueOf(value));
-//                        .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
 
                 dailyPnL.put(day, total.doubleValue());
             }

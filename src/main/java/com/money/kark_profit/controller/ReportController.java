@@ -7,7 +7,6 @@ import com.money.kark_profit.transform.response.ReportResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +18,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/report")
-@Slf4j
 @RequiredArgsConstructor
 public class ReportController {
     private final ReportService reportService;
@@ -28,7 +26,6 @@ public class ReportController {
 
     @PostMapping("/generate")
     private ResponseEntity<ResponseBuilderUtils<List<ReportResponse>>> generateReport(@RequestBody ReportRequest reportRequest, HttpServletRequest httpServletRequest) {
-        log.info("incoming request to generate report");
         return new ResponseEntity<>(reportService.generateReport(
                 reportRequest, userService.extractUserId(httpServletRequest), httpServletRequest), HttpStatus.OK);
     }

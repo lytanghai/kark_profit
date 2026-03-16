@@ -9,7 +9,6 @@ import com.money.kark_profit.transform.response.TransactionListingResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/transaction")
 @RequiredArgsConstructor
-@Slf4j
 public class TransactionController {
     private final TransactionService transactionService;
     private final PerformanceService performanceService;
@@ -29,13 +27,11 @@ public class TransactionController {
     /**PERFORMANCE****/
     @PostMapping("/monthly/performance")
     public ResponseEntity<ResponseBuilderUtils<MonthlyPnLResponse>> get(HttpServletRequest request, @RequestBody PerformanceRequest performanceRequest) {
-        log.info("incoming request to check monthly performance");
         return new ResponseEntity<>(performanceService.groupPnLByDay(request, performanceRequest), HttpStatus.OK);
     }
 
     @PostMapping("/fetch")
     public ResponseEntity<ResponseBuilderUtils<Page<TransactionListingResponse>>> fetchPnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
-        log.info("incoming request to fetch {}", transactionRequest);
         return new ResponseEntity<>(transactionService.listing(transactionRequest, request), HttpStatus.OK);
     }
     /**PERFORMANCE****/

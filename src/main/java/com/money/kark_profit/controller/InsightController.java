@@ -8,7 +8,6 @@ import com.money.kark_profit.transform.response.InsightResponse;
 import com.money.kark_profit.transform.response.NewsArticleResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/insight")
-@Slf4j
 @RequiredArgsConstructor
 public class InsightController {
 
@@ -31,7 +29,6 @@ public class InsightController {
             @RequestParam(required = false) String impact,
             @RequestParam(required = false) String keyword
     ) {
-        log.info("incoming request to check news globally");
         return new ResponseEntity<>(
                 newsAggregatorProvider.getFilteredNews(category, market, impact, keyword),
                 HttpStatus.OK);
@@ -39,13 +36,11 @@ public class InsightController {
 
     @PostMapping("/news")
     public ResponseEntity<ResponseBuilderUtils<InsightResponse>> googleNews(@RequestBody InsightRequest insightRequest) {
-        log.info("incoming request to check news");
         return new ResponseEntity<>(provider.fetchGoogleNews(insightRequest), HttpStatus.OK);
     }
 
     @GetMapping("/events")
     public ResponseEntity<ResponseBuilderUtils<List<EventCalendarResponse>>> forexFactory() {
-        log.info("incoming request to check weekly event");
         return new ResponseEntity<>(provider.fetchForexFactory(), HttpStatus.OK);
     }
 }

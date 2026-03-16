@@ -9,7 +9,6 @@ import com.money.kark_profit.transform.response.AuthResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@Slf4j
 @RequiredArgsConstructor
 public class AuthController {
 
@@ -33,7 +31,6 @@ public class AuthController {
 
     @PostMapping("/user/listing")
     public ResponseEntity<ResponseBuilderUtils<Page<UserProfileModel>>> register(@RequestBody RegisterRequest registerRequest, HttpServletRequest request) {
-        log.info("incoming request to view user listing");
         return new ResponseEntity<>(authService.listing(registerRequest, request), HttpStatus.OK);
     }
 

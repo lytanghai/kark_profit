@@ -1,6 +1,7 @@
 package com.money.kark_profit.exception;
 
 import com.money.kark_profit.utils.ResponseBuilderUtils;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -19,6 +20,12 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ResponseBuilderUtils<Void>> handleDatabaseException(DatabaseException ex) {
         ResponseBuilderUtils<Void> response = new ResponseBuilderUtils<>(ex.getCode(), ex.getMessage(), null);
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(DataAccessException.class)
+    public ResponseEntity<ResponseBuilderUtils<Void>> handleDatabaseAccessException(DatabaseException ex) {
+        ResponseBuilderUtils<Void> response = new ResponseBuilderUtils<>(ex.getCode(), "Unable to process request", null);
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)

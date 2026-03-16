@@ -4,8 +4,8 @@ spring:
   jackson:
     property-naming-strategy: SNAKE_CASE
     time-zone: Asia/Phnom_Penh
-  cache:
-    type: caffeine
+#  cache:
+#    type: caffeine
 
   profiles:
     active: local

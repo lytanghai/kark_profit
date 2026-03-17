@@ -142,3 +142,15 @@ Response:
 	"message": "DELETED SUCCESSFULLY",
 	"data": null
 }
+
+5. Merge Transaction
+
+curl --request POST \
+  --url http://localhost:8080/kark-profit/admin/merge-transaction \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW5naGFpLmx5IiwiaWF0IjoxNzczNzMxNjg0LCJleHAiOjE3NzM3MzM0ODR9.2xBy23auEs6RYg1nMyRMFhdzVtUWrPCUr0iBE8NNv2Q' \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/10.1.1' \
+  --cookie JSESSIONID=1A54706A370B0FA6559A2B040B4BE996 \
+  --data '{
+	"date":"17/03/2026"
+}'

@@ -9,6 +9,7 @@ public class ApplicationCode {
     public static String CREATED = "CREATED SUCCESSFULLY";
     public static String DELETED = "DELETED SUCCESSFULLY";
     public static String UPDATED = "UPDATED SUCCESSFULLY";
+    public static String MERGE = "TRANSACTION MERGED SUCCESSFULLY";
     public static String FETCH = "FETCH SUCCESSFULLY";
     public static String REGISTERED = "REGISTER SUCCESSFULLY";
     public static String LOGIN = "LOGIN SUCCESSFULLY";

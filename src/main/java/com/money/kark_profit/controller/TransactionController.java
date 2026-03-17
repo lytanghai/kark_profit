@@ -2,6 +2,7 @@ package com.money.kark_profit.controller;
 
 import com.money.kark_profit.service.TransactionService;
 import com.money.kark_profit.service.feature.PerformanceService;
+import com.money.kark_profit.transform.request.CommonRequest;
 import com.money.kark_profit.transform.request.PerformanceRequest;
 import com.money.kark_profit.transform.request.TransactionRequest;
 import com.money.kark_profit.transform.response.MonthlyPnLResponse;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.text.ParseException;
 
 @RestController
 @RequestMapping("/transaction")
@@ -49,5 +52,11 @@ public class TransactionController {
     @PostMapping("/delete")
     public ResponseEntity<ResponseBuilderUtils> deletePnL(@RequestBody TransactionRequest transactionRequest, HttpServletRequest request) {
         return new ResponseEntity<>(transactionService.deletePnL(transactionRequest, request), HttpStatus.OK);
+    }
+
+    @PostMapping("/merge-transaction")
+    public ResponseEntity<ResponseBuilderUtils> mergeTransaction(HttpServletRequest request,
+                                 @RequestBody CommonRequest commonRequest) throws ParseException {
+        return new ResponseEntity<>(transactionService.mergeTransaction(request, commonRequest), HttpStatus.OK);
     }
 }

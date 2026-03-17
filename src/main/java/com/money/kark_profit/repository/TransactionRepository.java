@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -21,6 +22,9 @@ public interface TransactionRepository extends JpaRepository<TransactionModel, I
 
     void deleteBySn(Integer sn);
 
+    @Modifying
+    @Query(value = "DELETE FROM transaction t WHERE t.sn IN :sns", nativeQuery = true)
+    void deleteBySnIn(@Param("sns") List<Integer> sns);
 
     @Query(value = "SELECT * FROM transaction t " +
             "WHERE t.user_id = :userId " +

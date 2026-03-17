@@ -12,6 +12,7 @@ import com.money.kark_profit.transform.interfaze.UserSummary;
 import com.money.kark_profit.transform.request.EmailRequest;
 import com.money.kark_profit.transform.request.ReportRequest;
 import com.money.kark_profit.transform.response.ReportResponse;
+import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -301,7 +302,7 @@ public class ReportService {
     @Scheduled(cron = "0 5 0 1 * ?") // 5 minutes past midnight on 1st day of month
 //    @Scheduled(cron = "0 * * * * *") //every min for testing
     public void sendMonthlyReports() {
-        Date[] dateRange = getPreviousMonthRange();
+        Date[] dateRange = DateUtils.getPreviousMonthRange();
         Date startDate = dateRange[0];
         Date endDate = dateRange[1];
 
@@ -334,26 +335,5 @@ public class ReportService {
         log.info("Monthly report generation completed");
     }
 
-    private Date[] getPreviousMonthRange() {
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.MONTH, -1);
 
-        // Start of month (00:00:00)
-        cal.set(Calendar.DAY_OF_MONTH, 1);
-        cal.set(Calendar.HOUR_OF_DAY, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        Date startDate = cal.getTime();
-
-        // End of month (23:59:59)
-        cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
-        cal.set(Calendar.HOUR_OF_DAY, 23);
-        cal.set(Calendar.MINUTE, 59);
-        cal.set(Calendar.SECOND, 59);
-        cal.set(Calendar.MILLISECOND, 999);
-        Date endDate = cal.getTime();
-
-        return new Date[]{startDate, endDate};
-    }
 }

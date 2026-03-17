@@ -5,6 +5,7 @@ import com.money.kark_profit.exception.DatabaseException;
 import com.money.kark_profit.exception.SystemException;
 import com.money.kark_profit.model.TransactionModel;
 import com.money.kark_profit.repository.TransactionRepository;
+import com.money.kark_profit.transform.request.CommonRequest;
 import com.money.kark_profit.transform.request.TransactionRequest;
 import com.money.kark_profit.transform.response.TransactionListingResponse;
 import com.money.kark_profit.transform.response.TransactionResponse;
@@ -22,13 +23,13 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -115,27 +116,25 @@ public class TransactionService {
 
         Page<TransactionModel> pageResult = transactionRepository.findAll(spec, pageable);
 
-        List<TransactionListingResponse> transformedList = pageResult.getContent().stream()
-                .map(m -> {
-                    return TransactionListingResponse.builder()
-                            .sn(m.getSn())
-                            .currency(m.getCurrency())
-                            .date(m.getDate())
-                            .lotSize(m.getLotSize())
-                            .pnl(m.getPnl()) // transformed value
-                            .symbol(m.getSymbol())
-                            .type(m.getType())
-                            .userId(m.getUserId())
-                            .build();
-                })
-                .collect(Collectors.toList());
-
         TransactionResponse transactionResponse = TransactionResponse.builder()
                 .totalElement(pageResult.getTotalElements())
                 .numberOfElement(pageResult.getNumberOfElements())
                 .size(pageResult.getSize())
                 .totalPage(pageResult.getTotalPages())
-                .content(transformedList)
+                .content(pageResult.getContent().stream()
+                        .map(m -> {
+                            return TransactionListingResponse.builder()
+                                    .sn(m.getSn())
+                                    .currency(m.getCurrency())
+                                    .date(m.getDate())
+                                    .lotSize(m.getLotSize())
+                                    .pnl(m.getPnl()) // transformed value
+                                    .symbol(m.getSymbol())
+                                    .type(m.getType())
+                                    .userId(m.getUserId())
+                                    .build();
+                        })
+                        .collect(Collectors.toList()))
                 .build();
 
         return new ResponseBuilderUtils<>(
@@ -205,5 +204,57 @@ public class TransactionService {
         }
 
         return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.UPDATED, null);
+    }
+
+    @Transactional
+    public ResponseBuilderUtils<Void>  mergeTransaction(HttpServletRequest request, CommonRequest commonRequest) throws ParseException {
+
+        Integer userId = userService.extractUserId(request);
+        if(userId == -1)
+            throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
+
+        Date[] dateRange = DateUtils.getFullDay(commonRequest.getDate());
+
+        List<TransactionModel> transactions = transactionRepository
+                .findByUserIdAndDateBetween(userId, dateRange[0], dateRange[1]);
+
+        Map<String, List<TransactionModel>> grouped = transactions.stream()
+                .collect(Collectors.groupingBy(t ->
+                        (t.getSymbol() == null ? "" : t.getSymbol()) + "|" +
+                                (t.getCurrency() == null ? "" : t.getCurrency()) + "|" +
+                                (t.getType() == null ? "" : t.getType())
+                ));
+
+        List<TransactionModel> aggregatedList = new ArrayList<>();
+
+        for (Map.Entry<String, List<TransactionModel>> entry : grouped.entrySet()) {
+            List<TransactionModel> group = entry.getValue();
+            TransactionModel base = group.get(0);
+            TransactionModel newTransaction = new TransactionModel();
+            newTransaction.setUserId(base.getUserId());
+            newTransaction.setSymbol(base.getSymbol());
+            newTransaction.setCurrency(base.getCurrency());
+            newTransaction.setType(base.getType());
+            newTransaction.setDate(new Date());
+            newTransaction.setPnl(group.stream()
+                    .mapToDouble(t -> t.getPnl() == null ? 0 : t.getPnl())
+                    .sum());
+            newTransaction.setLotSize(group.stream()
+                    .mapToDouble(t -> t.getLotSize() == null ? 0 : t.getLotSize())
+                    .sum());
+
+            aggregatedList.add(newTransaction);
+        }
+
+        try {
+            transactionRepository.saveAll(aggregatedList);
+            transactionRepository.deleteBySnIn(transactions.stream()
+                    .map(TransactionModel::getSn)
+                    .filter(Objects::nonNull)
+                    .toList());
+        } catch (Exception e) {
+            throw new DatabaseException(ApplicationCode.DBE_ERR_001 ,ApplicationCode.DBE_ERR_001_MSG);
+        }
+        return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.MERGE, null);
     }
 }

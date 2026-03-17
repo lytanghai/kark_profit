@@ -13,6 +13,7 @@ import com.money.kark_profit.utils.ResponseBuilderUtils;
 import com.money.kark_profit.utils.XmlConverterUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
@@ -113,6 +114,7 @@ public class PublicNewsProvider {
         );
     }
 
+    @Cacheable(value = "forexFactory", key = "'fx'")
     public ResponseBuilderUtils<List<EventCalendarResponse>> fetchForexFactory() {
         String economicEventsJson = EconomicEventsCache.getEconomicEvents(restHttp, FOREX_FACTORY);
 
@@ -129,7 +131,6 @@ public class PublicNewsProvider {
                 ApplicationCode.HTTP_200,
                 ApplicationCode.FETCH,
                 events);
-
     }
 
 }

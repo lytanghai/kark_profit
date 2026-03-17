@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import java.util.TimeZone;
 
 @SpringBootApplication
-//@EnableCaching
+@EnableCaching
 @EnableScheduling
 public class KarkProfitApplication {
 

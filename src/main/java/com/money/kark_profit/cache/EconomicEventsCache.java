@@ -19,24 +19,7 @@ public final class EconomicEventsCache {
      * @return JSON string of economic events
      */
     public static String getEconomicEvents(RestTemplateHttpClient restHttp, String apiUrl) {
-        // Try to get from cache
-        String cached = StringCache.get(CACHE_KEY);
-        if (cached != null) {
-            log.info("Returning economic events from cache");
-            return cached;
-        }
-
-        // Cache miss: fetch from API
-        log.info("Cache miss. Fetching economic events from API: {}", apiUrl);
-        String jsonResponse = restHttp.get(apiUrl, null, null, String.class);
-
-        if (jsonResponse != null && !jsonResponse.isEmpty()) {
-            // Store in cache
-            StringCache.put(CACHE_KEY, jsonResponse);
-            log.info("Economic events cached for future requests");
-        }
-
-        return jsonResponse;
+        return restHttp.get(apiUrl, null, null, String.class);
     }
 
     /**

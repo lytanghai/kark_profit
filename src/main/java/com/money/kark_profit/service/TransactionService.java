@@ -232,10 +232,10 @@ public class TransactionService {
             TransactionModel base = group.get(0);
             TransactionModel newTransaction = new TransactionModel();
             newTransaction.setUserId(base.getUserId());
-            newTransaction.setSymbol(base.getSymbol());
-            newTransaction.setCurrency(base.getCurrency());
+            newTransaction.setSymbol(base.getSymbol() == null ? null  : base.getSymbol());
+            newTransaction.setCurrency(base.getCurrency() == null  ? null : base.getCurrency());
             newTransaction.setType(base.getType());
-            newTransaction.setDate(new Date());
+            newTransaction.setDate(base.getDate());
             newTransaction.setPnl(group.stream()
                     .mapToDouble(t -> t.getPnl() == null ? 0 : t.getPnl())
                     .sum());

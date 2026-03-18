@@ -1,5 +1,6 @@
 package com.money.kark_profit.service;
 
+import com.money.kark_profit.cache.ApplicationInit;
 import com.money.kark_profit.cache.ConfigurationCache;
 import com.money.kark_profit.constants.ApplicationCache;
 import com.money.kark_profit.constants.ApplicationCode;
@@ -37,6 +38,7 @@ public class ConfigurationService {
     private final UserProfileRepository userProfileRepository;
     private final ConfigurationRepository configurationRepository;
     private final UserService userService;
+    private final ApplicationInit applicationInit;
 
     private boolean validatePermission(HttpServletRequest request) {
         int userId = userService.extractUserId(request);
@@ -60,6 +62,7 @@ public class ConfigurationService {
             if(configurationRepository.findByName(configReq.getName()).isPresent())
                 throw new DatabaseException(ApplicationCode.DBE_03122, configReq.getName() + " Already exists");
 
+            applicationInit.serverCacheInitiation();
             ConfigurationModel configurationModel = new ConfigurationModel();
             configurationModel.setStatus(true);
             configurationModel.setCreatedAt(new Date());
@@ -125,6 +128,7 @@ public class ConfigurationService {
                     throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
 
                 configurationRepository.deleteById(configurationRequest.getId());
+                applicationInit.serverCacheInitiation();
                 return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.DELETED, null);
             } catch (DataAccessException e) {
                 throw new DatabaseException("Failed to delete configuration record");
@@ -155,6 +159,7 @@ public class ConfigurationService {
                     transactionModel.setStatus(configurationRequest.getStatus());
 
                 configurationRepository.save(transactionModel);
+                applicationInit.serverCacheInitiation();
 
             } catch (DataAccessException e) {
                 throw new DatabaseException("Failed to update configuration record");

@@ -74,9 +74,9 @@ public class AuthService {
     }
 
     public ResponseBuilderUtils<AuthResponse> login(LoginRequest request) {
-        UserProfileModel user = null;
-        if(request.getEmail() != null) {
-            user = userProfileRepository.findByEmail(request.getEmail())
+        UserProfileModel user;
+        if(request.getUsername().contains("@")) {
+            user = userProfileRepository.findByEmail(request.getUsername())
                     .orElseThrow(() -> new RuntimeException("User not found"));
         } else {
             user = userProfileRepository.findByUsername(request.getUsername())

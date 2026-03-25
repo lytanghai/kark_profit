@@ -11,10 +11,13 @@ import com.money.kark_profit.transform.response.xml.GoogleNewsXmlResponse;
 import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import com.money.kark_profit.utils.XmlConverterUtils;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpHeaders;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -32,6 +35,7 @@ public class PublicNewsProvider {
     private static String AGENT_HEADER = "Mozilla/5.0";
 
     private final RestTemplateHttpClient restHttp;
+    private final ObjectMapper objectMapper;
 
     public ResponseBuilderUtils<InsightResponse> fetchGoogleNews(InsightRequest request) {
 
@@ -113,24 +117,44 @@ public class PublicNewsProvider {
                 response
         );
     }
+    @PostConstruct
+    public void init() {
+        updateForexFactoryCache();
+    }
 
-    @Cacheable(value = "forexFactory", key = "'fx'")
-    public ResponseBuilderUtils<List<EventCalendarResponse>> fetchForexFactory() {
+    @Cacheable(value = "forexFactory", key = "'fx'", unless = "#result.data.isEmpty()")
+    public ResponseBuilderUtils<List<EventCalendarResponse>> getForexFactoryCache() {
+        return new ResponseBuilderUtils<>(
+                ApplicationCode.HTTP_200,
+                "Cache not ready",
+                Collections.emptyList()
+        );
+    }
+
+    @Scheduled(fixedRate = 90 * 60 * 1000) // every 30 mins
+    @CachePut(value = "forexFactory", key = "'fx'")
+    public ResponseBuilderUtils<List<EventCalendarResponse>> updateForexFactoryCache() {
+
         String economicEventsJson = EconomicEventsCache.getEconomicEvents(restHttp, FOREX_FACTORY);
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        List<EventCalendarResponse> events = objectMapper.readValue(
-                        economicEventsJson,
-                        new TypeReference<List<EventCalendarResponse>>() {}
-                ).stream()
-                .filter(e -> "USD".equals(e.getCountry()))
-                .peek(e -> e.setDate(DateUtils.localTimeConverter(e.getDate())))
-                .toList();
+        List<EventCalendarResponse> events;
+        try {
+            events = objectMapper.readValue(
+                            economicEventsJson,
+                            new TypeReference<List<EventCalendarResponse>>() {}
+                    ).stream()
+                    .filter(e -> "USD".equals(e.getCountry()))
+                    .peek(e -> e.setDate(DateUtils.localTimeConverter(e.getDate())))
+                    .toList();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         return new ResponseBuilderUtils<>(
                 ApplicationCode.HTTP_200,
                 ApplicationCode.FETCH,
-                events);
+                events
+        );
     }
 
 }

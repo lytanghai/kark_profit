@@ -41,6 +41,6 @@ public class InsightController {
 
     @GetMapping("/events")
     public ResponseEntity<ResponseBuilderUtils<List<EventCalendarResponse>>> forexFactory() {
-        return new ResponseEntity<>(provider.fetchForexFactory(), HttpStatus.OK);
+        return new ResponseEntity<>(provider.getForexFactoryCache(), HttpStatus.OK);
     }
 }

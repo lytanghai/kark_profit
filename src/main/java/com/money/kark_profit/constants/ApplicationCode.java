@@ -5,6 +5,7 @@ public class ApplicationCode {
     /** SUCCESS **/
     public static String SUCCESS = "SUCCESS";
     public static String HTTP_200 = "200";
+    public static String HTTP_429 = "429";
 
     public static String CREATED = "CREATED SUCCESSFULLY";
     public static String DELETED = "DELETED SUCCESSFULLY";

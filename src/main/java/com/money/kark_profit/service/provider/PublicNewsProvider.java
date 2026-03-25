@@ -117,10 +117,6 @@ public class PublicNewsProvider {
                 response
         );
     }
-    @PostConstruct
-    public void init() {
-        updateForexFactoryCache();
-    }
 
     @Cacheable(value = "forexFactory", key = "'fx'", unless = "#result.data.isEmpty()")
     public ResponseBuilderUtils<List<EventCalendarResponse>> getForexFactoryCache() {
@@ -131,7 +127,7 @@ public class PublicNewsProvider {
         );
     }
 
-    @Scheduled(fixedRate = 90 * 60 * 1000) // every 30 mins
+    @Scheduled(fixedRate = 90 * 60 * 1000) // every 90 mins
     @CachePut(value = "forexFactory", key = "'fx'")
     public ResponseBuilderUtils<List<EventCalendarResponse>> updateForexFactoryCache() {
 

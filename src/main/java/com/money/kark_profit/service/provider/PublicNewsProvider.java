@@ -32,7 +32,7 @@ import java.util.Optional;
 @Slf4j
 public class PublicNewsProvider {
     private static String GOOGLE_NEWS = "https://news.google.com/rss/search";
-    private static String FOREX_FACTORY = "https://nfss.faireconomy.media/ff_calendar_thisweek.json";
+    private static String FOREX_FACTORY = "https://nfs.faireconomy.media/ff_calendar_thisweek.json";
     private static String AGENT_HEADER = "Mozilla/5.0";
 
     private final RestTemplateHttpClient restHttp;

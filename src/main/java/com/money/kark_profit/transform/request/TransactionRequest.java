@@ -9,8 +9,7 @@ import java.util.Date;
 public class TransactionRequest {
     private String symbol;
     private String currency;
-    @JsonProperty("lot_size")
-    private Double lotSize;
+
     private Double pnl;
     @JsonProperty("inp_date")
     private String inpDate;

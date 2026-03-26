@@ -11,8 +11,6 @@ import java.util.Date;
 public class TransactionListingResponse {
     private Integer sn;
     private String symbol;
-    @JsonProperty("lot_size")
-    private Double lotSize;
     private Double pnl;
     private String currency;
     private Date date;

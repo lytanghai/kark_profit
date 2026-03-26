@@ -17,9 +17,6 @@ public class TransactionModel {
     @Column(name = "symbol", length = 10)
     private String symbol;
 
-    @Column(name = "lot_size")
-    private Double lotSize;
-
     @Column(name = "pnl")
     private Double pnl;
 

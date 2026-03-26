@@ -8,7 +8,6 @@ curl --request POST \
   --data '{
 	"symbol": "XAU",
 	"currency": "USDC",
-	"lot_size": 0.01,
 	"inp_date":"03/03/2026", --optional
 	"pnl": 100.60,
 	"type":"loss"
@@ -31,7 +30,6 @@ curl --request POST \
   --data '{
 	"sn": 1,
 	"symbol": "XAU",
-	"lot_size": "0",
 	"currency": "USDC",
 	"pnl": 5.5
 }'
@@ -61,7 +59,6 @@ Response:
 			{
 				"currency": "USDC",
 				"date": "2026-03-02T07:58:29.962Z",
-				"lot_size": 0.01,
 				"pnl": 104300.6,
 				"sn": 7,
 				"symbol": "XAU",
@@ -71,7 +68,6 @@ Response:
 			{
 				"currency": "USDC",
 				"date": "2026-03-02T07:57:27.553Z",
-				"lot_size": 0.01,
 				"pnl": 104300.6,
 				"sn": 6,
 				"symbol": "XAU",
@@ -81,7 +77,6 @@ Response:
 			{
 				"currency": "USDC",
 				"date": "2026-03-12T07:56:31.517Z",
-				"lot_size": 0.01,
 				"pnl": 104300.6,
 				"sn": 4,
 				"symbol": "XAU",
@@ -91,7 +86,6 @@ Response:
 			{
 				"currency": "USDC",
 				"date": "2026-03-12T07:56:04.916Z",
-				"lot_size": 0.01,
 				"pnl": 104300.6,
 				"sn": 3,
 				"symbol": "XAU",
@@ -101,7 +95,7 @@ Response:
 			{
 				"currency": "USDC",
 				"date": "2026-03-12T07:56:00.603Z",
-				"lot_size": 0.01,
+
 				"pnl": 104300.6,
 				"sn": 2,
 				"symbol": "XAU",
@@ -111,7 +105,6 @@ Response:
 			{
 				"currency": "USDC",
 				"date": "2026-03-12T07:54:15.091Z",
-				"lot_size": 0.01,
 				"pnl": 104300.6,
 				"sn": 1,
 				"symbol": "XAU",

@@ -2,7 +2,6 @@
 create table public.transaction (
   sn serial not null,
   symbol character varying(10) null,
-  lot_size double precision null,
   pnl double precision null,
   currency character varying(10) null,
   type character varying(20) not null,

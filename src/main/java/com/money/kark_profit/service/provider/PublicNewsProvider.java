@@ -11,7 +11,6 @@ import com.money.kark_profit.transform.response.xml.GoogleNewsXmlResponse;
 import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import com.money.kark_profit.utils.XmlConverterUtils;
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CachePut;
@@ -24,14 +23,16 @@ import org.springframework.util.MultiValueMap;
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class PublicNewsProvider {
     private static String GOOGLE_NEWS = "https://news.google.com/rss/search";
-    private static String FOREX_FACTORY = "https://nfs.faireconomy.media/ff_calendar_thisweek.json";
+    private static String FOREX_FACTORY = "https://nfss.faireconomy.media/ff_calendar_thisweek.json";
     private static String AGENT_HEADER = "Mozilla/5.0";
 
     private final RestTemplateHttpClient restHttp;

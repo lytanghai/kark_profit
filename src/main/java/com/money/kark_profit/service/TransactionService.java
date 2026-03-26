@@ -47,7 +47,6 @@ public class TransactionService {
         transactionModel.setCurrency(transactionRequest.getCurrency());
         transactionModel.setPnl(transactionRequest.getPnl());
         transactionModel.setSymbol(transactionRequest.getSymbol() == null ? "XAU" : transactionRequest.getSymbol());
-        transactionModel.setLotSize(transactionRequest.getLotSize());
         transactionModel.setDate(DateUtils.formatPhnomPenhTime(new Date()));
         transactionModel.setType(transactionRequest.getType());
 
@@ -91,9 +90,6 @@ public class TransactionService {
             if (req.getSymbol() != null)
                 predicates.add(cb.equal(root.get("symbol"), req.getSymbol()));
 
-            if (req.getLotSize() != null)
-                predicates.add(cb.equal(root.get("lotSize"), req.getLotSize()));
-
             if (req.getPnl() != null)
                 predicates.add(cb.equal(root.get("pnl"), req.getPnl()));
 
@@ -127,7 +123,6 @@ public class TransactionService {
                                     .sn(m.getSn())
                                     .currency(m.getCurrency())
                                     .date(m.getDate())
-                                    .lotSize(m.getLotSize())
                                     .pnl(m.getPnl()) // transformed value
                                     .symbol(m.getSymbol())
                                     .type(m.getType())
@@ -183,9 +178,6 @@ public class TransactionService {
             if(transactionRequest.getPnl() != null)
                 transactionModel.setPnl(transactionRequest.getPnl());
 
-            if(transactionRequest.getLotSize() != null)
-                transactionModel.setLotSize(transactionRequest.getLotSize());
-
             if(transactionRequest.getCurrency() != null)
                 transactionModel.setCurrency(transactionRequest.getCurrency());
 
@@ -238,9 +230,6 @@ public class TransactionService {
             newTransaction.setDate(base.getDate());
             newTransaction.setPnl(group.stream()
                     .mapToDouble(t -> t.getPnl() == null ? 0 : t.getPnl())
-                    .sum());
-            newTransaction.setLotSize(group.stream()
-                    .mapToDouble(t -> t.getLotSize() == null ? 0 : t.getLotSize())
                     .sum());
 
             aggregatedList.add(newTransaction);

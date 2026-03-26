@@ -22,6 +22,7 @@ public class RestTemplateHttpClient {
     /* ---------------- GET REQUEST ---------------- */
 
     public <T> T get(String url, MultiValueMap<String, String> queryParams, HttpHeaders httpHeaders, Class<T> responseType) {
+        log.info("Requesting to public provider {}", url);
         try {
             String fullUrl = UriComponentsBuilder
                     .fromUriString(url)

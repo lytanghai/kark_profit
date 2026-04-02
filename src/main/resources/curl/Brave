@@ -1,0 +1,2459 @@
+curl --request GET \
+  --url 'https://api.search.brave.com/res/v1/web/search?q=Iran%20war&count=20&freshness=pd' \
+  --header 'Accept: application/json' \
+  --header 'Accept-Encoding: gzip' \
+  --header 'X-Subscription-Token: BSACSthCccR4Rn9EFiOBgODplPd4SpO'
+
+Response:
+
+{
+	"type": "search",
+	"query": {
+		"original": "Iran war",
+		"show_strict_warning": false,
+		"is_navigational": false,
+		"is_news_breaking": true,
+		"spellcheck_off": false,
+		"country": "us",
+		"bad_results": false,
+		"should_fallback": false,
+		"postal_code": "",
+		"city": "",
+		"header_country": "",
+		"more_results_available": true,
+		"state": ""
+	},
+	"infobox": {
+		"type": "graph",
+		"results": [
+			{
+				"title": "2026 Iran war",
+				"url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "ongoing armed conflict in West Asia",
+				"family_friendly": true,
+				"type": "infobox",
+				"position": 0,
+				"long_desc": "On 28 February 2026, the United States and Israel started a war with surprise airstrikes on sites and cities across Iran, assassinating Supreme Leader Ali Khamenei and several other Iranian officials and inflicting dozens of civilian casualties. Iran responded with missile and drone strikes ...",
+				"attributes": [
+					[
+						"2026 Iran war",
+						"Uni<a href='https://en.wikipedia.org/wiki/Template_talk:2026_Iran_war_map'>t</a><a href='https://en.wikipedia.org/wiki/Special:EditPage/Template:2026_Iran_war_map'>e</a>d States and Israel<br>Iran, <a href='https://en.wikipedia.org/wiki/Hezbollah'>Hezbollah</a>, <a href='https://en.wikipedia.org/wiki/Houthis'>Houthis</a>, and <a href='https://en.wikipedia.org/wiki/Popular_Mobilization_Forces'>PMF</a><br><a href='https://en.wikipedia.org/wiki/Template:2026_Iran_war_map'>v</a><br><a href='https://en.wikipedia.org/wiki/Template_talk:2026_Iran_war_map'>t</a><br><a href='https://en.wikipedia.org/wiki/Special:EditPage/Template:2026_Iran_war_map'>e</a>"
+					],
+					[
+						"Belligerents",
+						"United States<br>Israel<br>Bahrain<br>Iraq<br>Jordan<br>Kuwait<br><a href='https://en.wikipedia.org/wiki/Lebanon'>Lebanon</a><br>Oman<br>Qatar<br>Saudi Arabia<br>United Arab Emirates<br>United Kingdom"
+					],
+					[
+						"Belligerents",
+						"<a href='https://en.wikipedia.org/wiki/Iran'>Iran</a><br><a href='https://en.wikipedia.org/wiki/Hezbollah'>Hezbollah</a><br><a href='https://en.wikipedia.org/wiki/Houthis'>Houthis</a><br><a href='https://en.wikipedia.org/wiki/Popular_Mobilization_Forces'>Popular Mobilization Forces</a><br><a href='https://en.wikipedia.org/wiki/Islamic_Resistance_in_Iraq'>Islamic Resistance in Iraq</a><br><a href='https://en.wikipedia.org/wiki/Lebanon'>Lebanon</a><br><a href='https://en.wikipedia.org/wiki/Amal_Movement'>Amal Movement</a><br><a href='https://en.wikipedia.org/wiki/Islamic_Group_(Lebanon)'>Islamic Group</a><br><a href='https://en.wikipedia.org/wiki/Hamas'>Hamas</a><br><a href='https://en.wikipedia.org/wiki/Palestinian_Islamic_Jihad'>Palestinian Islamic Jihad</a>"
+					],
+					[
+						"Commanders and leaders",
+						"Donald Trump<br>Pete Hegseth<br>Dan Caine<br>Brad Cooper<br>Benjamin Netanyahu<br>Israel Katz<br>Eyal Zamir"
+					],
+					[
+						"Commanders and leaders",
+						"<a href='https://en.wikipedia.org/wiki/Ali_Khamenei'>Ali Khamenei</a> <a href='https://en.wikipedia.org/wiki/Assassination_of_Ali_Larijani'>X</a><br><a href='https://en.wikipedia.org/wiki/Mojtaba_Khamenei'>Mojtaba Khamenei</a><br><a href='https://en.wikipedia.org/wiki/Ali_Larijani'>Ali Larijani</a> <a href='https://en.wikipedia.org/wiki/Assassination_of_Ali_Larijani'>X</a><br><a href='https://en.wikipedia.org/wiki/Masoud_Pezeshkian'>Masoud Pezeshkian</a><br><a href='https://en.wikipedia.org/wiki/Alireza_Arafi'>Alireza Arafi</a><br><a href='https://en.wikipedia.org/wiki/Aziz_Nasirzadeh'>Aziz Nasirzadeh</a> <a href='https://en.wikipedia.org/wiki/Killed_in_action'>†</a><br><a href='https://en.wikipedia.org/wiki/Abdolrahim_Mousavi'>Abdolrahim Mousavi</a> <a href='https://en.wikipedia.org/wiki/Killed_in_action'>†</a><br><a href='https://en.wikipedia.org/wiki/Mohammad_Pakpour'>Mohammad Pakpour</a> <a href='https://en.wikipedia.org/wiki/Killed_in_action'>†</a>"
+					],
+					[
+						"Units involved",
+						"See <a href='https://en.wikipedia.org/wiki/2026_Iran_war_order_of_battle'>order of battle</a>"
+					],
+					[
+						"Casualties and losses",
+						"Per US and Israel:<br>Per Iran:"
+					],
+					[
+						"Casualties and losses",
+						"Per <a href='https://en.wikipedia.org/wiki/Iranian_Health_Ministry'>Iranian Health Ministry</a>:<br>2,076 people killed and 26,500 injured<br>Per internal sources:<br>Per <a href='https://en.wikipedia.org/wiki/HRANA'>HRANA</a>:<br>3,527 killed (1,212 military personnel, 1,606 civilians, and 709 unclassified)<br>Per US and Israel:"
+					]
+				],
+				"profiles": [
+					{
+						"name": "Wikipedia",
+						"url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+						"long_name": "en.wikipedia.org",
+						"img": "https://imgs.search.brave.com/m6XxME4ek8DGIUcEPCqjRoDjf2e54EwL9pQzyzogLYk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw"
+					},
+					{
+						"name": "The Guardian",
+						"url": "https://www.theguardian.com/world/us-israel-war-on-iran",
+						"long_name": "theguardian.com",
+						"img": "https://imgs.search.brave.com/rC70n-17a9InstnH-PH4YuXbWwFkdbesPtRJKvIQAwQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGRmYTNkMTZl/NmJhYTQwYmQ4NDRj/MzQ4NDZkNGQ0YTgy/ZWRlZDM4YWVkMzM4/NmM0Y2Y2NTgyMTQ5/NzQxOTExYy93d3cu/dGhlZ3VhcmRpYW4u/Y29tLw"
+					},
+					{
+						"name": "Google News",
+						"url": "https://news.google.com/topics/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2llbG8zTkVCSGNwNEFfREp0TTBDZ0FQAQ",
+						"long_name": "news.google.com",
+						"img": "https://imgs.search.brave.com/Y8s0oHCKokK0lXGLQMuNUaMMTAqcCV1qLJyvztcobX8/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMDIxMTRhYjQ3/MzgyZjM0OGQ5NTdi/ZTI2NDAyYzQ1Njc2/OWVlNjIzNjI5NzIx/ZmNhODIxMjk0Njdh/ZTY4MjBmMS9uZXdz/Lmdvb2dsZS5jb20v"
+					},
+					{
+						"name": "BBC",
+						"url": "https://www.bbc.co.uk/things/7afcd92f-ed70-4f03-af20-7987298b6f75",
+						"long_name": "British Broadcasting Corporation",
+						"img": "https://imgs.search.brave.com/BCYR3u7f0k_Pqx5hEO56aUIzi3eMFfe-vYQgUYWV-Bc/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTEzZDM0NjY3/NDc3MDEyZjI5ZGY3/OTJkMmMyOWU1MGNj/ZjQ5ZGU0Y2U4ZTEx/NzYzMWI1NWE2NDY4/YTk0MThkZC93d3cu/YmJjLmNvLnVrLw"
+					},
+					{
+						"name": "Al Jazeera",
+						"url": "https://www.aljazeera.com/tag/israel-iran-conflict",
+						"long_name": "aljazeera.com",
+						"img": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8"
+					},
+					{
+						"name": "Wikidata",
+						"url": "http://www.wikidata.org/entity/Q138503695",
+						"long_name": "wikidata.org",
+						"img": "https://imgs.search.brave.com/8vIq-V97PH8S0N-pyaeHgq_gFHOA8hXjBunynHio-Uw/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYzdkMGIyYTky/OTJjN2RjNDEyNWYx/MGQxNjAzNmZlNDk4/ZTRmNDczNjk0ZTZl/N2IxZjI0NTVkMGE3/YTBiYjEzYi93d3cu/d2lraWRhdGEub3Jn/Lw"
+					},
+					{
+						"name": "Yle",
+						"url": "https://yle.fi/t/18-369216/fi",
+						"long_name": "yle.fi",
+						"img": "https://imgs.search.brave.com/UYEZHHuvSmwpdQrpGMd47EJRhMbHOyjBfVeGcTQ15l4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjBjNDA0ODc0/NzVmODdhMGZiODg2/OWY4MzEwMThjMDky/MjdiMGY1MmZjY2E4/NzBhNTRlOTdhYzk5/YTEzMmZjMy95bGUu/Zmkv"
+					},
+					{
+						"name": "France 24",
+						"url": "https://www.france24.com/es/tag/ee-uu-ataca-ir%C3%A1n/",
+						"long_name": "france24.com",
+						"img": "https://imgs.search.brave.com/6afATvV-a6O9lWAU6XGTG_6FiAgeK4hyBSsNxlxWm6Q/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMDlkMzg5NjVi/NTY0NDFjZTlhNTA2/YWJlZDQ3YTM1OGY4/OWE3NTI0ZTZiOWU1/NWExZjFhODc2NmQ4/ZjhlMzgxZS93d3cu/ZnJhbmNlMjQuY29t/Lw"
+					}
+				],
+				"ratings": [],
+				"providers": [
+					{
+						"type": "external",
+						"name": "Wikipedia",
+						"url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+						"img": "https://imgs.search.brave.com/m6XxME4ek8DGIUcEPCqjRoDjf2e54EwL9pQzyzogLYk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw"
+					}
+				],
+				"images": [
+					{
+						"src": "https://imgs.search.brave.com/TaoRF0VpmZM74BKhury_Hq8E_Nhbh7W6ciswL0-Jlhg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zLmZy/YW5jZTI0LmNvbS9t/ZWRpYS9kaXNwbGF5/L2IxNjIxNDQ4LTRm/NWQtMTFmMC04OTA5/LTAwNTA1NmJmYjJi/Ni93OjcyMC9wOjE2/eDkvRVMtMjAyNTA2/MjItMTEwMjU3LTEx/MDczMi1DUy5qcGc",
+						"alt": "Informe desde Teherán: Irán condena el ataque de Estados Unidos",
+						"original": "https://s.france24.com/media/display/b1621448-4f5d-11f0-8909-005056bfb2b6/w:720/p:16x9/ES-20250622-110257-110732-CS.jpg",
+						"logo": false
+					},
+					{
+						"src": "https://imgs.search.brave.com/NHQ-VREwjjweDkdOzbifZreQICQevVQLxtvxG2aPsT4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zLmZy/YW5jZTI0LmNvbS9t/ZWRpYS9kaXNwbGF5/L2RlOTI0YzA0LTUw/NTYtMTFmMC1iMWMw/LTAwNTA1NmJmMzBi/Ny93OjcyMC9wOjE2/eDkvRVMtMjAyNTA2/MjMtMTY0NzQ4LTE2/NTMwNC1DUy5qcGc",
+						"alt": "Informe desde Teherán: Irán ataca base militar de EE. UU. en Qatar",
+						"original": "https://s.france24.com/media/display/de924c04-5056-11f0-b1c0-005056bf30b7/w:720/p:16x9/ES-20250623-164748-165304-CS.jpg",
+						"logo": false
+					},
+					{
+						"src": "https://imgs.search.brave.com/ubrPKvDJoufKfwEwnq0_PUP4KVTfgDmE1XnJdYMUDww/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zLmZy/YW5jZTI0LmNvbS9t/ZWRpYS9kaXNwbGF5/L2FhMTU5Y2Y4LTRm/ODctMTFmMC1hODhm/LTAwNTA1NmE5MDI4/NC93OjcyMC9wOjE2/eDkvRVMtMjAyNTA2/MjItMTYwNTMyLTE2/MDkyNC1DUy5qcGc",
+						"alt": "Informe desde Teherán: Irán evalúa cerrar el Estrecho de Ormuz",
+						"original": "https://s.france24.com/media/display/aa159cf8-4f87-11f0-a88f-005056a90284/w:720/p:16x9/ES-20250622-160532-160924-CS.jpg",
+						"logo": false
+					},
+					{
+						"src": "https://imgs.search.brave.com/nTc0G6Pode9WgjIMl307V6JWNLXjwYf1UpMzqc4IwlQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zLmZy/YW5jZTI0LmNvbS9t/ZWRpYS9kaXNwbGF5/L2U2MWYyOTU2LTUx/MDUtMTFmMC1hZWI3/LTAwNTA1NmE5N2Uz/Ni93OjcyMC9wOjE2/eDkvbW9pbmktY2Vz/c2V6LWxlLWZldS5q/cGc",
+						"alt": "Israel-Irán: un frágil alto el fuego",
+						"original": "https://s.france24.com/media/display/e61f2956-5105-11f0-aeb7-005056a97e36/w:720/p:16x9/moini-cessez-le-feu.jpg",
+						"logo": false
+					},
+					{
+						"src": "https://imgs.search.brave.com/zDuc3U-MR-7nAkBzjT-jtK7YF4ZY0x3I_Gq0qi-gLz8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zLmZy/YW5jZTI0LmNvbS9t/ZWRpYS9kaXNwbGF5/LzZmZjY1YWFhLTRm/MDMtMTFmMC1hNWZm/LTAwNTA1NmJmMzBi/Ny93OjcyMC9wOjE2/eDkvMjAyNS0wNi0x/NlQwNzM3MzhaLTEw/NzU5MzA0MjUtUkMy/ODJGQURQTFNXLVJU/Uk1BRFAtMy1JUkFO/LU5VQ0xFQVItU0lU/RVMuanBn",
+						"alt": "Une image satellite montre le site nucléaire de Fordo, en Iran, sur cette photo fournie datée du 14 juin 2025.",
+						"original": "https://s.france24.com/media/display/6ff65aaa-4f03-11f0-a5ff-005056bf30b7/w:720/p:16x9/2025-06-16T073738Z-1075930425-RC282FADPLSW-RTRMADP-3-IRAN-NUCLEAR-SITES.jpg",
+						"logo": false
+					}
+				],
+				"subtype": "generic",
+				"found_in_urls": []
+			}
+		]
+	},
+	"mixed": {
+		"type": "mixed",
+		"main": [
+			{
+				"type": "news",
+				"all": true
+			},
+			{
+				"type": "infobox",
+				"index": 0,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 0,
+				"all": false
+			},
+			{
+				"type": "videos",
+				"all": true
+			},
+			{
+				"type": "web",
+				"index": 1,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 2,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 3,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 4,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 5,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 6,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 7,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 8,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 9,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 10,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 11,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 12,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 13,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 14,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 15,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 16,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 17,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 18,
+				"all": false
+			},
+			{
+				"type": "web",
+				"index": 19,
+				"all": false
+			}
+		],
+		"top": [],
+		"side": []
+	},
+	"news": {
+		"type": "news",
+		"results": [
+			{
+				"title": "Middle East crisis live: ‘Go get your own oil,’ Trump tells allies in angry outburst",
+				"url": "https://www.theguardian.com/world/live/2026/mar/31/iran-latest-updates-trump-threats-oil-spill-dubai-tehran-jerusalem-strikes",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Under the Emirates airline’s visa advice section, it states: “Nationals of Iran are not allowed to enter and transit”. The website of another carrier, Flydubai, said Iranian nationals holding a UAE golden visa were exempt and permitted to enter and transit the country.",
+				"page_age": "2026-03-31T18:45:54",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "theguardian.com",
+					"hostname": "www.theguardian.com",
+					"favicon": "https://imgs.search.brave.com/rC70n-17a9InstnH-PH4YuXbWwFkdbesPtRJKvIQAwQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGRmYTNkMTZl/NmJhYTQwYmQ4NDRj/MzQ4NDZkNGQ0YTgy/ZWRlZDM4YWVkMzM4/NmM0Y2Y2NTgyMTQ5/NzQxOTExYy93d3cu/dGhlZ3VhcmRpYW4u/Y29tLw",
+					"path": "› world  › live  › 2026  › mar  › 31  › iran-latest-updates-trump-threats-oil-spill-dubai-tehran-jerusalem-strikes"
+				},
+				"source": "https://www.theguardian.com/world/live/2026/mar/31/iran-latest-updates-trump-threats-oil-spill-dubai-tehran-jerusalem-strikes",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/dvbKVQTXXdwp6rEioGYqIYnxskbWr0JLtENjVxSK0SQ/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vNGNlaFV0/b1AzZlFhbDg1MUc5/RWd2bW1pN0Q4Z2Zj/U09DN1gwSVoySWhn/Zy9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXBMbWQxL2FXMHVZ/Mjh1ZFdzdmFXMW4v/TDIxbFpHbGhMekF3/TXpVNC9Oamd6Tm1a/aFltVmtZbVUzL1pH/RTBNekZqTWpBeU9E/UmovTWpBMk0yRXpO/MlEyTW1Fdi9NVEkx/TWw4eU5URmZNakUz/L00xOHhOek01TDIx/aGMzUmwvY2k4eU1U/Y3pMbXB3Wno5My9h/V1IwYUQwM01EQW1j/WFZoL2JHbDBlVDA0/TlNaaGRYUnYvUFda/dmNtMWhkQ1ptYVhR/OS9iV0Y0Sm5NOU0y/TTBZemRtL05qQmpZ/V1ZqWkdReU0yUmkv/TURkbE5XSTJZVEUx/TlRkai9aVFU",
+					"original": "https://imgs.search.brave.com/4cehUtoP3fQal851G9Egvmmi7D8gfcSOC7X0IZ2Ihgg/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9pLmd1/aW0uY28udWsvaW1n/L21lZGlhLzAwMzU4/NjgzNmZhYmVkYmU3/ZGE0MzFjMjAyODRj/MjA2M2EzN2Q2MmEv/MTI1Ml8yNTFfMjE3/M18xNzM5L21hc3Rl/ci8yMTczLmpwZz93/aWR0aD03MDAmcXVh/bGl0eT04NSZhdXRv/PWZvcm1hdCZmaXQ9/bWF4JnM9M2M0Yzdm/NjBjYWVjZGQyM2Ri/MDdlNWI2YTE1NTdj/ZTU"
+				},
+				"age": "2 days ago",
+				"extra_snippets": [
+					"Trump said on Tuesday US forces would end operations in Iran “very soon,” suggesting a timeline of two to three weeks. Trump also told reporters that the responsibility for keeping the strait of Hormuz open will rest with countries that rely on it. “That’s not for us …",
+					"US secretary of state Marco Rubio told Fox News the US would need to reevaluate the Nato relationship after the conflict in Iran is concluded, saying “If now we have reached a point where the Nato alliance means that we can’t use [US military bases in Europe]... then Nato is a one-way street.”",
+					"Two-thirds of Americans believe that the US should work to end its involvement in the Iran war quickly, even if that means not achieving the goals set out by the Trump administration, a Reuters/Ipsos poll has found.",
+					"All I have to do is leave Iran – and we’ll be doing that very soon."
+				]
+			},
+			{
+				"title": "Iran dismisses Trump's 'ridiculous theatrical shows' and says it WON'T open Strait of Hormuz after President claimed it requested ceasefire - live updates",
+				"url": "https://www.dailymail.co.uk/news/article-15697191/iran-israel-war-gulf-trump-netany.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "RECAP: Follow the Daily Mail's latest coverage of the US-Israel war with Iran as Donald Trump promises the US will be leaving Iran 'very soon'.",
+				"page_age": "2026-04-01T21:48:19",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "dailymail.co.uk",
+					"hostname": "www.dailymail.co.uk",
+					"favicon": "https://imgs.search.brave.com/2xijxIt-pxcOZwWKABiWqVjRKtRCm1CGQYM5GLQgiQ0/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMjM5NzVkNWRi/NGZlOGQ0YjM4OGQy/ODQ0MWI1YTA3NzFh/NWQ5NjQ1Y2ZlMzM3/ZGEzOTUyYzgxMjlh/MzgxMjkzZS93d3cu/ZGFpbHltYWlsLmNv/LnVrLw",
+					"path": "› news  › article-15697191  › iran-israel-war-gulf-trump-netany.html"
+				},
+				"source": "https://www.dailymail.co.uk/news/article-15697191/iran-israel-war-gulf-trump-netany.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/KVsSdTZc6axPrG3rqbiknvjSwRfjuxDspHuM2HZ0yao/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vWV9ubVk4/NXhBV2xFVExsZExi/TTZ0d0dTWDRFY2dr/NzBPamNIUHpuOF9W/QS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXBMbVJoL2FXeDVi/V0ZwYkM1amJ5NTEv/YXk4eGN5OHlNREky/THpBMC9MekF4THpF/MEx6RXdOelU0L016/QTFPUzB3TFdsdFlX/ZGwvTFdFdE1qUmZN/VGMzTlRBMS9NVEE1/T1RnNU55NXFjR2M",
+					"original": "https://imgs.search.brave.com/Y_nmY85xAWlETLldLbM6twGSX4Ecgk70OjcHPzn8_VA/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9pLmRh/aWx5bWFpbC5jby51/ay8xcy8yMDI2LzA0/LzAxLzE0LzEwNzU4/MzA1OS0wLWltYWdl/LWEtMjRfMTc3NTA1/MTA5OTg5Ny5qcGc"
+				},
+				"age": "17 hours ago",
+				"extra_snippets": [
+					"Iran's military has insisted the Strait of Hormuz will remain closed to Tehran's 'enemies' as Donald Trump warned any truce in the war would depend on it reopening.",
+					"The Iranian Revolutionary Guards claimed the waterway is 'firmly and dominantly' under the control of its naval forces and that it would not be unblocked for its opponents.",
+					"The statement comes after Trump announced Iran's leadership is requesting a ceasefire - but warned that any truce is contingent on the Strait of Hormuz opening.",
+					"Trump said Iran has asked for a ceasefire but one would only come when the Strait of Hormuz is 'open, free, and clear,' in a post published on his Truth Social platform."
+				]
+			},
+			{
+				"title": "‘Get your own oil’: Trump launches tirade against Europe for not joining Iran war",
+				"url": "https://www.theguardian.com/world/2026/mar/31/trump-launches-tirade-against-european-countries-not-joining-iran-war",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Donald Trump has launched a tirade against European countries that refused to join his war against Iran, calling out the UK and France, as transatlantic relations soured from the spiralling conflict that has wreaked havoc on the global economy.",
+				"page_age": "2026-04-01T00:06:29",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "theguardian.com",
+					"hostname": "www.theguardian.com",
+					"favicon": "https://imgs.search.brave.com/rC70n-17a9InstnH-PH4YuXbWwFkdbesPtRJKvIQAwQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGRmYTNkMTZl/NmJhYTQwYmQ4NDRj/MzQ4NDZkNGQ0YTgy/ZWRlZDM4YWVkMzM4/NmM0Y2Y2NTgyMTQ5/NzQxOTExYy93d3cu/dGhlZ3VhcmRpYW4u/Y29tLw",
+					"path": "› world  › 2026  › mar  › 31  › trump-launches-tirade-against-european-countries-not-joining-iran-war"
+				},
+				"source": "https://www.theguardian.com/world/2026/mar/31/trump-launches-tirade-against-european-countries-not-joining-iran-war",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/BPny24DxuY5VOnPHGyILuiU-KJ8UtJwDyetBnBUoAz8/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vaEs3NE1D/RzZrUWRuT1prc2V0/QVVuVVdqRWk2bjRJ/ZFk4bDJVMVQzM0Vv/QS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXBMbWQxL2FXMHVZ/Mjh1ZFdzdmFXMW4v/TDIxbFpHbGhMekJp/WWpJNC9aREV6WTJR/MFlXRXlNamhpL05U/VTVObU00TUdFek1H/WmovWXprNFlUWTRO/REUwTkdRdi9Nekl5/WHpCZk16UTRNRjh5/L056ZzBMMjFoYzNS/bGNpOHovTkRnd0xt/cHdaejkzYVdSMC9h/RDAzTURBbWNYVmhi/R2wwL2VUMDROU1po/ZFhSdlBXWnYvY20x/aGRDWm1hWFE5YldG/NC9Kbk05T0RreVlU/Y3pPREV6L05UUXpZ/ak0wTkRKaFpqSTAv/TVdJd1pUUXlPVFkx/TVRV",
+					"original": "https://imgs.search.brave.com/hK74MCG6kQdnOZksetAUnUWjEi6n4IdY8l2U1T33EoA/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9pLmd1/aW0uY28udWsvaW1n/L21lZGlhLzBiYjI4/ZDEzY2Q0YWEyMjhi/NTU5NmM4MGEzMGZj/Yzk4YTY4NDE0NGQv/MzIyXzBfMzQ4MF8y/Nzg0L21hc3Rlci8z/NDgwLmpwZz93aWR0/aD03MDAmcXVhbGl0/eT04NSZhdXRvPWZv/cm1hdCZmaXQ9bWF4/JnM9ODkyYTczODEz/NTQzYjM0NDJhZjI0/MWIwZTQyOTY1MTU"
+				},
+				"age": "2 days ago",
+				"extra_snippets": [
+					"In his Tuesday posts, Trump said “all of those countries that can’t get jet fuel because of the strait of Hormuz, like the United Kingdom, which refused to get involved in the decapitation of Iran”, should buy US oil instead.",
+					"Global frustration with the economic fallout is growing. The Irish taoiseach, Micheál Martin, said on Tuesday that the oil supply shock caused by the US-Israeli attack on Iran was “probably the worst ever”.",
+					"On Tuesday, the Iranian president, Masoud Pezeshkian, said Iran had the “necessary will” to end the war “provided that essential conditions are met”, in particular guarantees that the conflict would not be repeated.",
+					"On Tuesday, blasts were heard in the Saudi Arabian capital, Riyadh, and Tehran attacked a fully loaded Kuwaiti oil tanker in the Gulf. US strikes also hit the city of Isfahan, home to one of Iran’s main nuclear sites, sending a huge fireball into the sky."
+				]
+			},
+			{
+				"title": "Middle East crisis live: Iran says Trump’s claim of ceasefire request ‘baseless’",
+				"url": "https://www.theguardian.com/world/middle-east-live/live/2026/apr/01/iran-live-updates-trump-claims-war-will-end-rubio-nato-relationship",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "In his letter to the American people, Iran’s president Masoud Pezeshkian laid out the longstanding, historical grievances behind Tehran’s distrust of Washington, with a turning point being the 1953 coup d’état, which he described as “an illegal American intervention aimed at preventing ...",
+				"page_age": "2026-04-01T15:26:10",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "theguardian.com",
+					"hostname": "www.theguardian.com",
+					"favicon": "https://imgs.search.brave.com/rC70n-17a9InstnH-PH4YuXbWwFkdbesPtRJKvIQAwQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGRmYTNkMTZl/NmJhYTQwYmQ4NDRj/MzQ4NDZkNGQ0YTgy/ZWRlZDM4YWVkMzM4/NmM0Y2Y2NTgyMTQ5/NzQxOTExYy93d3cu/dGhlZ3VhcmRpYW4u/Y29tLw",
+					"path": "› world  › middle-east-live  › live  › 2026  › apr  › 01  › iran-live-updates-trump-claims-war-will-end-rubio-nato-relationship"
+				},
+				"source": "https://www.theguardian.com/world/middle-east-live/live/2026/apr/01/iran-live-updates-trump-claims-war-will-end-rubio-nato-relationship",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/oWzIgzZVJ9D2ANzSc_tVgaQD3WCZXa2_5L3Q7lp0Jy0/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vZU4xXzhK/NWhVN05JemZ6TE1S/UUk2WFBFcDFwdWNS/c3RTeTlhRWFTbkJQ/by9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXBMbWQxL2FXMHVZ/Mjh1ZFdzdmFXMW4v/TDIxbFpHbGhMekZp/T0RGaC9OR1V6WkRR/eFlUSmpNbVUwL1lU/aGtOemhqWTJWbE1E/Rm0vWm1RMU1XTXdP/R00xWWprdi9OREE0/WHpCZk5EVXpOVjh6/L05qSTRMMjFoYzNS/bGNpODAvTlRNMUxt/cHdaejkzYVdSMC9h/RDAzTURBbWNYVmhi/R2wwL2VUMDROU1po/ZFhSdlBXWnYvY20x/aGRDWm1hWFE5YldG/NC9Kbk05WlRsaFlX/UmlOMlZoL05qWmpO/RGt3TjJZNU5UUTAv/WVRRd04yVTFaRGcy/TXpJ",
+					"original": "https://imgs.search.brave.com/eN1_8J5hU7NIzfzLMRQI6XPEp1pucRstSy9aEaSnBPo/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9pLmd1/aW0uY28udWsvaW1n/L21lZGlhLzFiODFh/NGUzZDQxYTJjMmU0/YThkNzhjY2VlMDFm/ZmQ1MWMwOGM1Yjkv/NDA4XzBfNDUzNV8z/NjI4L21hc3Rlci80/NTM1LmpwZz93aWR0/aD03MDAmcXVhbGl0/eT04NSZhdXRvPWZv/cm1hdCZmaXQ9bWF4/JnM9ZTlhYWRiN2Vh/NjZjNDkwN2Y5NTQ0/YTQwN2U1ZDg2MzI"
+				},
+				"age": "1 day ago",
+				"extra_snippets": [
+					"In his letter to the American people, Iran’s president Masoud Pezeshkian laid out the longstanding, historical grievances behind Tehran’s distrust of Washington, with a turning point being the 1953 coup d’état, which he described as “an illegal American intervention aimed at preventing the nationalisation of Iran’s own resources”.",
+					"He said that distrust “deepened further” through US support for the Shah, backing of Saddam Hussein, sweeping “inhumane” sanctions and, most recently, “unprovoked military aggression – twice, in the midst of negotiations, against Iran”.",
+					"The Iranian people harbor no enmity toward other nations, including the people of America, Europe, or neighbouring countries; attacks on Iran’s infrastructure, targeting of our people, have consequences beyond the country’s border.",
+					"Traffic through the strait has fallen by 90% since the start of the Iran war, sending global oil prices skyrocketing and inflicting alarming shortages on the Asian nations that get their oil from Persian Gulf countries via the strait."
+				]
+			},
+			{
+				"title": "Iran war live: ‘Missile from Iran’ hits oil tanker off Qatar’s coast",
+				"url": "https://www.aljazeera.com/news/liveblog/2026/4/1/iran-live-trump-says-no-deal-needed-to-end-war-isfahan-steel-plants-hit?traffic_source=rss",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "One of three missiles launched from Iran hit an oil tanker off Qatar's coast, no injuries reported.",
+				"page_age": "2026-04-01T00:00:00",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "aljazeera.com",
+					"hostname": "www.aljazeera.com",
+					"favicon": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8",
+					"path": "› news  › liveblog  › 2026  › 4  › 1  › iran-live-trump-says-no-deal-needed-to-end-war-isfahan-steel-plants-hit"
+				},
+				"source": "https://www.aljazeera.com/news/liveblog/2026/4/1/iran-live-trump-says-no-deal-needed-to-end-war-isfahan-steel-plants-hit?traffic_source=rss",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/I_GTlzMqroLh2063mL-JyMjnJwKMHnSnEM3d8zGb7_M/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vYUQwVVp4/QjUwZlJDS3A1OVJ2/OExwbXRXRnNfU2ll/TmhSUk9XQzFYa0hK/QS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OTNkM2N1L1lXeHFZ/WHBsWlhKaExtTnYv/YlM5M2NDMWpiMjUw/Wlc1MC9MM1Z3Ykc5/aFpITXZNakF5L05p/OHdNeTlCVURJMk1E/a3cvTlRRek16VXpN/elU0TFRFMy9OelE1/T1RnMk5UWXVhbkJu/L1AzSmxjMmw2WlQw/eE9USXcvSlRKRE1U/UTBNQQ",
+					"original": "https://imgs.search.brave.com/aD0UZxB50fRCKp59Rv8LpmtWFs_SieNhRROWC1XkHJA/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wMy9BUDI2MDkw/NTQzMzUzMzU4LTE3/NzQ5OTg2NTYuanBn/P3Jlc2l6ZT0xOTIw/JTJDMTQ0MA"
+				},
+				"age": "2 days ago",
+				"extra_snippets": [
+					"One of three missiles launched from Iran hit an oil tanker off Qatar’s coast, no injuries reported.",
+					"Qatar’s Defence Ministry says missiles launched from Iran hit oil tanker in the country’s territorial waters.",
+					"US President Donald Trump says Iran does not have to make a deal for him to end the war and that the conflict could end in two to three weeks."
+				]
+			},
+			{
+				"title": "Middle East crisis live: Kuwait issues oil spill warning after tanker attacked in Dubai port",
+				"url": "https://www.theguardian.com/world/live/2026/mar/30/iran-war-live-updates-trump-oil-kharg-island-houthis-israel-lebanon-middle-east",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "More on the tanker attack: Kuwait Petroleum Corporation said a giant Kuwaiti crude oil tanker was directly targeted in what it described as an Iranian attack while anchored at Dubai port in the United Arab Emirates, causing damage to the vessel and a fire onboard, the state news agency Kuna ...",
+				"page_age": "2026-03-31T03:56:39",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "theguardian.com",
+					"hostname": "www.theguardian.com",
+					"favicon": "https://imgs.search.brave.com/rC70n-17a9InstnH-PH4YuXbWwFkdbesPtRJKvIQAwQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGRmYTNkMTZl/NmJhYTQwYmQ4NDRj/MzQ4NDZkNGQ0YTgy/ZWRlZDM4YWVkMzM4/NmM0Y2Y2NTgyMTQ5/NzQxOTExYy93d3cu/dGhlZ3VhcmRpYW4u/Y29tLw",
+					"path": "› world  › live  › 2026  › mar  › 30  › iran-war-live-updates-trump-oil-kharg-island-houthis-israel-lebanon-middle-east"
+				},
+				"source": "https://www.theguardian.com/world/live/2026/mar/30/iran-war-live-updates-trump-oil-kharg-island-houthis-israel-lebanon-middle-east",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/cdAqeyIbfjU7dDaTCWMXgP51FMA75HmwjMREf4yarQY/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vbWZ6UHdW/cGZzQ3BmYThTUWZS/NXF0Y1gtNWdINDlE/WEVubk5BMWNhTE9M/cy9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXBMbWQxL2FXMHVZ/Mjh1ZFdzdmFXMW4v/TDIxbFpHbGhMekJs/Wmpaay9NREkyTXpk/allqQXhZak0zL09E/RXhOV1ppTkRjNU5E/UmgvWlRFd1lqYzRN/R1ZoWkdRdi9NVFV6/WHpCZk5UQXdNRjgw/L01EQXdMMjFoYzNS/bGNpODEvTURBd0xt/cHdaejkzYVdSMC9h/RDAzTURBbWNYVmhi/R2wwL2VUMDROU1po/ZFhSdlBXWnYvY20x/aGRDWm1hWFE5YldG/NC9Kbk05TXpGa1lq/RmpNV1ptL01HVTJO/V00wT0RJNE1EaGkv/WTJVMll6Tmtaall3/T0RN",
+					"original": "https://imgs.search.brave.com/mfzPwVpfsCpfa8SQfR5qtcX-5gH49DXEnnNA1caLOLs/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9pLmd1/aW0uY28udWsvaW1n/L21lZGlhLzBlZjZk/MDI2MzdjYjAxYjM3/ODExNWZiNDc5NDRh/ZTEwYjc4MGVhZGQv/MTUzXzBfNTAwMF80/MDAwL21hc3Rlci81/MDAwLmpwZz93aWR0/aD03MDAmcXVhbGl0/eT04NSZhdXRvPWZv/cm1hdCZmaXQ9bWF4/JnM9MzFkYjFjMWZm/MGU2NWM0ODI4MDhi/Y2U2YzNkZjYwODM"
+				},
+				"age": "2 days ago",
+				"extra_snippets": [
+					"More on the tanker attack: Kuwait Petroleum Corporation said a giant Kuwaiti crude oil tanker was directly targeted in what it described as an Iranian attack while anchored at Dubai port in the United Arab Emirates, causing damage to the vessel and a fire onboard, the state news agency Kuna said on Tuesday.",
+					"The US continues to hit Iranian targets while building up forces in the region. Iran continues to launch missile and drone attacks on Israel and neighbouring Gulf states. Tehran’s proxies in the region have entered the fray.",
+					"No amount of contradictory social media posts from Mr Trump can negate the shortages felt across the world, from Asian factories to European diesel markets. The pain is likely to get worse. There is no sign of imminent US victory or Iranian collapse.",
+					"The reported Iranian strike on a Kuwaiti oil tanker is the latest in a string of assaults on merchant vessels by missiles or explosive air and sea drones in the Persian Gulf and the strait of Hormuz since the US-Israeli attacks on Iran began a month ago."
+				]
+			},
+			{
+				"title": "Trump to give primetime address on Iran war as questions swirl over his next move",
+				"url": "https://www.bbc.com/news/articles/c74vqd8k3g1o?at_medium=RSS&at_campaign=rss",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "",
+				"page_age": "2026-04-01T14:59:06",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "bbc.com",
+					"hostname": "www.bbc.com",
+					"favicon": "https://imgs.search.brave.com/-9uoAONEhH31ac708C2NinDM9OjKbNcruJo3O1baQTM/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTljMGQ4ZTFj/YzcwNTIyYTU4ZDk4/ZTg5NTQ0NGQyYjQy/NzU3NTMxNDRjZGFi/NjFkMmRiNGE1MGE5/ZDhhOWMyZS93d3cu/YmJjLmNvbS8",
+					"path": "› news  › articles  › c74vqd8k3g1o"
+				},
+				"source": "https://www.bbc.com/news/articles/c74vqd8k3g1o?at_medium=RSS&at_campaign=rss",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/r1TpCP_RwngGHileCJ7iXwnC21Rm7eoaI-wPSzSzAQw/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vcUQ5UGFo/SFNVcHpRTkVmbnhD/Z3NGSE4xZ09MeVRK/MTRTM0FZcS1YZVcz/TS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXBZMmhsL1ppNWlZ/bU5wTG1OdkxuVnIv/TDI1bGQzTXZNVEF5/TkM5aS9jbUZ1WkdW/a1gyNWxkM012L1pH/WmtOUzlzYVhabEwy/STIvTlRreU5HSXdM/VEprWkRjdC9NVEZt/TVMxaE1UZzJMV0pr/L1ltVmpNMlpoT0RZ/d055NXEvY0dj",
+					"original": "https://imgs.search.brave.com/qD9PahHSUpzQNEfnxCgsFHN1gOLyTJ14S3AYq-XeW3M/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9pY2hl/Zi5iYmNpLmNvLnVr/L25ld3MvMTAyNC9i/cmFuZGVkX25ld3Mv/ZGZkNS9saXZlL2I2/NTkyNGIwLTJkZDct/MTFmMS1hMTg2LWJk/YmVjM2ZhODYwNy5q/cGc"
+				},
+				"age": "1 day ago",
+				"extra_snippets": []
+			},
+			{
+				"title": "Iran announces new strikes on U.S. targets hours ahead of Trump speech",
+				"url": "https://www.cbsnews.com/live-updates/iran-war-trump-nato-tehran-threatens-us-tech-companies-strait-of-hormuz/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Trump says he expects the U.S. war with Iran to end within several weeks despite unrelenting attacks from both sides and Iran's iron grip on the Strait of Hormuz.",
+				"page_age": "2026-04-01T21:25:38",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "cbsnews.com",
+					"hostname": "www.cbsnews.com",
+					"favicon": "https://imgs.search.brave.com/WMJ84WFf8h1hcjjVVUUmzl0nnJIhOkOa5cdJGjXcdWk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNDUwNTNjY2I0/ZTJkMTA1NjkzNzQ3/Mzg4OGQ4ZDNmZjg0/YTFmYzhhZjBkMTU2/N2ZkNDA4MmZjZTM4/YTI3MTllMS93d3cu/Y2JzbmV3cy5jb20v",
+					"path": "› live-updates  › iran-war-trump-nato-tehran-threatens-us-tech-companies-strait-of-hormuz"
+				},
+				"source": "https://www.cbsnews.com/live-updates/iran-war-trump-nato-tehran-threatens-us-tech-companies-strait-of-hormuz/",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/Z_KoZ_fMSZgVw1NEO3vrfCSdSHQ5tOQzcYijMtcziD0/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vUVczNUZC/U2JBb1hMWUVSNU9L/aGNNZWxYZEluNjBN/c3JWa01pT2FfTmc2/RS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OWhjM05sL2RITXlM/bU5pYzI1bGQzTnov/ZEdGMGFXTXVZMjl0/TDJoMS9ZaTlwTDNJ/dk1qQXlOaTh3L05D/OHdNUzgzT1RObVpq/SXgvTXkwNFlUWm1M/VFF4TmpVdC9PRGc0/WkMweE56VmtNbVV4/L056SXhNemt2ZEdo/MWJXSnUvWVdsc0x6/RXlNREI0TmpNdy9M/MkZrTURnd01USmhN/VGRtL056RXdZV1Zs/WmpGaE5XTmgvWm1K/bU0yRTJOV1ZpTDJs/eS9ZVzR0ZDJGeUxY/UmxhSEpoL2JpMXdi/MnhwWTJVdFlYQnkv/YVd3dE1TNXFjR2M",
+					"original": "https://imgs.search.brave.com/QW35FBSbAoXLYER5OKhcMelXdIn60MsrVkMiOa_Ng6E/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMyLmNic25ld3Nz/dGF0aWMuY29tL2h1/Yi9pL3IvMjAyNi8w/NC8wMS83OTNmZjIx/My04YTZmLTQxNjUt/ODg4ZC0xNzVkMmUx/NzIxMzkvdGh1bWJu/YWlsLzEyMDB4NjMw/L2FkMDgwMTJhMTdm/NzEwYWVlZjFhNWNh/ZmJmM2E2NWViL2ly/YW4td2FyLXRlaHJh/bi1wb2xpY2UtYXBy/aWwtMS5qcGc"
+				},
+				"age": "17 hours ago",
+				"extra_snippets": [
+					"President Trump gave an update on the Iran war Wednesday night, saying the operation's \"core strategic objectives are nearing completion,\" citing the degradation of the country's missiles, drones and navy. The U.S. will complete its military mission in Iran \"very shortly,\" Mr.",
+					"Mr. Trump said earlier Wednesday that Iran wants a ceasefire, but he's made it clear he could end U.S. operations without reopening the Strait of Hormuz, leaving other countries to deal with Tehran's chokehold on the critical shipping lane.",
+					"Mr. Trump has told Britain's Telegraph newspaper he could attempt to pull the U.S. out of the transatlantic NATO alliance it's led for more than seven decades, as he vents frustration at America's closest allies for declining to join the U.S.-Israeli war on Iran.",
+					"Markets have been looking out for signs that the Iran war will end soon. But during his speech, the president didn't offer a more definitive timeline for the war's conclusion, instead warning the U.S. will hit Iran \"extremely hard\" over the next few weeks. He also encouraged countries dependent on oil from the Middle East to \"take\" the Strait of Hormuz without a plan for the U.S."
+				]
+			},
+			{
+				"title": "Britain to host 35 countries for strait of Hormuz talks, says Starmer",
+				"url": "https://www.theguardian.com/world/2026/apr/01/hormuz-strait-talks-britain-starmer",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "On Wednesday, Iran’s Islamic Revolutionary Guards Corps said in a statement on state TV that the strait of Hormuz would remain closed to “enemies of this nation” and that it remained under control of its navy.",
+				"page_age": "2026-04-01T15:18:27",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "theguardian.com",
+					"hostname": "www.theguardian.com",
+					"favicon": "https://imgs.search.brave.com/rC70n-17a9InstnH-PH4YuXbWwFkdbesPtRJKvIQAwQ/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNGRmYTNkMTZl/NmJhYTQwYmQ4NDRj/MzQ4NDZkNGQ0YTgy/ZWRlZDM4YWVkMzM4/NmM0Y2Y2NTgyMTQ5/NzQxOTExYy93d3cu/dGhlZ3VhcmRpYW4u/Y29tLw",
+					"path": "› world  › 2026  › apr  › 01  › hormuz-strait-talks-britain-starmer"
+				},
+				"source": "https://www.theguardian.com/world/2026/apr/01/hormuz-strait-talks-britain-starmer",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/FkOik0TKEjUReepNQcbJhoszMNpg35V3N8ncZ44qtyg/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vcXBqUV96/NE5PYlhNVU1wMkct/Z3hPaTlUejNrdDJZ/M3FjQjEza2ZKRThr/VS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXBMbWQxL2FXMHVZ/Mjh1ZFdzdmFXMW4v/TDIxbFpHbGhMelJq/TTJVeS9PV1EyTkRN/M09HUmtPVGc0L05E/TXdZelJtTTJRMlpq/RmsvWldNNU5tRTNZ/VFUyTnpZdi9NVEk1/WHpCZk1UTXhPVjh4/L01EVTJMMjFoYzNS/bGNpOHgvTXpFNUxt/cHdaejkzYVdSMC9h/RDAzTURBbWNYVmhi/R2wwL2VUMDROU1po/ZFhSdlBXWnYvY20x/aGRDWm1hWFE5YldG/NC9Kbk05TW1JeE5U/UmlOVEUxL01EazBO/alV5T0RRek5URTIv/WVRsa09XRm1PV1Zs/TVRV",
+					"original": "https://imgs.search.brave.com/qpjQ_z4NObXMUMp2G-gxOi9Tz3kt2Y3qcB13kfJE8kU/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9pLmd1/aW0uY28udWsvaW1n/L21lZGlhLzRjM2Uy/OWQ2NDM3OGRkOTg4/NDMwYzRmM2Q2ZjFk/ZWM5NmE3YTU2NzYv/MTI5XzBfMTMxOV8x/MDU2L21hc3Rlci8x/MzE5LmpwZz93aWR0/aD03MDAmcXVhbGl0/eT04NSZhdXRvPWZv/cm1hdCZmaXQ9bWF4/JnM9MmIxNTRiNTE1/MDk0NjUyODQzNTE2/YTlkOWFmOWVlMTU"
+				},
+				"age": "1 day ago",
+				"extra_snippets": [
+					"The UK will convene 35 countries – excluding the US – to explore ways to reopen the strait of Hormuz, the vital shipping route for oil and gas that has been blocked by Iran.",
+					"About 1,000 ships are stranded by Iran’s partial blockade of the strait in response to the strikes by the US and Israel.",
+					"Trump posted on Wednesday that there would be no ceasefire with Iran until it had relinquished control of the waterway. “We will consider when Hormuz Strait is open, free, and clear.",
+					"Until then, we are blasting Iran into oblivion or, as they say, back to the Stone Ages!!!” he wrote."
+				]
+			},
+			{
+				"title": "Iran war live: Kuwaiti oil tanker hit in Dubai port; 3 UN soldiers killed",
+				"url": "https://www.aljazeera.com/news/liveblog/2026/3/31/iran-war-live-kuwaiti-oil-tanker-hit-in-dubai-port-3-un-troops-killed?traffic_source=rss",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Saudi, Qatari, Jordanian leaders meet as Iran continues to retaliate for US-Israeli raids with attacks on Gulf nations.",
+				"page_age": "2026-03-31T00:00:00",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "aljazeera.com",
+					"hostname": "www.aljazeera.com",
+					"favicon": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8",
+					"path": "› news  › liveblog  › 2026  › 3  › 31  › iran-war-live-kuwaiti-oil-tanker-hit-in-dubai-port-3-un-troops-killed"
+				},
+				"source": "https://www.aljazeera.com/news/liveblog/2026/3/31/iran-war-live-kuwaiti-oil-tanker-hit-in-dubai-port-3-un-troops-killed?traffic_source=rss",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/xdUp83Dh_3GM3HxzTiji6KeJ5bgtkGcd-7JePr0qpsc/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vMjVneXN5/NVFJN1RSMnNXZGRI/ZV9uUXRrc2poamFv/V2RJeGlfNHVTakZW/OC9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OTNkM2N1L1lXeHFZ/WHBsWlhKaExtTnYv/YlM5M2NDMWpiMjUw/Wlc1MC9MM1Z3Ykc5/aFpITXZNakF5L05p/OHdNeTh5TURJMkxU/QXovTFRNd1ZERXpN/VFl6TVZwZi9OakEw/T1RjMk5UZ3lYMUpE/L01qQkdTMEZSU1Ux/U1dsOVMvVkZKTlFV/UlFYek5mU1ZKQi9U/aTFEVWtsVFNWTXRN/VGMzL05Ea3hNakUz/TlM1cWNHY18vY21W/emFYcGxQVEU1TWpB/bC9Na014TkRRdw",
+					"original": "https://imgs.search.brave.com/25gysy5QI7TR2sWddHe_nQtksjhjaoWdIxi_4uSjFV8/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wMy8yMDI2LTAz/LTMwVDEzMTYzMVpf/NjA0OTc2NTgyX1JD/MjBGS0FRSU1SWl9S/VFJNQURQXzNfSVJB/Ti1DUklTSVMtMTc3/NDkxMjE3NS5qcGc_/cmVzaXplPTE5MjAl/MkMxNDQw"
+				},
+				"age": "3 days ago",
+				"extra_snippets": [
+					"Leaders of Saudi Arabia, Qatar and Jordan meet in Jeddah as US-Israeli attacks on Iran continue, and Iranian counterattacks hit Gulf nations.",
+					"US Secretary of State Marco Rubio has told Al Jazeera that President Donald Trump “always prefers diplomacy”, but warned Iran of “real consequences” over the partial closure of the Strait of Hormuz."
+				]
+			},
+			{
+				"title": "Iran-US war latest: Iran’s president hits out at ‘unprovoked military aggression’ hours before Trump’s address",
+				"url": "https://www.independent.co.uk/news/world/middle-east/iran-us-war-live-trump-oil-israel-strait-of-hormuz-b2949695.html",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "The French president said reopening the Strait of Hormuz using force would not work and urged Trump to ‘be serious’",
+				"page_age": "2026-04-01T21:42:28",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "independent.co.uk",
+					"hostname": "www.independent.co.uk",
+					"favicon": "https://imgs.search.brave.com/M_zo7zhS0WvQG9XhO-0Js_pwEAlWc2wtGKCPFnNjZjI/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvZmEyODE2YjY0/YzFkZDgyOGUzOThi/NmFhOGNkZTRhZDBm/ZmJiYWUxZGQ0MjYx/YWI5YjIyYWQ3N2E4/ZTZjNDk3YS93d3cu/aW5kZXBlbmRlbnQu/Y28udWsv",
+					"path": "› news  › world  › middle-east  › iran-us-war-live-trump-oil-israel-strait-of-hormuz-b2949695.html"
+				},
+				"source": "https://www.independent.co.uk/news/world/middle-east/iran-us-war-live-trump-oil-israel-strait-of-hormuz-b2949695.html",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/3r6dVk7_vsixvCOYezbii74nLT_qGlrzB5Yz9SOn3uE/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vZFBScEdx/SmNINk9HM3REcGxw/SlllSXFRdmIyc01t/YWN4MnVRR040cTkw/US9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXpkR0YwL2FXTXVh/VzVrWlhCbGJtUmwv/Ym5RdVkyOHVkV3N2/TWpBeS9OaTh3TXk4/ek1TOHlNaTh5L01T/OHlNREkyTFRBekxU/TXgvVkRJeU1ERXhO/MXBmTkRVeS9NRFl4/TURJNVgxSkRNbGhH/L1MwRk9NbGczUjE5/U1ZGSk4vUVVSUVh6/TmZWVk5CTFZSUy9W/VTFRTG1wd1pXY19k/MmxrL2RHZzlNVEl3/TUNaaGRYUnYvUFhk/bFluQW1ZM0p2Y0Qw/ei9KVE5CTWc",
+					"original": "https://imgs.search.brave.com/dPRpGqJcH6OG3tDplpJYeIqQvb2sMmacx2uQGN4q90Q/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuaW5kZXBlbmRl/bnQuY28udWsvMjAy/Ni8wMy8zMS8yMi8y/MS8yMDI2LTAzLTMx/VDIyMDExN1pfNDUy/MDYxMDI5X1JDMlhG/S0FOMlg3R19SVFJN/QURQXzNfVVNBLVRS/VU1QLmpwZWc_d2lk/dGg9MTIwMCZhdXRv/PXdlYnAmY3JvcD0z/JTNBMg"
+				},
+				"age": "17 hours ago",
+				"extra_snippets": [
+					"Donald Trump has said that the US is close to achieving its military objectives and will wind down the conflict with Iran in the next few weeks, more than a month into fighting that has killed 13 US soldiers and brought chaos back to the region.",
+					"Emmanuel Macron has told Donald Trump that the war in Iran requires a “serious” approach in the most scathing attack on the US president by an ally since the war began.",
+					"Trump has offered mixed messages on his objectives in the Iran war, often in the same day.",
+					"Trump says end of U.S. military operations in Iran is 'very close'"
+				]
+			},
+			{
+				"title": "President Trump says US could finish Iran operation within two to three weeks",
+				"url": "https://www.foxnews.com/politics/trump-iran-conflict-end-timeline-nuclear-goal",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "President Donald Trump indicated during remarks on Tuesday that he thinks the U.S. will wrap up its attacks on Iran in two to three weeks.",
+				"page_age": "2026-04-01T09:57:15",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "foxnews.com",
+					"hostname": "www.foxnews.com",
+					"favicon": "https://imgs.search.brave.com/8Y6YYaSHf4PweCQwcB2IRvUWPCEsdNoek5FtyWqRRW4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOGIyN2Q2NTE4/NGRmOTVmZGNmMzEy/OWJjY2MwNzkzYzg0/YWNhOGFmY2UxYTQ1/NmZiM2JkYzcxMjFh/MDFmNDBkYy93d3cu/Zm94bmV3cy5jb20v",
+					"path": "› politics  › trump-iran-conflict-end-timeline-nuclear-goal"
+				},
+				"source": "https://www.foxnews.com/politics/trump-iran-conflict-end-timeline-nuclear-goal",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/OPNnKDf3I6Sd75cTIYhUjl11qMlApgX1qsPm0cE7TII/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vYVRwWk5Z/LXBYVkNCZm94a0w4/WWZlTW91a0lxb0s4/bFdIdUh1cjNrLW43/Zy9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OWhOVGN1L1ptOTRi/bVYzY3k1amIyMHYv/YzNSaGRHbGpMbVp2/ZUc1bC9kM011WTI5/dEwyWnZlRzVsL2Qz/TXVZMjl0TDJOdmJu/UmwvYm5RdmRYQnNi/MkZrY3k4eS9NREky/THpBMEx6a3pNUzgx/L01qTXZjSEpsYzJs/a1pXNTAvTFdSdmJt/RnNaQzEwY25WdC9j/QzF0WVhKamFDMHpN/UzB5L01ESTJMbXB3/Wno5MlpUMHgvSm5S/c1BURQ",
+					"original": "https://imgs.search.brave.com/aTpZNY-pXVCBfoxkL8YfeMoukIqoK8lWHuHur3k-n7g/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9hNTcu/Zm94bmV3cy5jb20v/c3RhdGljLmZveG5l/d3MuY29tL2ZveG5l/d3MuY29tL2NvbnRl/bnQvdXBsb2Fkcy8y/MDI2LzA0LzkzMS81/MjMvcHJlc2lkZW50/LWRvbmFsZC10cnVt/cC1tYXJjaC0zMS0y/MDI2LmpwZz92ZT0x/JnRsPTE"
+				},
+				"age": "1 day ago",
+				"extra_snippets": [
+					"United States President Donald Trump indicated on Tuesday that he thinks America will be finished with attacks on Iran in two to three weeks.",
+					"President Donald Trump indicated on Tuesday that he thinks the U.S. will finish its attacks on Iran in two to three weeks.",
+					"President Donald Trump indicated on Tuesday that the U.S. will finish attacking Iran within two to three weeks.",
+					"The president mounted the U.S. war against Iran more than four weeks ago in conjunction with Israel."
+				]
+			},
+			{
+				"title": "Iran fires back with flat denial after Trump claims Tehran requested ceasefire: 'False and baseless'",
+				"url": "https://www.foxnews.com/politics/iran-fires-back-flat-denial-after-trump-claims-tehran-requested-ceasefire-false-baseless",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "President Donald Trump's social media statement that Iran asked for a ceasefire is \"false and baseless,\" Iran's Foreign Ministry said Wednesday.",
+				"page_age": "2026-04-01T18:55:46",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "foxnews.com",
+					"hostname": "www.foxnews.com",
+					"favicon": "https://imgs.search.brave.com/8Y6YYaSHf4PweCQwcB2IRvUWPCEsdNoek5FtyWqRRW4/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOGIyN2Q2NTE4/NGRmOTVmZGNmMzEy/OWJjY2MwNzkzYzg0/YWNhOGFmY2UxYTQ1/NmZiM2JkYzcxMjFh/MDFmNDBkYy93d3cu/Zm94bmV3cy5jb20v",
+					"path": "› politics  › iran-fires-back-flat-denial-after-trump-claims-tehran-requested-ceasefire-false-baseless"
+				},
+				"source": "https://www.foxnews.com/politics/iran-fires-back-flat-denial-after-trump-claims-tehran-requested-ceasefire-false-baseless",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/wrkaP7lveg3lgSxu_ogSyxMiySTCjcYd8H6dwwAqjm8/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vNFl3Q2NQ/Nk1Ic0JLaXIyeDdv/NEp5QjIwTklFYjNr/S3l1bFFVWHZDZjdH/RS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OWhOVGN1L1ptOTRi/bVYzY3k1amIyMHYv/YzNSaGRHbGpMbVp2/ZUc1bC9kM011WTI5/dEwyWnZlRzVsL2Qz/TXVZMjl0TDJOdmJu/UmwvYm5RdmRYQnNi/MkZrY3k4eS9NREky/THpBMEx6a3pNUzgx/L01qTXZhWEpoYm1s/aGJpMW0vYjNKbGFX/ZHVMVzFwYm1sei9k/R1Z5TG1wd1p6OTJa/VDB4L0puUnNQVEU",
+					"original": "https://imgs.search.brave.com/4YwCcP6MHsBKir2x7o4JyB20NIEb3kKyulQUXvCf7GE/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9hNTcu/Zm94bmV3cy5jb20v/c3RhdGljLmZveG5l/d3MuY29tL2ZveG5l/d3MuY29tL2NvbnRl/bnQvdXBsb2Fkcy8y/MDI2LzA0LzkzMS81/MjMvaXJhbmlhbi1m/b3JlaWduLW1pbmlz/dGVyLmpwZz92ZT0x/JnRsPTE"
+				},
+				"age": "20 hours ago",
+				"extra_snippets": [
+					"Iran's Foreign Ministry spokesperson Esmail Baghaei called President Donald Trump's claim that Tehran requested a ceasefire \"false and baseless.\"",
+					"President Donald Trump indicated Tuesday that he thinks the U.S. will finish its attacks on Iran in two to three weeks.",
+					"Iran is pushing back on President Donald Trump’s claim that it requested a ceasefire, with an official calling the statement \"false and baseless in a blunt public denial.",
+					"Iran’s Foreign Ministry spokesperson, Esmail Baghaei, made the remarks rejecting Trump’s claim on Wednesday, according to a report on Iranian state television."
+				]
+			},
+			{
+				"title": "Trump says Iran war could wrap up in 2-3 weeks as gas prices rise",
+				"url": "https://www.cbsnews.com/live-updates/iran-war-gas-price-4-dollar-gallon-oil-trump-isfahan-desalination-plant/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "President Trump indicated the Iran war may wrap up \"very soon\" and he could abandon efforts to force Iran to reopen the Strait of Hormuz, as the war pushed U.S. gas prices over the $4 mark.",
+				"page_age": "2026-04-01T07:31:00",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "cbsnews.com",
+					"hostname": "www.cbsnews.com",
+					"favicon": "https://imgs.search.brave.com/WMJ84WFf8h1hcjjVVUUmzl0nnJIhOkOa5cdJGjXcdWk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNDUwNTNjY2I0/ZTJkMTA1NjkzNzQ3/Mzg4OGQ4ZDNmZjg0/YTFmYzhhZjBkMTU2/N2ZkNDA4MmZjZTM4/YTI3MTllMS93d3cu/Y2JzbmV3cy5jb20v",
+					"path": "› live-updates  › iran-war-gas-price-4-dollar-gallon-oil-trump-isfahan-desalination-plant"
+				},
+				"source": "https://www.cbsnews.com/live-updates/iran-war-gas-price-4-dollar-gallon-oil-trump-isfahan-desalination-plant/",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/A23S78YGCGae7HpbZX46nDQDy3jWeIvPSR-T_m-WN4E/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vOFdzS0dJ/U2RGWkQ4VVRsSjRC/cnZWclN4Sm5tMzdE/OEg0Z0NOdlJreXZr/OC9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OWhjM05sL2RITXpM/bU5pYzI1bGQzTnov/ZEdGMGFXTXVZMjl0/TDJoMS9ZaTlwTDNJ/dk1qQXlOaTh3L015/OHpNUzloTkRKaE56/YzEvTmkwMU1XWmxM/VFF6T0RRdC9ZalUy/TUMxak9EaGtabUpp/L04yTmlPR0V2ZEdo/MWJXSnUvWVdsc0x6/RXlNREI0TmpNdy9M/MlEwTXpaaVlUSTVa/REkwL1l6ZzFaRGcz/WmpaallqazIvTVdF/ME16VTFaak5qTDI5/cC9iQzEwWVc1clpY/SXRhWEpoL2JpMTNZ/WEl0WVd3dGMyRnMv/YldrdGEzVjNZV2ww/TG1wdy9adw",
+					"original": "https://imgs.search.brave.com/8WsKGISdFZD8UTlJ4BrvVrSxJnm37D8H4gCNvRkyvk8/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMzLmNic25ld3Nz/dGF0aWMuY29tL2h1/Yi9pL3IvMjAyNi8w/My8zMS9hNDJhNzc1/Ni01MWZlLTQzODQt/YjU2MC1jODhkZmJi/N2NiOGEvdGh1bWJu/YWlsLzEyMDB4NjMw/L2Q0MzZiYTI5ZDI0/Yzg1ZDg3ZjZjYjk2/MWE0MzU1ZjNjL29p/bC10YW5rZXItaXJh/bi13YXItYWwtc2Fs/bWkta3V3YWl0Lmpw/Zw"
+				},
+				"age": "1 day ago",
+				"extra_snippets": [
+					"After he renewed his threat to attack Iran's civilian energy and water infrastructure if no deal is reached to end the war, Iranian state media said a water desalination plant on an island near the Strait of Hormuz was out of commission after being hit.",
+					"Energy markets continued to convulse over uncertainty about the war, sending the average price of a gallon of gas in the U.S. over $4 for the first time in almost four years as a massive tanker loaded with crude was hit by an Iranian drone off Dubai's coast.",
+					"President Trump told reporters Tuesday he expects U.S. operations in Iran to wrap up in \"two weeks, maybe three.\"",
+					"Earlier Tuesday, the president told CBS News' Weijia Jiang he's not ready \"quite yet\" to abandon efforts to force Iran to reopen the Strait of Hormuz to all shipping traffic."
+				]
+			},
+			{
+				"title": "Massive oil tanker struck by Iranian drone near Strait of Hormuz as US unleashes 2,000lb bunker buster bombs on ammunition depot",
+				"url": "https://www.dailymail.co.uk/news/article-15693415/Oil-tanker-Iran-hormuz-bunker-buster.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "The US and Iran traded blows late on Monday, as Iranian drones hit a huge Kuwaiti oil tanker near the Strait of Hormuz, while the Americans bombarded an Iranian ammunition depot.",
+				"page_age": "2026-03-31T11:49:29",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "dailymail.co.uk",
+					"hostname": "www.dailymail.co.uk",
+					"favicon": "https://imgs.search.brave.com/2xijxIt-pxcOZwWKABiWqVjRKtRCm1CGQYM5GLQgiQ0/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMjM5NzVkNWRi/NGZlOGQ0YjM4OGQy/ODQ0MWI1YTA3NzFh/NWQ5NjQ1Y2ZlMzM3/ZGEzOTUyYzgxMjlh/MzgxMjkzZS93d3cu/ZGFpbHltYWlsLmNv/LnVrLw",
+					"path": "› news  › article-15693415  › Oil-tanker-Iran-hormuz-bunker-buster.html"
+				},
+				"source": "https://www.dailymail.co.uk/news/article-15693415/Oil-tanker-Iran-hormuz-bunker-buster.html?ns_mchannel=rss&ns_campaign=1490&ito=1490",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/2zS4vD31R5gaN-YvlUK0zr51v-75JqBqf1hS-shpxQc/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vR2xVY1gz/TE5kSVhjYm41RmV2/MGxyOHRFWkp6a0NN/N0xfXzI2Wkg3dzla/SS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXBMbVJoL2FXeDVi/V0ZwYkM1amJ5NTEv/YXk4eGN5OHlNREky/THpBei9Mek14THpB/MEx6RXdOelUwL01q/WXlOUzB3TFdsdFlX/ZGwvTFdFdE1qWmZN/VGMzTkRreS9PVEU1/T1Rjek15NXFjR2M",
+					"original": "https://imgs.search.brave.com/GlUcX3LNdIXcbn5Fev0lr8tEZJzkCM7L__26ZH7w9ZI/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9pLmRh/aWx5bWFpbC5jby51/ay8xcy8yMDI2LzAz/LzMxLzA0LzEwNzU0/MjYyNS0wLWltYWdl/LWEtMjZfMTc3NDky/OTE5OTczMy5qcGc"
+				},
+				"age": "2 days ago",
+				"extra_snippets": [
+					"The apparent strike on the Al Salmi tanker is just the latest in a string of assaults on merchant vessels by missiles or explosive air and sea drones in the Gulf and Strait of Hormuz since the US and Israel attacked Iran on February 28.",
+					"Kuwait Petroleum Corporation (KPC) said early on Tuesday that the Al Salmi was struck in an Iranian attack while anchored at Dubai port in the United Arab Emirates, causing damage to the vessel and a fire onboard.",
+					"Officials from Saudi Arabia, United Arab Emirates, Kuwait and Bahrain have conveyed in private conversations that they do not want the military operation to end until there are significant changes in the Iranian leadership or there’s a dramatic shift in Iranian behavior, according to the officials, who were not authorized to comment publicly and spoke on the condition of anonymity.",
+					"The push from the Gulf nations comes as Mr Trump vacillates between claiming that Iran’s decimated leadership is ready to settle the conflict and threatening to further escalate the war if a deal is not reached soon."
+				]
+			},
+			{
+				"title": "Trump tells Europe 'Go get your own oil,' Iran hits oil tanker off Dubai",
+				"url": "https://www.npr.org/2026/03/31/nx-s1-5766991/iran-war-lebanon-israel-dubai-trump-oil-europe",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Trump's remarks came in response to a question about rising gas prices. He said they would fall once the U.S. leaves Iran, claiming that would happen in \"maybe two weeks, maybe three.\"",
+				"page_age": "2026-03-31T10:12:08",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "npr.org",
+					"hostname": "www.npr.org",
+					"favicon": "https://imgs.search.brave.com/Y1l6Dzd6VM4_ltfNpwB9Esia4wtA5Fyy600GWlxTPcY/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOGY0NTM3MmEx/MjJkYTQ5YTlmYjFk/YTJhYmNjNGM5M2Q2/NThjYjg0YWMxY2My/YmU5NDlmMTQ0YzJi/YzNjNGFlMS93d3cu/bnByLm9yZy8",
+					"path": "› 2026  › 03  › 31  › nx-s1-5766991  › iran-war-lebanon-israel-dubai-trump-oil-europe"
+				},
+				"source": "https://www.npr.org/2026/03/31/nx-s1-5766991/iran-war-lebanon-israel-dubai-trump-oil-europe",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/GfW7Jp9OOj3xWz2mLGVj5uCrW4DimFgn9_-KJfGgYsM/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vUkg4LW01/ZVE0SmIwWTZTcG4x/SjlENVJwcmhBRFRl/cmRFZ3hVTVhMWUow/QS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXVjSEl1L1luSnBa/MmgwYzNCdmRHTmsv/Ymk1amIyMHZaR2x0/Y3pNdi9aR1ZtWVhW/c2RDOXpkSEpwL2ND/OW1ZV3h6WlM5amNt/OXcvTHpFd01qUjRO/amd6S3pBci9NQzl5/WlhOcGVtVXZNVEF5/L05IZzJPRE1oTHo5/MWNtdzkvYUhSMGND/VXpRU1V5UmlVeS9S/bTV3Y2kxaWNtbG5h/SFJ6L2NHOTBMbk16/TG1GdFlYcHYvYm1G/M2N5NWpiMjBsTWtZ/ei9PU1V5UmpZeUpU/SkdNR0prL05URm1a/RGcwWldKaE9EZzIv/TWpjNU9ESTBOV0kw/TVdObS9aaVV5Um1k/bGRIUjVhVzFoL1oy/VnpMVEl5TmpnMU16/VTQvTmpRdWFuQm4",
+					"original": "https://imgs.search.brave.com/RH8-m5eQ4Jb0Y6Spn1J9D5RprhADTerdEgxUMXLYJ0A/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9ucHIu/YnJpZ2h0c3BvdGNk/bi5jb20vZGltczMv/ZGVmYXVsdC9zdHJp/cC9mYWxzZS9jcm9w/LzEwMjR4NjgzKzAr/MC9yZXNpemUvMTAy/NHg2ODMhLz91cmw9/aHR0cCUzQSUyRiUy/Rm5wci1icmlnaHRz/cG90LnMzLmFtYXpv/bmF3cy5jb20lMkYz/OSUyRjYyJTJGMGJk/NTFmZDg0ZWJhODg2/Mjc5ODI0NWI0MWNm/ZiUyRmdldHR5aW1h/Z2VzLTIyNjg1MzU4/NjQuanBn"
+				},
+				"age": "2 days ago",
+				"extra_snippets": [
+					"U.S. journalist kidnapped in Iraq Trump's remarks came in response to a question about rising gas prices. He said they would fall once the U.S. leaves Iran, claiming that would happen in \"maybe two weeks, maybe three.\"",
+					"Trump's remarks came in response to a question about gas prices — which earlier Tuesday hit a national average of $4 a gallon. Asked what he would do about it, Trump said: \"All I have to do is leave Iran, and we'll be doing that very soon, and they'll become tumbling down.\"",
+					"Just on Monday, though, Trump offered this threat on social media over the strait reopening: \"If for any reason a deal is not shortly reached, which it probably will be, and if the Hormuz Strait is not immediately 'Open for Business,' we will conclude our lovely 'stay' in Iran by blowing up and completely obliterating all of their Electric Generating Plants, Oil Wells and Kharg Island (and possibly all desalinization plants!), which we have purposefully not yet 'touched.'\"",
+					"Iran said it was targeting U.S. Marines in the UAE in an area outside a military base. The U.S. has deployed thousands more forces, including Marines and Army paratroopers, to the region. Dubai has also long served as a port of call for the U.S."
+				]
+			},
+			{
+				"title": "Trump to address nation at critical moment in his war with Iran",
+				"url": "https://www.npr.org/2026/04/01/nx-s1-5770093/trump-address-iran-war",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Trump used a prime-time address to outline his objectives for the war and discuss the military's progress to date. He also repeated an earlier claim that fighting could end in two to three weeks.",
+				"page_age": "2026-04-01T17:48:19",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "npr.org",
+					"hostname": "www.npr.org",
+					"favicon": "https://imgs.search.brave.com/Y1l6Dzd6VM4_ltfNpwB9Esia4wtA5Fyy600GWlxTPcY/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOGY0NTM3MmEx/MjJkYTQ5YTlmYjFk/YTJhYmNjNGM5M2Q2/NThjYjg0YWMxY2My/YmU5NDlmMTQ0YzJi/YzNjNGFlMS93d3cu/bnByLm9yZy8",
+					"path": "› 2026  › 04  › 01  › nx-s1-5770093  › trump-address-iran-war"
+				},
+				"source": "https://www.npr.org/2026/04/01/nx-s1-5770093/trump-address-iran-war",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/UPRv8m59q1BjRnkfDH2NITXciAX3GmLlHIf8hsb8MYE/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vNXJjclh3/aG1HeTF2ZGdDUS1x/RFl5VFY3MVdONldi/d1FLWU1HdXI1ZmdK/MC9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXdZMlJ1L0xtSnlZ/WFpsTG1OdmJTOWkv/Y21GMlpTMTBiMlJo/ZVM5ai9ZV05vWlM4/eE9ERmtNbUZtL1lt/WmhORE5pTWpNNFpH/TTEvWkRWbU1UazNZ/VFF5TW1SbC9aalJp/TkRNME16a3lPREZo/L05qSmtaamMyTWpn/MVltVXgvTVdZMllt/RXdPRGRpTG1wdy9a/eTV3WVdR",
+					"original": "https://imgs.search.brave.com/5rcrXwhmGy1vdgCQ-qDYyTV71WN6WbwQKYMGur5fgJ0/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9wY2Ru/LmJyYXZlLmNvbS9i/cmF2ZS10b2RheS9j/YWNoZS8xODFkMmFm/YmZhNDNiMjM4ZGM1/ZDVmMTk3YTQyMmRl/ZjRiNDM0MzkyODFh/NjJkZjc2Mjg1YmUx/MWY2YmEwODdiLmpw/Zy5wYWQ"
+				},
+				"age": "1 day ago",
+				"extra_snippets": [
+					"When he first announced the strikes on Iran, Trump listed several military objectives: destroying Iran's missiles, destroying its Navy, keeping Iran's terrorist proxies from destabilizing the Middle East, and keeping Iran from obtaining a nuclear weapon.",
+					"The U.S. has made progress on reducing the damage Iran is causing with its missiles — the number of Iranian strikes has fallen off since the start of the war, according to data compiled by the Associated Press.",
+					"But Iran may still have many of the weapons left: last week, a U.S. official told NPR that the U.S. has only been able to confirm the elimination of around one-third of Iran's missile capabilities. In addition, Iran is still inflicting regional damage with those missiles.",
+					"On the issue of weakening Iran's proxies, it's unclear how much progress has been made. Israel has invaded Lebanon to keep the Iranian-backed militant group Hezbollah from attacking. However, Yemen's Houthi rebels also entered the war in recent days with ballistic missile attacks against Israel and threats against U.S."
+				]
+			},
+			{
+				"title": "Trump to give important update on Iran tonight in prime-time speech",
+				"url": "https://www.cbsnews.com/news/trump-iran-war-update-primetime-address-wednesday/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "President Trump is planning to deliver a prime-time address Wednesday night to \"provide an important update on Iran,\" the White House said, as the president faces critical decisions in the monthlong war.",
+				"page_age": "2026-04-01T04:12:00",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "cbsnews.com",
+					"hostname": "www.cbsnews.com",
+					"favicon": "https://imgs.search.brave.com/WMJ84WFf8h1hcjjVVUUmzl0nnJIhOkOa5cdJGjXcdWk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNDUwNTNjY2I0/ZTJkMTA1NjkzNzQ3/Mzg4OGQ4ZDNmZjg0/YTFmYzhhZjBkMTU2/N2ZkNDA4MmZjZTM4/YTI3MTllMS93d3cu/Y2JzbmV3cy5jb20v",
+					"path": "› news  › trump-iran-war-update-primetime-address-wednesday"
+				},
+				"source": "https://www.cbsnews.com/news/trump-iran-war-update-primetime-address-wednesday/",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/4LTucrp3GLGETwtrMMlKgNkTq3TJbj0AtJndZUq22aA/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vc2RidzJa/QUFYdWE1SXNBTHNT/dW5lLWc4NjZXUjRy/SjJvd3lJaFRVdkZx/WS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OWhjM05sL2RITXpM/bU5pYzI1bGQzTnov/ZEdGMGFXTXVZMjl0/TDJoMS9ZaTlwTDNJ/dk1qQXlOaTh3L015/OHpNUzgzTmpabVpX/UmwvTnkxa09XTm1M/VFF3TkRNdC9ZVFpo/TVMxaE5EWmpNR0kw/L05EZGtNRGt2ZEdo/MWJXSnUvWVdsc0x6/RXlNREI0TmpNdy9M/emM0WldJMVpESTNa/REU1L1lqTXhNVEUx/WkdZeU9UVXovWmpV/NU5UZzRNREZoTDJO/aS9jMjR0Wm5WemFX/OXVMWFJ5L2RXMXdM/V3hoYzJobGN5MXYv/ZFhRdFlYUXRaWFZ5/YjNCbC9ZVzR0WVd4/c2FXVnpMVzkyL1pY/SXRjM1J5WVdsMExX/OW0vTFdodmNtMTFl/aTFwYlMxdS9iM1F0/WVMxbllYUmxhMlZs/L2NHVnlMV1p2Y2kx/MGFHVnQvTFhSb2RX/MWlibUZwYkM1cS9j/R2M",
+					"original": "https://imgs.search.brave.com/sdbw2ZAAXua5IsALsSune-g866WR4rJ2owyIhTUvFqY/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMzLmNic25ld3Nz/dGF0aWMuY29tL2h1/Yi9pL3IvMjAyNi8w/My8zMS83NjZmZWRl/Ny1kOWNmLTQwNDMt/YTZhMS1hNDZjMGI0/NDdkMDkvdGh1bWJu/YWlsLzEyMDB4NjMw/Lzc4ZWI1ZDI3ZDE5/YjMxMTE1ZGYyOTUz/ZjU5NTg4MDFhL2Ni/c24tZnVzaW9uLXRy/dW1wLWxhc2hlcy1v/dXQtYXQtZXVyb3Bl/YW4tYWxsaWVzLW92/ZXItc3RyYWl0LW9m/LWhvcm11ei1pbS1u/b3QtYS1nYXRla2Vl/cGVyLWZvci10aGVt/LXRodW1ibmFpbC5q/cGc"
+				},
+				"age": "1 day ago",
+				"extra_snippets": [
+					"Trump publicly signals that he is looking to strike a deal with Iran and wrap the war up in a matter of weeks — and as he privately weighs whether to use ground forces, CBS News reported earlier this month.",
+					"Mr. Trump told reporters Tuesday afternoon he expects the war with Iran to end in \"two weeks, maybe three,\" arguing that the U.S.'s core objective of degrading Iran's military has largely been achieved. He has also said any countries that rely on Middle Eastern petroleum should be responsible for getting their oil through the Strait of Hormuz themselves, hinting that the U.S.",
+					"The president told CBS News' Weijia Jiang on Tuesday he isn't prepared to withdraw U.S. forces from efforts to push Iran to reopen the Strait of Hormuz \"quite yet,\" but other countries \"have to come in and take care of it.\"",
+					"The Trump administration has strategized whether to launch a high-risk mission to use Special Operations Forces to seize Iran's stockpile of highly enriched uranium, sources told CBS News earlier this month, though he had not appeared to make a decision at that point."
+				]
+			},
+			{
+				"title": "Trump Faces a Decision on Whether to Start a Ground War in Iran",
+				"url": "https://www.nytimes.com/2026/03/31/us/politics/trump-iran-ground-war.html",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "The president wants a negotiation, but the Iranians say they are refusing until a cease-fire is declared. And while Marines and the 82nd Airborne Division offer new leverage, the risks escalate quickly.",
+				"page_age": "2026-03-31T13:02:00",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "nytimes.com",
+					"hostname": "www.nytimes.com",
+					"favicon": "https://imgs.search.brave.com/lWA-zkTMlWM2cUvrcYa1Fls86e-Vl-rkSBOjichQqVs/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMGFlZWRkYmVh/YWFhZmFjYjM4MWYy/NTQzZmExMTIwN2Nm/NGJmZjgwYTRhYjI5/OTliM2JkYmI2MWY0/M2RlOGFlMi93d3cu/bnl0aW1lcy5jb20v",
+					"path": "› 2026  › 03  › 31  › us  › politics  › trump-iran-ground-war.html"
+				},
+				"source": "https://www.nytimes.com/2026/03/31/us/politics/trump-iran-ground-war.html",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/B0vcDaFg63mADCK23pMvEVvxfktqi8QtHFw1QAemqvk/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vQlVvemxX/OHgxS05DMjU5N0FP/SERyTFh5YW10V0Nz/QjYyM3BHYUFFVUV1/Yy9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OXpkR0YwL2FXTXdN/UzV1ZVhRdVkyOXQv/TDJsdFlXZGxjeTh5/TURJMi9MekF6THpN/eEwyMTFiSFJwL2JX/VmthV0V2TXpGa1l5/MXcvY21WNGVTMWhj/M05sYzNNdC9kRzl3/TFdOd2JIY3ZNekZr/L1l5MXdjbVY0ZVMx/aGMzTmwvYzNNdGRH/OXdMV053YkhjdC9i/V1ZrYVhWdFUzRjFZ/WEpsL1FYUXpXQzVx/Y0dj",
+					"original": "https://imgs.search.brave.com/BUozlW8x1KNC2597AOHDrLXyamtWCsB623pGaAEUEuc/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwMS5ueXQuY29t/L2ltYWdlcy8yMDI2/LzAzLzMxL211bHRp/bWVkaWEvMzFkYy1w/cmV4eS1hc3Nlc3Mt/dG9wLWNwbHcvMzFk/Yy1wcmV4eS1hc3Nl/c3MtdG9wLWNwbHct/bWVkaXVtU3F1YXJl/QXQzWC5qcGc"
+				},
+				"age": "2 days ago",
+				"extra_snippets": [
+					"David E. Sanger has covered five American presidents and frequently writes about the revival of superpower conflict. Tyler Pager has covered President Trump’s political campaigns and his military action against Venezuela and Iran.",
+					"As the war in Iran has entered its second month with no negotiations yet scheduled between the major combatants, President Trump is facing several interlocking decisions that will determine how long American forces will stay engaged in the battle, and with what kind of risks.",
+					"The most pressing choice seems to be whether he should narrow his war aims in hopes of pushing through a negotiated settlement with a new crop of Iranian leaders. Talking to reporters on Sunday night aboard Air Force One, Mr.",
+					"But if the Iranians continue to rebuff him, claiming as they did on Monday that there is nothing to talk about until the United States and Israel stop bombing Iranian territory, he has different choices to make."
+				]
+			},
+			{
+				"title": "Trump tells allies ‘get your own oil’, says Iran war could end in 2-3 weeks",
+				"url": "https://www.aljazeera.com/news/2026/4/1/trump-tells-allies-get-your-own-oil-says-iran-war-could-end-in-2-3-weeks?traffic_source=rss",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Under pressure as domestic petrol prices soar, US president says no deal needed to end war on Iran.",
+				"page_age": "2026-04-01T00:14:19",
+				"family_friendly": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "aljazeera.com",
+					"hostname": "www.aljazeera.com",
+					"favicon": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8",
+					"path": "› news  › 2026  › 4  › 1  › trump-tells-allies-get-your-own-oil-says-iran-war-could-end-in-2-3-weeks"
+				},
+				"source": "https://www.aljazeera.com/news/2026/4/1/trump-tells-allies-get-your-own-oil-says-iran-war-could-end-in-2-3-weeks?traffic_source=rss",
+				"breaking": true,
+				"is_live": false,
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/1dVWUCJuq85yyZB7cMx9I68v-CFDB4LIF9Qdir1lvrU/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vQWg2Q20t/Qjlnc1FvVkFYTkdu/YXNySERwb0ZmQ1JJ/WkREUm1vYk83VUxZ/WS9yczpmaXQ6NjI4/OjQwMDoxOjAvZzpj/ZS9hSFIwY0hNNkx5/OTNkM2N1L1lXeHFZ/WHBsWlhKaExtTnYv/YlM5M2NDMWpiMjUw/Wlc1MC9MM1Z3Ykc5/aFpITXZNakF5L05p/OHdNeTh5TURJMkxU/QXovTFRNeFZESXlN/VE13T0ZwZi9PVE13/TkRJME9URmZVa015/L1dVWkxRVmMzV1RO/S1gxSlUvVWsxQlJG/QmZNMTlWVTBFdC9W/RkpWVFZBdE1UYzNO/VEF3L01EUTVOaTVx/Y0djX2NtVnovYVhw/bFBURTVNakFsTWtN/eC9ORFF3",
+					"original": "https://imgs.search.brave.com/Ah6Cm-B9gsQoVAXNGnasrHDpoFfCRIZDDRmobO7ULYY/rs:fit:628:400:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wMy8yMDI2LTAz/LTMxVDIyMTMwOFpf/OTMwNDI0OTFfUkMy/WUZLQVc3WTNKX1JU/Uk1BRFBfM19VU0Et/VFJVTVAtMTc3NTAw/MDQ5Ni5qcGc_cmVz/aXplPTE5MjAlMkMx/NDQw"
+				},
+				"age": "2 days ago",
+				"extra_snippets": [
+					"President Donald Trump has said the United States could stop attacking Iran within two to three weeks and that a deal is not necessary to end a war that has disrupted energy supplies and shaken the global economy.",
+					"His comments came as Iranian Minister of Foreign Affairs Abbas Araghchi told Al Jazeera on Tuesday that no negotiations are going on with Washington despite direct and indirect exchanges of messages, nearly five weeks after the US and Israel began attacking Iran.",
+					"He noted that it would not be “as easy for Trump to just walk out” of a conflict that has spread across the region and killed thousands of people – mostly in Iran and Lebanon, where Israel has launched a ground invasion in conjunction with aerial bombardment – including many civilians.",
+					"Trump’s comments came as domestic petrol prices jumped past an average of $4 a gallon (3.8 litres) as a result of Iran’s attacks on Gulf oil facilities and its continued squeezing of fuel supplies through the Strait of Hormuz, a vital waterway through which one-fifth of the world’s oil and liquified natural gas passes."
+				]
+			}
+		],
+		"mutated_by_goggles": false
+	},
+	"videos": {
+		"type": "videos",
+		"results": [
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=dcDMxvpeNEI",
+				"title": "Trump signals Iran war could end soon but gives mixed signals on ...",
+				"description": "The Trump administration is sending more military forces to the Middle East, while at the same time saying Iran has asked for a ceasefire, a claim Iranian of...",
+				"age": "17 hours ago",
+				"page_age": "2026-04-01T22:21:10",
+				"fetched_content_timestamp": 1775087026,
+				"video": {
+					"duration": "08:49",
+					"creator": "PBS NewsHour",
+					"publisher": "YouTube"
+				},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Wg4wjE5SHAargkzePU3eSLmWgVz84BEZk1SjSglJK_U/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/_KjA4SpNLjb4rtrb4YPeBxDdU4_8UaS8DDcO0jHCrhM/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9k/Y0RNeHZwZU5FSS9t/YXhyZXNkZWZhdWx0/LmpwZw",
+					"original": "https://i.ytimg.com/vi/dcDMxvpeNEI/maxresdefault.jpg"
+				}
+			},
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=jaG89e1JIH0",
+				"title": "US President Trump says Iran war objectives 'nearing completion' ...",
+				"description": "US President Donald Trump has told the nation in a televised speech that the US military has nearly completed its goals in the Iran war. He vowed to strike I...",
+				"age": "3 hours ago",
+				"page_age": "2026-04-02T11:30:38",
+				"fetched_content_timestamp": 1775132220,
+				"video": {
+					"duration": "12:12",
+					"creator": "BBC News",
+					"publisher": "YouTube"
+				},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Wg4wjE5SHAargkzePU3eSLmWgVz84BEZk1SjSglJK_U/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/koSIIKWe7BOVbtd3zOPXjcjxOELZCfpaCxI3vSLC1sU/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9q/YUc4OWUxSklIMC9t/YXhyZXNkZWZhdWx0/LmpwZw",
+					"original": "https://i.ytimg.com/vi/jaG89e1JIH0/maxresdefault.jpg"
+				}
+			},
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=atA3X7eC49U",
+				"title": "Trump makes his case for Iran war in 1st national address since ...",
+				"description": "President Donald Trump said U.S. forces will “finish the job” in Iran soon Wednesday night in his first national address since the conflict began more than a...",
+				"age": "4 hours ago",
+				"page_age": "2026-04-02T10:50:00",
+				"fetched_content_timestamp": 1775133179,
+				"video": {
+					"duration": "02:10",
+					"creator": "NBC4 Washington",
+					"publisher": "YouTube"
+				},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Wg4wjE5SHAargkzePU3eSLmWgVz84BEZk1SjSglJK_U/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/rk4p9un3vElH0WqVlkeeeTGvOh3DF1ocqxpEfSB8VvY/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9h/dEEzWDdlQzQ5VS9o/cWRlZmF1bHQuanBn",
+					"original": "https://i.ytimg.com/vi/atA3X7eC49U/hqdefault.jpg"
+				}
+			},
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=UDsxiuIkCF4",
+				"title": "Trump declares Iran war is ‘nearing completion’ - YouTube",
+				"description": "In his first public address since the U.S.-Israel war against Iran began, U.S. President Donald Trump touted his accomplishments in the conflict and said it ...",
+				"age": "12 hours ago",
+				"page_age": "2026-04-02T02:58:10",
+				"fetched_content_timestamp": 1775108886,
+				"video": {
+					"duration": "11:36",
+					"creator": "CBC News: The National",
+					"publisher": "YouTube"
+				},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Wg4wjE5SHAargkzePU3eSLmWgVz84BEZk1SjSglJK_U/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/FeQN-U43F1Ofbm2MYudG7hu84Jndhu7_14O9fn9ELZk/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9V/RHN4aXVJa0NGNC9t/YXhyZXNkZWZhdWx0/LmpwZw",
+					"original": "https://i.ytimg.com/vi/UDsxiuIkCF4/maxresdefault.jpg"
+				}
+			},
+			{
+				"type": "video_result",
+				"url": "https://www.youtube.com/watch?v=vc1Gb5jYOxY",
+				"title": "Iran War: Trump threatens to pull US out of NATO over lack of support ...",
+				"description": "President Trump has said he is considering withdrawing the US from Nato, after the refusal of US allies to join the US-Israeli war against Iran.In a Truth So...",
+				"age": "17 hours ago",
+				"page_age": "2026-04-01T21:40:43",
+				"fetched_content_timestamp": 1775084849,
+				"video": {
+					"duration": "05:10",
+					"creator": "BBC News",
+					"publisher": "YouTube"
+				},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "youtube.com",
+					"hostname": "www.youtube.com",
+					"favicon": "https://imgs.search.brave.com/Wg4wjE5SHAargkzePU3eSLmWgVz84BEZk1SjSglJK_U/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+					"path": "› watch"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/5JkMdN7dFuQc9cgnxdlCNLN0y5n6unZWlkZiMyATFWo/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS92/YzFHYjVqWU94WS9t/YXhyZXNkZWZhdWx0/LmpwZw",
+					"original": "https://i.ytimg.com/vi/vc1Gb5jYOxY/maxresdefault.jpg"
+				}
+			},
+			{
+				"type": "video_result",
+				"url": "https://www.bbc.com/news/videos/ce3593gv84eo",
+				"title": "Trump says US 'on the cusp' of ending Iran war in address",
+				"description": "The president also called on countries reliant on the Strait of Hormuz to 'build up the courage' to secure it.",
+				"age": "13 hours ago",
+				"page_age": "2026-04-02T02:19:35",
+				"fetched_content_timestamp": 1775132196,
+				"video": {
+					"duration": "01:15",
+					"publisher": "BBC"
+				},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "bbc.com",
+					"hostname": "www.bbc.com",
+					"favicon": "https://imgs.search.brave.com/-9uoAONEhH31ac708C2NinDM9OjKbNcruJo3O1baQTM/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTljMGQ4ZTFj/YzcwNTIyYTU4ZDk4/ZTg5NTQ0NGQyYjQy/NzU3NTMxNDRjZGFi/NjFkMmRiNGE1MGE5/ZDhhOWMyZS93d3cu/YmJjLmNvbS8",
+					"path": "› news  › videos  › ce3593gv84eo"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/_1OVKSooT3dNnVewQ6VOtAD2VcaP7gJAfTuWx4HAcDk/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pY2hl/Zi5iYmNpLmNvLnVr/L25ld3MvMTAyNC9i/cmFuZGVkX25ld3Mv/MjNjZS9saXZlLzJk/ZTlkOWYwLTJlMzkt/MTFmMS05MzRmLTAz/NjQ2ODgzNDcyOC5q/cGc",
+					"original": "https://ichef.bbci.co.uk/news/1024/branded_news/23ce/live/2de9d9f0-2e39-11f1-934f-036468834728.jpg"
+				}
+			}
+		],
+		"mutated_by_goggles": false
+	},
+	"web": {
+		"type": "search",
+		"results": [
+			{
+				"title": "2026 Iran war - Wikipedia",
+				"url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "On <strong>28 February 2026</strong>, the United States and Israel started a war with surprise airstrikes on sites and cities across Iran, assassinating Supreme Leader Ali Khamenei and several other Iranian officials and inflicting dozens of civilian casualties. Iran responded with missile and drone strikes ...",
+				"page_age": "2026-04-02T13:45:03",
+				"profile": {
+					"name": "Wikipedia",
+					"url": "https://en.wikipedia.org/wiki/2026_Iran_war",
+					"long_name": "en.wikipedia.org",
+					"img": "https://imgs.search.brave.com/m6XxME4ek8DGIUcEPCqjRoDjf2e54EwL9pQzyzogLYk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"is_live": false,
+				"deep_results": {
+					"buttons": [
+						{
+							"type": "button_result",
+							"title": "Background",
+							"url": "https://en.wikipedia.org/wiki/2026_Iran_war#Background"
+						},
+						{
+							"type": "button_result",
+							"title": "Prelude",
+							"url": "https://en.wikipedia.org/wiki/2026_Iran_war#Prelude"
+						},
+						{
+							"type": "button_result",
+							"title": "Hostilities",
+							"url": "https://en.wikipedia.org/wiki/2026_Iran_war#Hostilities"
+						},
+						{
+							"type": "button_result",
+							"title": "Strikes and casualties",
+							"url": "https://en.wikipedia.org/wiki/2026_Iran_war#Strikes_and_casualties"
+						},
+						{
+							"type": "button_result",
+							"title": "Impact",
+							"url": "https://en.wikipedia.org/wiki/2026_Iran_war#Impact"
+						},
+						{
+							"type": "button_result",
+							"title": "Reactions",
+							"url": "https://en.wikipedia.org/wiki/2026_Iran_war#Reactions"
+						},
+						{
+							"type": "button_result",
+							"title": "Analysis",
+							"url": "https://en.wikipedia.org/wiki/2026_Iran_war#Analysis"
+						},
+						{
+							"type": "button_result",
+							"title": "Diplomatic efforts",
+							"url": "https://en.wikipedia.org/wiki/2026_Iran_war#Diplomatic_efforts"
+						}
+					]
+				},
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "en.wikipedia.org",
+					"hostname": "en.wikipedia.org",
+					"favicon": "https://imgs.search.brave.com/m6XxME4ek8DGIUcEPCqjRoDjf2e54EwL9pQzyzogLYk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw",
+					"path": "› wiki  › 2026_Iran_war"
+				},
+				"age": "1 hour ago",
+				"extra_snippets": [
+					"After the Middle Eastern crisis began in 2023, Iran and Israel exchanged missile strikes in 2024, and Israel and the US launched airstrikes against Iran in the Twelve-Day War in June 2025. In January 2026, Iranian security forces killed thousands of protesters in their crackdown of the largest Iranian protests since the 1979 Islamic Revolution.",
+					"Two ballistic missiles were reportedly launched at Diego Garcia military base on the Chagos Islands, which Iran also denied. The conflict between Hezbollah and Israel escalated into the 2026 Lebanon war, killing more than 1,000 militants and civilians by late March.",
+					"Trump administration officials have offered diverse and changing explanations for starting the war, such as to pre-empt Iranian retaliation against US assets after an expected Israeli attack on Iran, to ward off an imminent Iranian threat, to destroy Iran's missile and military capabilities, to prevent Iran obtaining a nuclear weapon, to secure Iran's oil resources, and to achieve regime change by bringing the Iranian opposition to power.",
+					"Iranian and some US officials rejected claims that Iran had been preparing an attack. The International Atomic Energy Agency said that while Iran has an \"ambitious\" nuclear program and has refused to allow inspections of its damaged sites since the 2025 war, there was no evidence of a structured nuclear weapons program when the 2026 war began."
+				]
+			},
+			{
+				"title": "Latest Analysis: War with Iran | CSIS",
+				"url": "https://www.csis.org/programs/latest-analysis-war-iran",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Iran is abandoning calibrated retaliation for rapid escalation—expanding the war across the region and raising stakes globally.",
+				"page_age": "2026-04-01T23:25:02",
+				"profile": {
+					"name": "Center for Strategic and International Studies",
+					"url": "https://www.csis.org/programs/latest-analysis-war-iran",
+					"long_name": "csis.org",
+					"img": "https://imgs.search.brave.com/0fNT0DnQNE-g0WUpFRpRp6krms9wxt5yiel9zl9uW8g/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOGVjYWQ4MjZk/MzNiMjhkNjE0MTBi/NDkzNzNlYWU1YmRl/NDFlMWMwNWI0OWMz/MGQ0NjkxN2IzZWVj/ZDgxMDQ1ZS93d3cu/Y3Npcy5vcmcv"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "csis.org",
+					"hostname": "www.csis.org",
+					"favicon": "https://imgs.search.brave.com/0fNT0DnQNE-g0WUpFRpRp6krms9wxt5yiel9zl9uW8g/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOGVjYWQ4MjZk/MzNiMjhkNjE0MTBi/NDkzNzNlYWU1YmRl/NDFlMWMwNWI0OWMz/MGQ0NjkxN2IzZWVj/ZDgxMDQ1ZS93d3cu/Y3Npcy5vcmcv",
+					"path": "  › csis programs"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/0YpjuRaGE2o3M6OqI3L_Wf6rIN2FTbbxWjn9V3Vs9MU/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9jc2lz/LXdlYnNpdGUtcHJv/ZC5zMy5hbWF6b25h/d3MuY29tL3MzZnMt/cHVibGljLzIwMjYt/MDMvR2V0dHlJbWFn/ZXMtMjI2NDM4NTAx/NF9jcm9wcGVkLmpw/Zz9WZXJzaW9uSWQ9/WWNYTXVCbTAwUUpq/UzB2VGJyaE5qaWNw/UHZGM3ZtYjQ",
+					"original": "https://csis-website-prod.s3.amazonaws.com/s3fs-public/2026-03/GettyImages-2264385014_cropped.jpg?VersionId=YcXMuBm00QJjS0vTbrhNjicpPvF3vmb4",
+					"logo": false
+				},
+				"age": "16 hours ago",
+				"extra_snippets": [
+					"In this special episode of Into Africa, Samira Gaid, founding director of Balqiis Insights, rejoins the Into Africa podcast to dive deeper into the geopolitics of the Horn and unpack how the Iran war is reverberating across the region.",
+					"What happens when the U.S. trades problem-solving for perpetual war? Commentary by Jon B. Alterman — March 23, 2026 · Iran is executing a multidomain punishment campaign across energy, cyber, and maritime systems to coerce the United States and its partners.",
+					"As the war in Iran disrupts global energy markets, Europe cannot afford to wait.",
+					"Iran is abandoning calibrated retaliation for rapid escalation—expanding the war across the region and raising stakes globally."
+				]
+			},
+			{
+				"title": "The War in Iran: Operational Progress, but Challenges Remain",
+				"url": "https://understandingwar.org/research/middle-east/the-war-in-iran-operational-progress-but-challenges-remain/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "The Iranians have developed five lines of effort to compel the United States and Israel to end the war: drone and ballistic missile attacks to inflict US and Israeli casualties and economic damage in the Gulf; drone, missile, and naval attacks including mines to disrupt shipping in the Persian Gulf; proxy attacks from Hezbollah and other Iranian-backed groups; global terrorism; and cyber attacks on critical infrastructure.[1] The US-Israeli combined campaign has focused on stopping drone, ballistic missile, and traditional naval attacks most urgently because these assets are the most essential Iranian tools that Tehran needs to execute its strategy.[2] Both aerial and naval drones remain a threat to shipping and oil infrastructure in the Gulf, and the threat of Iranian mining of the Strait remains real, if complex.",
+				"page_age": "2026-03-15T18:10:13",
+				"profile": {
+					"name": "Institute for the Study of War",
+					"url": "https://understandingwar.org/research/middle-east/the-war-in-iran-operational-progress-but-challenges-remain/",
+					"long_name": "understandingwar.org",
+					"img": "https://imgs.search.brave.com/oXOW56nqReVNvr7NY2_PpP6RWwiUx0U0ta1SFxVMjng/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMzkxZDYxN2E1/MWZhN2ExNDc4MzU4/ZGZiOWJiOGQ1NmM2/MjRiOWM4YjUwZDEx/M2I2NTIzNDE0MGRm/NTY4YzI5Zi91bmRl/cnN0YW5kaW5nd2Fy/Lm9yZy8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "understandingwar.org",
+					"hostname": "understandingwar.org",
+					"favicon": "https://imgs.search.brave.com/oXOW56nqReVNvr7NY2_PpP6RWwiUx0U0ta1SFxVMjng/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMzkxZDYxN2E1/MWZhN2ExNDc4MzU4/ZGZiOWJiOGQ1NmM2/MjRiOWM4YjUwZDEx/M2I2NTIzNDE0MGRm/NTY4YzI5Zi91bmRl/cnN0YW5kaW5nd2Fy/Lm9yZy8",
+					"path": "  › home  › the war in iran: operational progress, but challenges remain"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/bmG4Tur7sPWS_Rzj_W9-mEZ_43J_1Zn7Qt5eZaIHVWU/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly91bmRl/cnN0YW5kaW5nd2Fy/Lm9yZy93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNS8wNS9JU1cy/MExvZ28yMDI4dGh1/bWJuYWlsczIwMjYy/MGNvdmVyMjBpbWFn/ZTI5XzE4LmpwZw",
+					"original": "https://understandingwar.org/wp-content/uploads/2025/05/ISW20Logo2028thumbnails202620cover20image29_18.jpg",
+					"logo": true
+				},
+				"age": "3 weeks ago",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Stefaniia Bern"
+						}
+					],
+					"date": "Mar 15, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "Understanding War",
+						"url": "https://understandingwar.org/",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/gWfGkttGppC6XuUTtfJtado9REdVWlEuEJc6oXlWPi8/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly91bmRl/cnN0YW5kaW5nd2Fy/Lm9yZy93cC1jb250/ZW50L3VwbG9hZHMv/MjAyNS8wOC8yNS0y/NDAtMDctSVNXLVJl/c2VhcmNoLUxpYnJh/cnktR3JhcGhpY18x/MDgweDEwODAud2Vi/cA",
+							"original": "https://understandingwar.org/wp-content/uploads/2025/08/25-240-07-ISW-Research-Library-Graphic_1080x1080.webp"
+						}
+					}
+				},
+				"organization": {
+					"type": "organization",
+					"name": "Understanding War",
+					"contact_points": []
+				},
+				"extra_snippets": [
+					"The war in Iran is currently in a phase in which the military trajectory is relatively positive: the United States is steadily destroying Iran’s ability to use its most essential tool in the war — drone and missile attacks — which in turn underpin the entire Iranian strategy.",
+					"Iran has still done some damage to US forces, and it is still firing drones and missiles, though the overall attack rate is slowly decreasing. These attacks still pale in comparison to the major attacks Iran sought to conduct in an existential war and have caused neither operationally significant damage nor widespread casualties.",
+					"The Iranians have developed five lines of effort to compel the United States and Israel to end the war: drone and ballistic missile attacks to inflict US and Israeli casualties and economic damage in the Gulf; drone, missile, and naval attacks including mines to disrupt shipping in the Persian Gulf; proxy attacks from Hezbollah and other Iranian-backed groups; global terrorism; and cyber attacks on critical infrastructure.[1] The US-Israeli combined campaign has focused on stopping drone, ballistic missile, and traditional naval attacks most urgently because these assets are the most essential Iranian tools that Tehran needs to execute its strategy.[2] Both aerial and naval drones remain a threat to shipping and oil infrastructure in the Gulf, and the threat of Iranian mining of the Strait remains real, if complex.",
+					"Iran’s military weakness relative to the United States led it to adopt an asymmetric strategy against Washington that seeks to outlast Washington rather than to militarily defeat it outright.[3] The various lines of effort that comprise this strategy have changed over the years, but during this war, Iran has relied on the five key efforts outlined above."
+				]
+			},
+			{
+				"title": "Reuters Iran War: Latest Breaking News, Updates & Analysis | Reuters",
+				"url": "https://www.reuters.com/world/iran/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Real-time Reuters coverage of the <strong>Iran war</strong>: US-Israel strikes, Iranian retaliation, nuclear threats, oil market shocks, and regional war risks.",
+				"page_age": "2026-04-02T13:54:05",
+				"profile": {
+					"name": "Reuters",
+					"url": "https://www.reuters.com/world/iran/",
+					"long_name": "reuters.com",
+					"img": "https://imgs.search.brave.com/g-LRPAPxrx_Eqo7F4IKC-Guqa4ONApD9n_VKZlqfqWo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMzE0MWM3N2Ji/ZjQ3ZDhmYzI3NjMz/ODNjYTRiMGI4MjM4/OTExMzRkM2E1ODI4/MjI4YzA0ZWQ0OTRk/YWY5YTQwMy93d3cu/cmV1dGVycy5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "reuters.com",
+					"hostname": "www.reuters.com",
+					"favicon": "https://imgs.search.brave.com/g-LRPAPxrx_Eqo7F4IKC-Guqa4ONApD9n_VKZlqfqWo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMzE0MWM3N2Ji/ZjQ3ZDhmYzI3NjMz/ODNjYTRiMGI4MjM4/OTExMzRkM2E1ODI4/MjI4YzA0ZWQ0OTRk/YWY5YTQwMy93d3cu/cmV1dGVycy5jb20v",
+					"path": "› world  › iran"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/07b2w1xf-HYyOD6A4MZWQR4ney4IhDnhu7jOJIAtAf0/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/cmV1dGVycy5jb20v/cGYvcmVzb3VyY2Vz/L2ltYWdlcy9yZXV0/ZXJzL3JldXRlcnMt/ZGVmYXVsdC53ZWJw/P2Q9MzU1",
+					"original": "https://www.reuters.com/pf/resources/images/reuters/reuters-default.webp?d=355",
+					"logo": false
+				},
+				"age": "1 hour ago",
+				"extra_snippets": [
+					"U.S. defense stocks have declined even as the Iran war drags on, indicating that the typical \"buy-on-conflict\" trade had largely peaked in the ​weeks before in anticipation of tougher action by President Donald Trump.",
+					"Indian police this week seized 414 cooking‑gas canisters hidden in a graveyard in Hyderabad city and arrested those involved in ​trying to sell them on the black market amid shortages ‌due to the Iran war, a government official said on Thursday.",
+					"A diplomatic outcast a year ago, Pakistan has become a trusted regional partner and a mediator between the U.S. and Iran to end the war in the Middle East, a remarkable transformation for the South Asian nation driven mostly by its powerful military chief, Field Marshal Asim Munir.",
+					"Dozens of countries sought ways to restart vital energy shipments through the Strait of Hormuz after U.S. ​President Donald Trump vowed more aggressive strikes on Iran, pushing oil prices back up to damaging levels."
+				]
+			},
+			{
+				"title": "Trump Says U.S. Military Campaign in Iran to Wind Down and Plans National Address - The New York Times",
+				"url": "https://www.nytimes.com/live/2026/03/31/world/iran-war-oil-trump",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Iran’s foreign minister, Abbas Araghchi, said on Tuesday that his country had neither responded to a 15-point peace proposal from the United States nor made a counteroffer. He denied any formal negotiations were taking place, despite President Trump’s claim that talks were going well. The war kept grinding ahead on Tuesday.",
+				"page_age": "2026-04-02T03:30:03",
+				"profile": {
+					"name": "NYTimes",
+					"url": "https://www.nytimes.com/live/2026/03/31/world/iran-war-oil-trump",
+					"long_name": "The New York Times",
+					"img": "https://imgs.search.brave.com/lWA-zkTMlWM2cUvrcYa1Fls86e-Vl-rkSBOjichQqVs/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMGFlZWRkYmVh/YWFhZmFjYjM4MWYy/NTQzZmExMTIwN2Nm/NGJmZjgwYTRhYjI5/OTliM2JkYmI2MWY0/M2RlOGFlMi93d3cu/bnl0aW1lcy5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "video",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "nytimes.com",
+					"hostname": "www.nytimes.com",
+					"favicon": "https://imgs.search.brave.com/lWA-zkTMlWM2cUvrcYa1Fls86e-Vl-rkSBOjichQqVs/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMGFlZWRkYmVh/YWFhZmFjYjM4MWYy/NTQzZmExMTIwN2Nm/NGJmZjgwYTRhYjI5/OTliM2JkYmI2MWY0/M2RlOGFlMi93d3cu/bnl0aW1lcy5jb20v",
+					"path": "  › world  › middle east"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/OcsrSg_jIBNURgZtksN6Xa4Pba06GQED5eDP8SQKH50/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwMS5ueXQuY29t/L2ltYWdlcy8yMDI2/LzAzLzMxL211bHRp/bWVkaWEvMzF0cnVt/cC1uZXdzLXByb21v/MDAyMGgvMzF0cnVt/cC1uZXdzLXByb21v/MDAyMGgtdmlkZW9T/aXh0ZWVuQnlOaW5l/SnVtYm8xNjAwLmpw/Zw",
+					"original": "https://static01.nyt.com/images/2026/03/31/multimedia/31trump-news-promo0020h/31trump-news-promo0020h-videoSixteenByNineJumbo1600.jpg",
+					"logo": false
+				},
+				"age": "11 hours ago",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Tyler Pager",
+							"url": "https://www.nytimes.com/by/tyler-pager"
+						},
+						{
+							"type": "person",
+							"name": "Edward Wong",
+							"url": "https://www.nytimes.com/by/edward-wong"
+						},
+						{
+							"type": "person",
+							"name": "Zolan Kanno-Youngs",
+							"url": "https://www.nytimes.com/by/zolan-kanno-youngs"
+						},
+						{
+							"type": "person",
+							"name": "Ephrat Livni",
+							"url": "https://www.nytimes.com/by/ephrat-livni"
+						},
+						{
+							"type": "person",
+							"name": "Abdi Latif Dahir",
+							"url": "https://www.nytimes.com/by/abdi-latif-dahir"
+						},
+						{
+							"type": "person",
+							"name": "Francesca Regalado",
+							"url": "https://www.nytimes.com/by/francesca-regalado"
+						},
+						{
+							"type": "person",
+							"name": "Farnaz Fassihi",
+							"url": "https://www.nytimes.com/by/farnaz-fassihi"
+						},
+						{
+							"type": "person",
+							"name": "Qasim Nauman",
+							"url": "https://www.nytimes.com/by/qasim-nauman"
+						},
+						{
+							"type": "person",
+							"name": "David E. Sanger",
+							"url": "https://www.nytimes.com/by/david-e-sanger"
+						},
+						{
+							"type": "person",
+							"name": "Parin Behrooz",
+							"url": "https://www.nytimes.com/by/parin-behrooz"
+						},
+						{
+							"type": "person",
+							"name": "Dayana Iwaza and Ephrat Livni"
+						},
+						{
+							"type": "person",
+							"name": "Chris Cameron",
+							"url": "https://www.nytimes.com/by/chris-cameron"
+						},
+						{
+							"type": "person",
+							"name": "Zimasa Matiwane",
+							"url": "https://www.nytimes.com/by/zimasa-matiwane"
+						},
+						{
+							"type": "person",
+							"name": "Megan Mineiro",
+							"url": "https://www.nytimes.com/by/megan-mineiro"
+						},
+						{
+							"type": "person",
+							"name": "Anushka Patil",
+							"url": "https://www.nytimes.com/by/anushka-patil"
+						}
+					],
+					"date": "Mar 31, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "The New York Times"
+					},
+					"isAccessibleForFree": true
+				},
+				"extra_snippets": [
+					"Iran’s foreign minister, Abbas Araghchi, said on Tuesday that his country had neither responded to a 15-point peace proposal from the United States nor made a counteroffer. He denied any formal negotiations were taking place, despite President Trump’s claim that talks were going well. The war kept grinding ahead on Tuesday.",
+					"At a briefing in Washington, Gen. Dan Caine, the chairman of the Joint Chiefs of Staff, said the United States had begun flying B-52 bombers over Iranian territory for the first time since the war started, a sign that Iran’s air defenses had been significantly damaged.",
+					"The suspect is a member of the Iranian-allied paramilitary group Kataib Hezbollah, two senior Iraqi security officials said. Gas prices: Gasoline in the United States crossed an average of $4 a gallon on Tuesday, a threshold it hadn’t reached since August 2022. The S&P 500 surged nearly 3 percent on hopes that the war will come to an end soon.",
+					"Casualties: The Human Rights Activists News Agency said at least 1,598 civilians had been killed, including 244 children, in Iran since the war began. Lebanon’s health ministry said that more than 1,260 Lebanese had been killed as of Tuesday, with more than 3,750 others wounded, since the latest fighting between Israel and Hezbollah began."
+				]
+			},
+			{
+				"title": "Twenty questions (and expert answers) about the Iran war - Atlantic Council",
+				"url": "https://www.atlanticcouncil.org/dispatches/twenty-questions-and-expert-answers-about-the-iran-war/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "As US-Israeli forces strike Iran and Iran retaliates across the Middle East, Atlantic Council experts bring clarity to the fast-moving events.",
+				"page_age": "2026-03-16T20:49:20",
+				"profile": {
+					"name": "Atlantic Council",
+					"url": "https://www.atlanticcouncil.org/dispatches/twenty-questions-and-expert-answers-about-the-iran-war/",
+					"long_name": "atlanticcouncil.org",
+					"img": "https://imgs.search.brave.com/FuRQkWfzCIJmCCQX3Cw06k2J3WrLGvJct7sSDdzE5hk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTgwNzgyNGNl/MTViNmYxNDcwYTQ4/YzcyYzFkN2NjOWRm/NGEwZDBjNWM3OTQw/YTE3NzYyMzMzOWNj/YTdjNjEwNi93d3cu/YXRsYW50aWNjb3Vu/Y2lsLm9yZy8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "atlanticcouncil.org",
+					"hostname": "www.atlanticcouncil.org",
+					"favicon": "https://imgs.search.brave.com/FuRQkWfzCIJmCCQX3Cw06k2J3WrLGvJct7sSDdzE5hk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTgwNzgyNGNl/MTViNmYxNDcwYTQ4/YzcyYzFkN2NjOWRm/NGEwZDBjNWM3OTQw/YTE3NzYyMzMzOWNj/YTdjNjEwNi93d3cu/YXRsYW50aWNjb3Vu/Y2lsLm9yZy8",
+					"path": "  › home  › twenty questions (and expert answers) about the iran war"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/chxkUa5qzwUjfbb02XWYkHLoh7hQvKq6aP0zhxLkYMk/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YXRsYW50aWNjb3Vu/Y2lsLm9yZy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNi8wMy8y/MDI2LTAzLTA5VDE1/NTcyOFpfMTM4Mjgx/NjIyNl9NVDFTT1BB/RkFTSFRBUkkyOTcy/X1JUUk1BRFBfM19T/T1BBLXNjYWxlZC5q/cGc",
+					"original": "https://www.atlanticcouncil.org/wp-content/uploads/2026/03/2026-03-09T155728Z_1382816226_MT1SOPAFASHTARI2972_RTRMADP_3_SOPA-scaled.jpg",
+					"logo": false
+				},
+				"age": "2 weeks ago",
+				"extra_snippets": [
+					"Iranian forces and proxies are striking back across the Middle East. Global financial and energy markets are full of volatility. And questions abound about the future trajectory of this conflict and its wider consequences. Below, Atlantic Council experts pierce the fog of war with clarifying answers to twenty of the most pressing questions about these fast-moving events.",
+					"Israel almost certainly has set as a strategic objective the collapse of the Iranian regime. That is an expansion of initial goals following the June 2025 twelve-day war. In that conflict, Israeli and US strikes significantly set back the Iranian nuclear program.",
+					"So far, with a few deadly Iranian missile attacks but Israel’s defenses otherwise holding, the campaign seems to most Israelis to be both necessary and being conducted at a tolerable price. What is less clear is how well the Israeli goal of regime change matches the United States’ objectives, or if it does, how long that will remain the case. Trump and his administration have offered inconsistent explanations of the war’s strategic objectives, but at least some of those calls—for “unconditional surrender” and creating the conditions that allow the Iranian people to take over their institutions—are consistent with Israeli goals.",
+					"But as oil prices spike, markets dip, shipping and supply chains are disrupted, and Iran continues to find gaps in its Arab neighbors’ air defense and cause economic and infrastructure damage, it is possible to imagine Trump seeking an earlier off-ramp with a claim of having significantly defanged the regime. Further, the prospects of regime collapse followed by chaos, civil war, instability spilling over into neighboring countries, and refugee flows is of potentially far greater concern to the United States and its Arab partners than to Israel."
+				]
+			},
+			{
+				"title": "Iran War Live Updates: Oil Prices Surge After Trump Threatens to Escalate Attacks - The New York Times",
+				"url": "https://www.nytimes.com/live/2026/04/02/world/iran-war-trump-news",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Oil prices surged and stock markets sank on Thursday, hours after President Trump declared in a national television address that the U.S. military campaign against Iran would escalate and failed to offer a clear exit strategy, though he insisted the war was an overwhelming success.",
+				"page_age": "2026-04-02T14:47:25",
+				"profile": {
+					"name": "NYTimes",
+					"url": "https://www.nytimes.com/live/2026/04/02/world/iran-war-trump-news",
+					"long_name": "The New York Times",
+					"img": "https://imgs.search.brave.com/lWA-zkTMlWM2cUvrcYa1Fls86e-Vl-rkSBOjichQqVs/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMGFlZWRkYmVh/YWFhZmFjYjM4MWYy/NTQzZmExMTIwN2Nm/NGJmZjgwYTRhYjI5/OTliM2JkYmI2MWY0/M2RlOGFlMi93d3cu/bnl0aW1lcy5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "video",
+				"is_live": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "nytimes.com",
+					"hostname": "www.nytimes.com",
+					"favicon": "https://imgs.search.brave.com/lWA-zkTMlWM2cUvrcYa1Fls86e-Vl-rkSBOjichQqVs/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMGFlZWRkYmVh/YWFhZmFjYjM4MWYy/NTQzZmExMTIwN2Nm/NGJmZjgwYTRhYjI5/OTliM2JkYmI2MWY0/M2RlOGFlMi93d3cu/bnl0aW1lcy5jb20v",
+					"path": "  › world  › middle east"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/jPnmPL4s_MZW9Wx31p0xXFsYrB4ib_AsvSLRowQD2OA/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwMS5ueXQuY29t/L2ltYWdlcy8yMDI2/LzA0LzAyL211bHRp/bWVkaWEvMDJpc3Jh/ZWwtaXJhbi1wcm9t/by1mcGp2LzAyaXNy/YWVsLWlyYW4tcHJv/bW8tZnBqdi12aWRl/b1NpeHRlZW5CeU5p/bmVKdW1ibzE2MDAu/anBn",
+					"original": "https://static01.nyt.com/images/2026/04/02/multimedia/02israel-iran-promo-fpjv/02israel-iran-promo-fpjv-videoSixteenByNineJumbo1600.jpg",
+					"logo": false
+				},
+				"age": "8 minutes ago",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Zolan Kanno-Youngs",
+							"url": "https://www.nytimes.com/by/zolan-kanno-youngs"
+						},
+						{
+							"type": "person",
+							"name": "Yan Zhuang",
+							"url": "https://www.nytimes.com/by/yan-zhuang"
+						},
+						{
+							"type": "person",
+							"name": "Jason Karaian",
+							"url": "https://www.nytimes.com/by/jason-karaian"
+						},
+						{
+							"type": "person",
+							"name": "Yeganeh Torbati and Sanam Mahoozi"
+						},
+						{
+							"type": "person",
+							"name": "Johnatan Reiss",
+							"url": "https://www.nytimes.com/by/johnatan-reiss"
+						},
+						{
+							"type": "person",
+							"name": "Farnaz Fassihi",
+							"url": "https://www.nytimes.com/by/farnaz-fassihi"
+						},
+						{
+							"type": "person",
+							"name": "Yeganeh Torbati",
+							"url": "https://www.nytimes.com/by/yeganeh-torbati"
+						},
+						{
+							"type": "person",
+							"name": "Jim Tankersley and Tatiana Firsova"
+						},
+						{
+							"type": "person",
+							"name": "Mark Landler",
+							"url": "https://www.nytimes.com/by/mark-landler"
+						},
+						{
+							"type": "person",
+							"name": "Erika Solomon",
+							"url": "https://www.nytimes.com/by/erika-solomon"
+						},
+						{
+							"type": "person",
+							"name": "Leily Nikounazar",
+							"url": "https://www.nytimes.com/by/leily-nikounazar"
+						},
+						{
+							"type": "person",
+							"name": "Edward Wong",
+							"url": "https://www.nytimes.com/by/edward-wong"
+						},
+						{
+							"type": "person",
+							"name": "Stephen Castle",
+							"url": "https://www.nytimes.com/by/stephen-castle"
+						},
+						{
+							"type": "person",
+							"name": "Aurelien Breeden",
+							"url": "https://www.nytimes.com/by/aurelien-breeden"
+						},
+						{
+							"type": "person",
+							"name": "Gregory Schmidt",
+							"url": "https://www.nytimes.com/by/gregory-schmidt"
+						}
+					],
+					"date": "Apr 02, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "The New York Times"
+					},
+					"isAccessibleForFree": true
+				},
+				"extra_snippets": [
+					"Oil prices surged and stock markets sank on Thursday, hours after President Trump declared in a national television address that the U.S. military campaign against Iran would escalate and failed to offer a clear exit strategy, though he insisted the war was an overwhelming success.",
+					"In Iran, commanders and political officials were defiant after Mr. Trump’s remarks. “We will not tolerate this vicious cycle of war, negotiations, cease-fire and then repeating the same pattern,” Esmail Baghaei, a spokesman for Iran’s foreign ministry, said in a statement on Iran’s state news broadcaster.",
+					"European frustration: President Emmanuel Macron of France snapped at Mr. Trump on Thursday, saying that his shifting statements about the Iran war were unserious and that his angry comments on the NATO alliance were unhelpful.",
+					"Death tolls: The Human Rights Activists News Agency said at least 1,606 civilians, including 244 children, had been killed in Iran since the war began. Lebanon’s health ministry said more than 1,318 Lebanese had been killed as of Wednesday since the latest fighting between Israel and Hezbollah began."
+				]
+			},
+			{
+				"title": "Iran war | AP News",
+				"url": "https://apnews.com/hub/iran",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "U.S. applications for unemployment benefits fell last week as layoffs remain sparse despite a softening labor market and rising energy costs due to the <strong>Iran war</strong>.",
+				"page_age": "2026-04-02T05:45:03",
+				"profile": {
+					"name": "AP News",
+					"url": "https://apnews.com/hub/iran",
+					"long_name": "apnews.com",
+					"img": "https://imgs.search.brave.com/-_32qKbk4nzvzQ3RP6w9el0V0iswWgQP6EG3HIKvQ2s/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOWJlOGE2ODEz/ZDcxYzRjZDBjMzMw/OTZiMWM3ZDUwNjJk/ZTMyZDY3N2U5NTg4/ZDZhNDk3NzFiZjdh/OGQ0YTFmNi9hcG5l/d3MuY29tLw"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "apnews.com",
+					"hostname": "apnews.com",
+					"favicon": "https://imgs.search.brave.com/-_32qKbk4nzvzQ3RP6w9el0V0iswWgQP6EG3HIKvQ2s/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOWJlOGE2ODEz/ZDcxYzRjZDBjMzMw/OTZiMWM3ZDUwNjJk/ZTMyZDY3N2U5NTg4/ZDZhNDk3NzFiZjdh/OGQ0YTFmNi9hcG5l/d3MuY29tLw",
+					"path": "› hub  › iran"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/qvh2ICxRQpT7yBY-AAkHHw7Svqt4LdhvxQdNNxS96pg/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9kaW1z/LmFwbmV3cy5jb20v/ZGltczQvZGVmYXVs/dC9lNzdmMWRmLzIx/NDc0ODM2NDcvc3Ry/aXAvZmFsc2UvY3Jv/cC82MDAweDQwMDAr/MCswL3Jlc2l6ZS85/ODB4NjUzIS9xdWFs/aXR5LzkwLz91cmw9/aHR0cHMlM0ElMkYl/MkZhc3NldHMuYXBu/ZXdzLmNvbSUyRmQ4/JTJGNGUlMkZkYjEy/ZDY5ZTUyMzU4NjFl/NTJiYWI4YWJiOWI1/JTJGNTRkMTE2YjU0/MmExNDNhZGIwODVi/NTc4Yzk0NzJjNzA",
+					"original": "https://dims.apnews.com/dims4/default/e77f1df/2147483647/strip/false/crop/6000x4000+0+0/resize/980x653!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fd8%2F4e%2Fdb12d69e5235861e52bab8abb9b5%2F54d116b542a143adb085b578c9472c70",
+					"logo": false
+				},
+				"age": "9 hours ago",
+				"extra_snippets": [
+					"Today’s live updates have ended. Follow more live coverage on the Iran war.",
+					"U.S. applications for unemployment benefits fell last week as layoffs remain sparse despite a softening labor market and rising energy costs due to the Iran war."
+				]
+			},
+			{
+				"title": "Trump says Iran war could wrap up in 2-3 weeks as conflict pushes gas prices over $4 a gallon",
+				"url": "https://www.cbsnews.com/live-updates/iran-war-gas-price-4-dollar-gallon-oil-trump-isfahan-desalination-plant/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "President Trump indicated the <strong>Iran war</strong> may wrap up &quot;very soon&quot; and he could abandon efforts to force Iran to reopen the Strait of Hormuz, as the war pushed U.S. gas prices over the $4 mark.",
+				"page_age": "2026-04-01T07:31:00",
+				"profile": {
+					"name": "CBS News",
+					"url": "https://www.cbsnews.com/live-updates/iran-war-gas-price-4-dollar-gallon-oil-trump-isfahan-desalination-plant/",
+					"long_name": "cbsnews.com",
+					"img": "https://imgs.search.brave.com/WMJ84WFf8h1hcjjVVUUmzl0nnJIhOkOa5cdJGjXcdWk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNDUwNTNjY2I0/ZTJkMTA1NjkzNzQ3/Mzg4OGQ4ZDNmZjg0/YTFmYzhhZjBkMTU2/N2ZkNDA4MmZjZTM4/YTI3MTllMS93d3cu/Y2JzbmV3cy5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "cbsnews.com",
+					"hostname": "www.cbsnews.com",
+					"favicon": "https://imgs.search.brave.com/WMJ84WFf8h1hcjjVVUUmzl0nnJIhOkOa5cdJGjXcdWk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNDUwNTNjY2I0/ZTJkMTA1NjkzNzQ3/Mzg4OGQ4ZDNmZjg0/YTFmYzhhZjBkMTU2/N2ZkNDA4MmZjZTM4/YTI3MTllMS93d3cu/Y2JzbmV3cy5jb20v",
+					"path": "  › world  › trump says iran war could wrap up in 2-3 weeks as gas prices rise"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/ABxrCC4kdCoV1gqgR8WN7PXX7e5r3DbWc7Omz4T8wZA/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMzLmNic25ld3Nz/dGF0aWMuY29tL2h1/Yi9pL3IvMjAyNi8w/My8zMS9hNDJhNzc1/Ni01MWZlLTQzODQt/YjU2MC1jODhkZmJi/N2NiOGEvdGh1bWJu/YWlsLzEyMDB4NjMw/L2Q0MzZiYTI5ZDI0/Yzg1ZDg3ZjZjYjk2/MWE0MzU1ZjNjL29p/bC10YW5rZXItaXJh/bi13YXItYWwtc2Fs/bWkta3V3YWl0Lmpw/Zw",
+					"original": "https://assets3.cbsnewsstatic.com/hub/i/r/2026/03/31/a42a7756-51fe-4384-b560-c88dfbb7cb8a/thumbnail/1200x630/d436ba29d24c85d87f6cb961a4355f3c/oil-tanker-iran-war-al-salmi-kuwait.jpg",
+					"logo": false
+				},
+				"age": "1 day ago",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Tucker  Reals",
+							"url": "https://www.cbsnews.com/team/tucker-reals/"
+						},
+						{
+							"type": "person",
+							"name": "Kathryn  Watson",
+							"url": "https://www.cbsnews.com/team/kathryn-watson/"
+						},
+						{
+							"type": "person",
+							"name": "Stefan  Becket",
+							"url": "https://www.cbsnews.com/team/stefan-becket/"
+						}
+					],
+					"date": "Mar 31, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "CBS News",
+						"url": "https://www.cbsnews.com/",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/H8-F6pKAlBfbON7B46v499OsPKvwffdYYMd-5ufJ_S4/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/Y2JzbmV3cy5jb20v/YXNzZXRzL3N0YW5k/YWxvbmUvY2JzbmV3/cy1sb2dvLXdoaXRl/LTYwMHg2MC5wbmc",
+							"original": "https://www.cbsnews.com/assets/standalone/cbsnews-logo-white-600x60.png"
+						}
+					}
+				},
+				"extra_snippets": [
+					"Follow updates on the war in the Middle East for Wednesday, April 1, here. See earlier developments below. President Trump told reporters Tuesday he expects U.S. operations in Iran to wrap up in \"two weeks, maybe three.\"",
+					"After he renewed his threat to attack Iran's civilian energy and water infrastructure if no deal is reached to end the war, Iranian state media said a water desalination plant on an island near the Strait of Hormuz was out of commission after being hit.",
+					"Energy markets continued to convulse over uncertainty about the war, sending the average price of a gallon of gas in the U.S. over $4 for the first time in almost four years as a massive tanker loaded with crude was hit by an Iranian drone off Dubai's coast.",
+					"Yemen's Houthis on Wednesday claimed a missile attack targeting Israel that they said was launched jointly with their backer Iran and Lebanon's Hezbollah, which is also a Tehran proxy. It was the third such attack claimed by the Houthis since they entered the Middle East war."
+				]
+			},
+			{
+				"title": "Iran war live: US, Israel step up strikes; Tehran vows retaliation | US-Israel war on Iran News | Al Jazeera",
+				"url": "https://www.aljazeera.com/news/liveblog/2026/4/2/iran-war-live-trump-to-address-nation-tehran-denies-seeking-ceasefire",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Trump says US will bomb Iran &#x27;back to the Stone Ages&#x27;, but Iranian military warns it will escalate retaliatory attacks.",
+				"page_age": "2026-04-02T14:45:09",
+				"profile": {
+					"name": "Al Jazeera",
+					"url": "https://www.aljazeera.com/news/liveblog/2026/4/2/iran-war-live-trump-to-address-nation-tehran-denies-seeking-ceasefire",
+					"long_name": "aljazeera.com",
+					"img": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "video",
+				"is_live": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "aljazeera.com",
+					"hostname": "www.aljazeera.com",
+					"favicon": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8",
+					"path": "› news  › liveblog  › 2026  › 4  › 2  › iran-war-live-trump-to-address-nation-tehran-denies-seeking-ceasefire"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/Elzgyy6PmWuqooGhQeyyZTVmsy9goc02ddcCdEMlQ9s/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wNC8yMDI2LTA0/LTAxVDEyNTEyNFpf/MTc4NzQ1Mzk2NV9S/QzJCR0tBVEdHSFFf/UlRSTUFEUF8zX0lS/QU4tQ1JJU0lTLTE3/NzUwODUwNzguanBn/P3Jlc2l6ZT0xOTIw/JTJDMTQ0MA",
+					"original": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-01T125124Z_1787453965_RC2BGKATGGHQ_RTRMADP_3_IRAN-CRISIS-1775085078.jpg?resize=1920%2C1440",
+					"logo": false
+				},
+				"age": "10 minutes ago",
+				"video": {
+					"thumbnail": {
+						"src": "https://imgs.search.brave.com/Elzgyy6PmWuqooGhQeyyZTVmsy9goc02ddcCdEMlQ9s/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wNC8yMDI2LTA0/LTAxVDEyNTEyNFpf/MTc4NzQ1Mzk2NV9S/QzJCR0tBVEdHSFFf/UlRSTUFEUF8zX0lS/QU4tQ1JJU0lTLTE3/NzUwODUwNzguanBn/P3Jlc2l6ZT0xOTIw/JTJDMTQ0MA",
+						"original": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-01T125124Z_1787453965_RC2BGKATGGHQ_RTRMADP_3_IRAN-CRISIS-1775085078.jpg?resize=1920%2C1440"
+					}
+				},
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Fiona Kelliher",
+							"url": "https://www.aljazeera.com/author/fiona-kelliher"
+						},
+						{
+							"type": "person",
+							"name": "Usaid Siddiqui",
+							"url": "https://www.aljazeera.com/author/usaid_siddiqui_190806110228727"
+						},
+						{
+							"type": "person",
+							"name": "Umut Uras",
+							"url": "https://www.aljazeera.com/author/umut_uras_201269161842731602"
+						},
+						{
+							"type": "person",
+							"name": "Nils Adler",
+							"url": "https://www.aljazeera.com/author/nils-adler"
+						}
+					],
+					"date": "Apr 02, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "Al Jazeera",
+						"url": "https://www.aljazeera.com",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/adsztfkoAdl9un8txHcPDIrHmaUnD5hApzdWA8wWVVk/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS9pbWFnZXMvbG9n/b19hamUucG5n",
+							"original": "https://www.aljazeera.com/images/logo_aje.png"
+						}
+					}
+				},
+				"extra_snippets": [
+					"Trump says US will bomb Iran ‘back to the Stone Ages’, but Iranian military warns it will escalate retaliatory attacks.",
+					"During his address to the nation on Wednesday, Trump said the US is close to completing its core objectives in Iran, but didn’t offer a firm timeline for when the conflict might end.",
+					"Iran says Tehran will continue to “fight back”. Read more"
+				]
+			},
+			{
+				"title": "Iran War: Latest News, Live Coverage and Video | NBC News",
+				"url": "https://www.nbcnews.com/world/iran-war",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Follow <strong>Iran war</strong> news as the Trump administration weighs next steps. The U.S. first launched strikes against the country on Feb. 28.",
+				"page_age": "2026-04-02T04:45:03",
+				"profile": {
+					"name": "NBC News",
+					"url": "https://www.nbcnews.com/world/iran-war",
+					"long_name": "nbcnews.com",
+					"img": "https://imgs.search.brave.com/eI6piNjPQhnQicFjMZFpnZ2HlEkQUna_5IQn9Awm0PU/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNzJjOWM3M2Qx/ODU2MGYwNDE1MTFk/ZGZiYTRhYjUwNDg3/NjU3NjhkMjJjMWEx/MWU5NjFiYzRiN2Rj/ZmE1NzUzMC93d3cu/bmJjbmV3cy5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "nbcnews.com",
+					"hostname": "www.nbcnews.com",
+					"favicon": "https://imgs.search.brave.com/eI6piNjPQhnQicFjMZFpnZ2HlEkQUna_5IQn9Awm0PU/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNzJjOWM3M2Qx/ODU2MGYwNDE1MTFk/ZGZiYTRhYjUwNDg3/NjU3NjhkMjJjMWEx/MWU5NjFiYzRiN2Rj/ZmE1NzUzMC93d3cu/bmJjbmV3cy5jb20v",
+					"path": "› world  › iran-war"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/vBSsuncMbTSirCz1cWoyKfecAMKlrRccHZolCUtgKfg/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jbGRucnkucy1u/YmNuZXdzLmNvbS9p/bWFnZS91cGxvYWQv/cm9ja2Ntcy8yMDI2/LTAzL2lyYW4td2Fy/LXBhZ2UtaGVhZGVy/LWY5NDNhZS5qcGc",
+					"original": "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2026-03/iran-war-page-header-f943ae.jpg",
+					"logo": false
+				},
+				"age": "10 hours ago",
+				"extra_snippets": [
+					"In his first prime-time address to the American public about the conflict, Trump said the U.S. will strike Iran \"back to the Stone Ages\" in the \"next two to three weeks.\" ... Trump's approach to the war in Iran is emblematic of how he has pushed the boundaries of presidential power both at home and overseas.",
+					"Shelly Kittleson is thought to have been taken by Iranian-backed militants on the streets of Baghdad. ... President Donald Trump will provide an update on the war in a speech Wednesday night, addressing a nation that has voiced opposition to his course of action in Iran.",
+					"Iran has targeted Gulf states with an average of 120 drone attacks per day since the war's start.",
+					"The South Asian nation has emerged as an unlikely mediator in the U.S.-Israeli war with Iran as it engages in its most severe fighting in decades with neighboring Afghanistan."
+				]
+			},
+			{
+				"title": "Iran war updates: Attacks on infrastructure; UNIFIL peacekeeper killed | US-Israel war on Iran News | Al Jazeera",
+				"url": "https://www.aljazeera.com/news/liveblog/2026/3/29/iran-war-live-houthis-attack-israel-anti-war-protesters-rally-in-tel-aviv",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "These were the updates on the <strong>US-Israeli war on Iran on Sunday, March 29, 2026</strong>.",
+				"page_age": "2026-03-30T12:00:05",
+				"profile": {
+					"name": "Al Jazeera",
+					"url": "https://www.aljazeera.com/news/liveblog/2026/3/29/iran-war-live-houthis-attack-israel-anti-war-protesters-rally-in-tel-aviv",
+					"long_name": "aljazeera.com",
+					"img": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "video",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "aljazeera.com",
+					"hostname": "www.aljazeera.com",
+					"favicon": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8",
+					"path": "› news  › liveblog  › 2026  › 3  › 29  › iran-war-live-houthis-attack-israel-anti-war-protesters-rally-in-tel-aviv"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/xhR9j4uXREhGYTdp47hnB-QBvxahND686zC5XzYisxM/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wMy9BUDI2MDg3/NTEyMjQxNTY3LTE3/NzQ3MzkzNzMuanBn/P3Jlc2l6ZT0xOTIw/JTJDMTQ0MA",
+					"original": "https://www.aljazeera.com/wp-content/uploads/2026/03/AP26087512241567-1774739373.jpg?resize=1920%2C1440",
+					"logo": false
+				},
+				"age": "3 days ago",
+				"video": {
+					"duration": "02:17",
+					"thumbnail": {
+						"src": "https://imgs.search.brave.com/xhR9j4uXREhGYTdp47hnB-QBvxahND686zC5XzYisxM/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wMy9BUDI2MDg3/NTEyMjQxNTY3LTE3/NzQ3MzkzNzMuanBn/P3Jlc2l6ZT0xOTIw/JTJDMTQ0MA",
+						"original": "https://www.aljazeera.com/wp-content/uploads/2026/03/AP26087512241567-1774739373.jpg?resize=1920%2C1440"
+					}
+				},
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Ted Regencia",
+							"url": "https://www.aljazeera.com/author/ted_regencia_201281121442856892"
+						},
+						{
+							"type": "person",
+							"name": "Caolán Magee",
+							"url": "https://www.aljazeera.com/author/caolan-magee"
+						},
+						{
+							"type": "person",
+							"name": "Virginia Pietromarchi",
+							"url": "https://www.aljazeera.com/author/virginia_pietromarchi_190125132105953"
+						},
+						{
+							"type": "person",
+							"name": "Christine Maguire",
+							"url": "https://www.aljazeera.com/author/christine-maguire"
+						},
+						{
+							"type": "person",
+							"name": "Urooba Jamal",
+							"url": "https://www.aljazeera.com/author/urooba_jamal_200403132107947"
+						},
+						{
+							"type": "person",
+							"name": "Zaid Sabah",
+							"url": "https://www.aljazeera.com/author/zaid-sabahh"
+						}
+					],
+					"date": "Mar 29, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "Al Jazeera",
+						"url": "https://www.aljazeera.com",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/adsztfkoAdl9un8txHcPDIrHmaUnD5hApzdWA8wWVVk/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS9pbWFnZXMvbG9n/b19hamUucG5n",
+							"original": "https://www.aljazeera.com/images/logo_aje.png"
+						}
+					}
+				}
+			},
+			{
+				"title": "Trump Claims Military Success but Offers No Clear Timeline to End Fighting - The New York Times",
+				"url": "https://www.nytimes.com/live/2026/04/01/world/iran-war-trump-oil-news",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Trump insisted that talks were continuing with Iran, multiple U.S. intelligence agencies have assessed in recent days that Tehran is not currently willing to engage in substantial negotiations. The assessments say the Iranian government believes it is in a strong position in the war and does not have to accede to America’s diplomatic demands, officials said.",
+				"page_age": "2026-04-02T14:26:19",
+				"profile": {
+					"name": "NYTimes",
+					"url": "https://www.nytimes.com/live/2026/04/01/world/iran-war-trump-oil-news",
+					"long_name": "The New York Times",
+					"img": "https://imgs.search.brave.com/lWA-zkTMlWM2cUvrcYa1Fls86e-Vl-rkSBOjichQqVs/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMGFlZWRkYmVh/YWFhZmFjYjM4MWYy/NTQzZmExMTIwN2Nm/NGJmZjgwYTRhYjI5/OTliM2JkYmI2MWY0/M2RlOGFlMi93d3cu/bnl0aW1lcy5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "video",
+				"is_live": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "nytimes.com",
+					"hostname": "www.nytimes.com",
+					"favicon": "https://imgs.search.brave.com/lWA-zkTMlWM2cUvrcYa1Fls86e-Vl-rkSBOjichQqVs/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMGFlZWRkYmVh/YWFhZmFjYjM4MWYy/NTQzZmExMTIwN2Nm/NGJmZjgwYTRhYjI5/OTliM2JkYmI2MWY0/M2RlOGFlMi93d3cu/bnl0aW1lcy5jb20v",
+					"path": "  › world  › middle east"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/b8fuMKQbv6JdCSio_pW2voJEFAJYaUPIhn8KW60SV1g/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwMS5ueXQuY29t/L2ltYWdlcy8yMDI2/LzA0LzAxL211bHRp/bWVkaWEvMDFpc3Jh/ZWwtaXJhbi1saXZl/LXByb21vMTBwLzAx/aXNyYWVsLWlyYW4t/bGl2ZS1oZWFkZXI5/MzBwLWNxbXctdmlk/ZW9TaXh0ZWVuQnlO/aW5lSnVtYm8xNjAw/LmpwZw",
+					"original": "https://static01.nyt.com/images/2026/04/01/multimedia/01israel-iran-live-promo10p/01israel-iran-live-header930p-cqmw-videoSixteenByNineJumbo1600.jpg",
+					"logo": false
+				},
+				"age": "29 minutes ago",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Zolan Kanno-Youngs",
+							"url": "https://www.nytimes.com/by/zolan-kanno-youngs"
+						},
+						{
+							"type": "person",
+							"name": "Luke Broadwater",
+							"url": "https://www.nytimes.com/by/luke-broadwater"
+						},
+						{
+							"type": "person",
+							"name": "Tyler Pager",
+							"url": "https://www.nytimes.com/by/tyler-pager"
+						},
+						{
+							"type": "person",
+							"name": "The New York Times",
+							"url": "https://www.nytimes.com/by/the-new-york-times"
+						},
+						{
+							"type": "person",
+							"name": "Rich Barbieri",
+							"url": "https://www.nytimes.com/by/rich-barbieri"
+						},
+						{
+							"type": "person",
+							"name": "Anton Troianovski",
+							"url": "https://www.nytimes.com/by/anton-troianovski"
+						},
+						{
+							"type": "person",
+							"name": "Tony Romm",
+							"url": "https://www.nytimes.com/by/tony-romm"
+						},
+						{
+							"type": "person",
+							"name": "David E. Sanger",
+							"url": "https://www.nytimes.com/by/david-e-sanger"
+						},
+						{
+							"type": "person",
+							"name": "Helene Cooper",
+							"url": "https://www.nytimes.com/by/helene-cooper"
+						},
+						{
+							"type": "person",
+							"name": "Julian E. Barnes",
+							"url": "https://www.nytimes.com/by/julian-e-barnes"
+						},
+						{
+							"type": "person",
+							"name": "Chris Cameron",
+							"url": "https://www.nytimes.com/by/chris-cameron"
+						},
+						{
+							"type": "person",
+							"name": "Mark Mazzetti",
+							"url": "https://www.nytimes.com/by/mark-mazzetti"
+						},
+						{
+							"type": "person",
+							"name": "Eve Sampson",
+							"url": "https://www.nytimes.com/by/eve-sampson"
+						},
+						{
+							"type": "person",
+							"name": "Edward Wong",
+							"url": "https://www.nytimes.com/by/edward-wong"
+						},
+						{
+							"type": "person",
+							"name": "Farnaz Fassihi",
+							"url": "https://www.nytimes.com/by/farnaz-fassihi"
+						}
+					],
+					"date": "Apr 01, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "The New York Times"
+					},
+					"isAccessibleForFree": true
+				},
+				"extra_snippets": [
+					"Instead, he described the military action against Iran as an overwhelming success and seemingly pleaded for concerned Americans uneasy about its costs and open-ended timeline to “keep this conflict in perspective.” · Mr. Trump ticked through the durations of the United States’ involvement in past conflicts, including the wars in Iraq and Vietnam, for the purpose of reminding Americans that the campaign against Iran had just entered its second month.",
+					"But a large number are undamaged, and Iran continues to fire missiles in the region. The speech at times resembled the kind of sober address Americans might expect to see at the start of a war, or even before it, when a president makes a case for why the time for military action is necessary.",
+					"Mr. Trump did not travel the country delivering extensive speeches laying out that justification before the war, and the speech Wednesday night was his first prime-time address from the White House since the attacks on Iran began on Feb.",
+					"Trump insisted that talks were continuing with Iran, multiple U.S. intelligence agencies have assessed in recent days that Tehran is not currently willing to engage in substantial negotiations. The assessments say the Iranian government believes it is in a strong position in the war and does not have to accede to America’s diplomatic demands, officials said."
+				]
+			},
+			{
+				"title": "Iranian city 'hit hard' by strikes, say residents, while video shows huge blasts at missile base - BBC News",
+				"url": "https://www.bbc.com/news/live/c36r5p1l7w3t",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "It adds that, overnight, Britain&#x27;s RAF Regiment gunners &quot;successfully downed multiple Iranian drones&quot; operating in a &quot;high-threat area&quot; overnight. ... UN Secretary General António Guterres just spoke to reporters in New York, where he called for an immediate end to the war and cessation of hostilities on all sides.",
+				"page_age": "2026-04-03T13:18:00",
+				"profile": {
+					"name": "BBC",
+					"url": "https://www.bbc.com/news/live/c36r5p1l7w3t",
+					"long_name": "British Broadcasting Corporation",
+					"img": "https://imgs.search.brave.com/-9uoAONEhH31ac708C2NinDM9OjKbNcruJo3O1baQTM/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTljMGQ4ZTFj/YzcwNTIyYTU4ZDk4/ZTg5NTQ0NGQyYjQy/NzU3NTMxNDRjZGFi/NjFkMmRiNGE1MGE5/ZDhhOWMyZS93d3cu/YmJjLmNvbS8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"is_live": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "bbc.com",
+					"hostname": "www.bbc.com",
+					"favicon": "https://imgs.search.brave.com/-9uoAONEhH31ac708C2NinDM9OjKbNcruJo3O1baQTM/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvYTljMGQ4ZTFj/YzcwNTIyYTU4ZDk4/ZTg5NTQ0NGQyYjQy/NzU3NTMxNDRjZGFi/NjFkMmRiNGE1MGE5/ZDhhOWMyZS93d3cu/YmJjLmNvbS8",
+					"path": "› news  › live  › c36r5p1l7w3t"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/QRGzlyLzQmdZ4CKsU0FSBfFpNe1L0WKv6LIhxc7MNJM/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pY2hl/Zi5iYmNpLmNvLnVr/L2FjZS9icmFuZGVk/X25ld3MvMTIwMC9j/cHNwcm9kcGIvODEx/OS9saXZlL2FmOGI1/YTMwLTJlOWItMTFm/MS1iMjk3LTk1YjBh/MGE4MzMxZS5qcGc",
+					"original": "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/8119/live/af8b5a30-2e9b-11f1-b297-95b0a0a8331e.jpg",
+					"logo": false
+				},
+				"age": "in 1 day",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "BBC News",
+							"url": "https://www.bbc.co.uk/news"
+						}
+					],
+					"date": "Apr 01, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "BBC News",
+						"url": "https://www.bbc.co.uk/news",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/6_-fAcXZHQaWJCvs20ER-vBnu8TTYjbI-ztKof0m7y0/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuZmlsZXMuYmJj/aS5jby51ay9jb3Jl/L3dlYnNpdGUvYXNz/ZXRzL3N0YXRpYy9u/ZXdzL2ltYWdlcy9t/ZXRhZGF0YS9wb3N0/ZXItMTAyNHg1NzYu/NWY0MDRhOGI4Yi5w/bmc",
+							"original": "https://static.files.bbci.co.uk/core/website/assets/static/news/images/metadata/poster-1024x576.5f404a8b8b.png"
+						}
+					}
+				},
+				"extra_snippets": [
+					"It adds that, overnight, Britain's RAF Regiment gunners \"successfully downed multiple Iranian drones\" operating in a \"high-threat area\" overnight. ... UN Secretary General António Guterres just spoke to reporters in New York, where he called for an immediate end to the war and cessation of hostilities on all sides.",
+					"He goes on to say: \"My message is clear, to the United States and Israel, it is high time to stop the war that is inflicting immense human suffering and already triggering devastating economic consequences. ... Mohammad-Bagher Ghalibaf, the speaker of Iran's parliament, says seven million Iranians have volunteered for military service since the start of the war with Israel and the US.",
+					"We've had an update from the United Arab Emirates Ministry of Defence, which says that they have \"engaged with\" 19 missiles and 26 drones launched from Iran today. The ministry says in its update on X that since the war began, the UAE's air defences have tackled around 457 missiles and 2,038 drones.",
+					"Given its current cultural, demographic, and economic structures, especially considering its historical experience, Iran has a strong capacity for reconstruction.” · Meanwhile, a woman in her 40s in Tehran says: “I hope he won’t do it. I’m worried that he might want to strike all the oil and energy industries and infrastructure and completely destroy them. Rebuilding all of that takes a very long time.” ... Macron, and his wife Brigitte, are in South Korea today where they paid a visit to the war memorial in Seoul"
+				]
+			},
+			{
+				"title": "Day 33 of Middle East conflict — Trump’s first address to the nation on Iran war | CNN",
+				"url": "https://www.cnn.com/2026/04/01/world/live-news/iran-war-us-trump-oil",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "But Albanese told the National Press Club that he believed that Iran’s air force, navy and military-industrial base had been degraded – as had its capacity to launch missiles. “Now those objectives have been realized, it is not clear what more needs to be achieved – or what the endpoint looks like,” he said in his speech. Albanese has repeatedly said that he wants to see a de-escalation, and for Trump to take into account the war’s economic impact on the rest of the world.",
+				"page_age": "2026-04-02T05:45:05",
+				"profile": {
+					"name": "CNN",
+					"url": "https://www.cnn.com/2026/04/01/world/live-news/iran-war-us-trump-oil",
+					"long_name": "Cable News Network",
+					"img": "https://imgs.search.brave.com/tV1joo3SHuITYemc5OsCps2_N9Toz6zArm5dNdbSoMs/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNWE3MWZjOTZk/NGRhM2RmZDQzMjZh/NjE3OGQ3NzQ3MDI5/NDJiOGI2ZDdkZDFj/ODI3N2MzYWU3OGU4/YzQ3YTNkNC93d3cu/Y25uLmNvbS8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "video",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "cnn.com",
+					"hostname": "www.cnn.com",
+					"favicon": "https://imgs.search.brave.com/tV1joo3SHuITYemc5OsCps2_N9Toz6zArm5dNdbSoMs/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNWE3MWZjOTZk/NGRhM2RmZDQzMjZh/NjE3OGQ3NzQ3MDI5/NDJiOGI2ZDdkZDFj/ODI3N2MzYWU3OGU4/YzQ3YTNkNC93d3cu/Y25uLmNvbS8",
+					"path": "› 2026  › 04  › 01  › world  › live-news  › iran-war-us-trump-oil"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/zttscgSnBfEFAshh5r8mcJP91yPSZyaXeM_TkZ6B75g/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5jbm4uY29tL2Fw/aS92MS9pbWFnZXMv/c3RlbGxhci9wcm9k/LzIwMjYtMDMtMzF0/MjIxMTM1ei03NDcz/NDIwMDMtcmMyeWZr/YXhmb2x6LXJ0cm1h/ZHAtMy11c2EtdHJ1/bXAuSlBHP2M9MTZ4/OSZxPXdfODAwLGNf/ZmlsbA",
+					"original": "https://media.cnn.com/api/v1/images/stellar/prod/2026-03-31t221135z-747342003-rc2yfkaxfolz-rtrmadp-3-usa-trump.JPG?c=16x9&q=w_800,c_fill",
+					"logo": false
+				},
+				"age": "9 hours ago",
+				"video": {
+					"duration": "01:03",
+					"thumbnail": {
+						"src": "https://imgs.search.brave.com/1HwKUyNwn6E5QsvYdnYEs-r3FXH-8OKpq8hhySohjbU/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5jbm4uY29tL2Fw/aS92MS9pbWFnZXMv/c3RlbGxhci9wcm9k/L3N0aWxsLTIyNTA1/MDEwLTEzMjI5LTA3/LXN0aWxsLmpwZz9j/PW9yaWdpbmFs",
+						"original": "https://media.cnn.com/api/v1/images/stellar/prod/still-22505010-13229-07-still.jpg?c=original"
+					}
+				},
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Lex Harvey",
+							"url": "https://www.cnn.com/profiles/lex-harvey"
+						},
+						{
+							"type": "person",
+							"name": "John Liu",
+							"url": "https://www.cnn.com/profiles/john-liu"
+						},
+						{
+							"type": "person",
+							"name": "Hilary Whiteman",
+							"url": "https://www.cnn.com/profiles/hilary-whiteman"
+						},
+						{
+							"type": "person",
+							"name": "Adam Cancryn",
+							"url": "https://www.cnn.com/profiles/adam-cancryn"
+						},
+						{
+							"type": "person",
+							"name": "Kit Maher",
+							"url": "https://www.cnn.com/profiles/kit-maher-profile"
+						},
+						{
+							"type": "person",
+							"name": "Alayna Treene",
+							"url": "https://www.cnn.com/profiles/alayna-treene"
+						},
+						{
+							"type": "person",
+							"name": "Dalia Abdelwahab"
+						},
+						{
+							"type": "person",
+							"name": "Betsy Klein",
+							"url": "https://www.cnn.com/profiles/betsy-klein"
+						},
+						{
+							"type": "person",
+							"name": "Tori B. Powell",
+							"url": "https://www.cnn.com/profiles/tori-powell"
+						},
+						{
+							"type": "person",
+							"name": "Donald Judd",
+							"url": "https://www.cnn.com/profiles/donald-judd"
+						},
+						{
+							"type": "person",
+							"name": "Kevin Liptak",
+							"url": "https://www.cnn.com/profiles/kevin-liptak-profile"
+						},
+						{
+							"type": "person",
+							"name": "Nina Giraldo"
+						},
+						{
+							"type": "person",
+							"name": "Kylie Atwood",
+							"url": "https://www.cnn.com/profiles/kylie-atwood"
+						},
+						{
+							"type": "person",
+							"name": "Jennifer Hansler",
+							"url": "https://www.cnn.com/profiles/jennifer-hansler"
+						},
+						{
+							"type": "person",
+							"name": "Adam Pourahmadi",
+							"url": "https://www.cnn.com/profiles/adam-pourahmadi"
+						}
+					],
+					"date": "Apr 01, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "CNN",
+						"url": "https://www.cnn.com",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/9qx4iKQ36QJxNDILmjxI6UCMic3Kt_gxZRjHYvrIQZQ/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5jbm4uY29tL2Fw/aS92MS9pbWFnZXMv/c3RlbGxhci9wcm9k/L2NubmxvZ28ucG5n/P3E9d182MCxoXzYx",
+							"original": "https://media.cnn.com/api/v1/images/stellar/prod/cnnlogo.png?q=w_60,h_61"
+						}
+					},
+					"isAccessibleForFree": false
+				},
+				"extra_snippets": [
+					"However, Trump signaled that the US is prepared to intensify its military response in the remaining time period and threatened to bring Iran “back to the stone ages.” · • NATO criticism: Trump said in a new interview he would consider having the US leave NATO and again criticized the alliance for what he said was lackluster military support for the war.",
+					"With energy infrastructure in the region damaged and lengthy supply disruptions, analysts have warned that global oil prices are likely to remain elevated for an extended period, even if the war ends soon. ... Link Copied! ... A person stands in front of an electronic stock board showing Japan's Nikkei index at a securities firm in Tokyo on Tuesday. ... Asian stocks traded downward on Thursday, as US President Donald Trump repeated vows to hit Iran hard for another few weeks, sending oil prices surging.",
+					"We are going to hit them extremely hard over the next two to three weeks,” Trump said during his address, while reiterating that the war is “nearing completion.” · But Trump’s speech – offering few details of his exit strategy – did little to calm oil markets, as both the global and US oil benchmarks surged following his address. ... Link Copied! ... Australia's Prime Minister Anthony Albanese attends a press conference at Parliament House in Canberra, Australia, on March 10. ... Australia is among the close US allies feeling the economic fallout of the Iran war, as it relies heavily on oil shipped via the Strait of Hormuz.",
+					"But Albanese told the National Press Club that he believed that Iran’s air force, navy and military-industrial base had been degraded – as had its capacity to launch missiles. “Now those objectives have been realized, it is not clear what more needs to be achieved – or what the endpoint looks like,” he said in his speech. Albanese has repeatedly said that he wants to see a de-escalation, and for Trump to take into account the war’s economic impact on the rest of the world."
+				]
+			},
+			{
+				"title": "Iran war updates: Pezeshkian urges US public to question gov’t war motives | US-Israel war on Iran News | Al Jazeera",
+				"url": "https://www.aljazeera.com/news/liveblog/2026/4/1/iran-live-trump-says-no-deal-needed-to-end-war-isfahan-steel-plants-hit",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "These were the updates about the <strong>US-Israeli war on Iran on Wednesday, April 1, 2026</strong>.",
+				"page_age": "2026-04-02T00:10:04",
+				"profile": {
+					"name": "Al Jazeera",
+					"url": "https://www.aljazeera.com/news/liveblog/2026/4/1/iran-live-trump-says-no-deal-needed-to-end-war-isfahan-steel-plants-hit",
+					"long_name": "aljazeera.com",
+					"img": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "video",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "aljazeera.com",
+					"hostname": "www.aljazeera.com",
+					"favicon": "https://imgs.search.brave.com/v6ofD8-UxOz25FG97pc7hKftp3PxiHPGAa1WXzanNHo/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjJhNzgzMzNk/Y2FkMjdkN2I5YWFh/YzcwZmE1Y2U4YWY2/MzU4ZTg5YTc3ZDZi/NzRhMDFkNzkzY2I4/NWYzMWNjOC93d3cu/YWxqYXplZXJhLmNv/bS8",
+					"path": "› news  › liveblog  › 2026  › 4  › 1  › iran-live-trump-says-no-deal-needed-to-end-war-isfahan-steel-plants-hit"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/lMGjnnMJalmsj-SsJM_LAWt4F7XItpe64IvrseytokQ/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wMi8yMDI2LTAy/LTExVDEwMjQ1N1pf/MTM1NjQyODY1N19S/QzJMSkpBNDdNVlNf/UlRSTUFEUF8zX0lS/QU4tQ1JJU0lTLVBS/T1RFU1QtMS0xNzcx/NzUyNDgxLmpwZz9y/ZXNpemU9MTIwMCUy/QzYzMA",
+					"original": "https://www.aljazeera.com/wp-content/uploads/2026/02/2026-02-11T102457Z_1356428657_RC2LJJA47MVS_RTRMADP_3_IRAN-CRISIS-PROTEST-1-1771752481.jpg?resize=1200%2C630",
+					"logo": false
+				},
+				"age": "15 hours ago",
+				"video": {
+					"duration": "04:21",
+					"thumbnail": {
+						"src": "https://imgs.search.brave.com/lMGjnnMJalmsj-SsJM_LAWt4F7XItpe64IvrseytokQ/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wMi8yMDI2LTAy/LTExVDEwMjQ1N1pf/MTM1NjQyODY1N19S/QzJMSkpBNDdNVlNf/UlRSTUFEUF8zX0lS/QU4tQ1JJU0lTLVBS/T1RFU1QtMS0xNzcx/NzUyNDgxLmpwZz9y/ZXNpemU9MTIwMCUy/QzYzMA",
+						"original": "https://www.aljazeera.com/wp-content/uploads/2026/02/2026-02-11T102457Z_1356428657_RC2LJJA47MVS_RTRMADP_3_IRAN-CRISIS-PROTEST-1-1771752481.jpg?resize=1200%2C630"
+					}
+				},
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Ted Regencia",
+							"url": "https://www.aljazeera.com/author/ted_regencia_201281121442856892"
+						},
+						{
+							"type": "person",
+							"name": "Lyndal Rowlands",
+							"url": "https://www.aljazeera.com/author/lyndal_rowlands_170519012102404"
+						},
+						{
+							"type": "person",
+							"name": "Zaid Sabah",
+							"url": "https://www.aljazeera.com/author/zaid-sabahh"
+						},
+						{
+							"type": "person",
+							"name": "Fiona Kelliher",
+							"url": "https://www.aljazeera.com/author/fiona-kelliher"
+						},
+						{
+							"type": "person",
+							"name": "Stephen Quillen",
+							"url": "https://www.aljazeera.com/author/quillens"
+						},
+						{
+							"type": "person",
+							"name": "Nils Adler",
+							"url": "https://www.aljazeera.com/author/nils-adler"
+						},
+						{
+							"type": "person",
+							"name": "Umut Uras",
+							"url": "https://www.aljazeera.com/author/umut_uras_201269161842731602"
+						},
+						{
+							"type": "person",
+							"name": "Usaid Siddiqui",
+							"url": "https://www.aljazeera.com/author/usaid_siddiqui_190806110228727"
+						}
+					],
+					"date": "Apr 01, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "Al Jazeera",
+						"url": "https://www.aljazeera.com",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/adsztfkoAdl9un8txHcPDIrHmaUnD5hApzdWA8wWVVk/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/YWxqYXplZXJhLmNv/bS9pbWFnZXMvbG9n/b19hamUucG5n",
+							"original": "https://www.aljazeera.com/images/logo_aje.png"
+						}
+					}
+				}
+			},
+			{
+				"title": "Iran war's \"core strategic objectives are nearing completion,\" Trump says",
+				"url": "https://www.cbsnews.com/live-updates/iran-war-trump-nato-tehran-threatens-us-tech-companies-strait-of-hormuz/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Follow updates on the war in the Middle East for Thursday, April 2, here. See earlier developments below. President Trump gave an update on the <strong>Iran war</strong> Wednesday night, saying the operation&#x27;s &quot;core strategic objectives are nearing completion,&quot; citing the degradation of the country&#x27;s missiles, drones and navy.",
+				"page_age": "2026-04-02T03:32:00",
+				"profile": {
+					"name": "CBS News",
+					"url": "https://www.cbsnews.com/live-updates/iran-war-trump-nato-tehran-threatens-us-tech-companies-strait-of-hormuz/",
+					"long_name": "cbsnews.com",
+					"img": "https://imgs.search.brave.com/WMJ84WFf8h1hcjjVVUUmzl0nnJIhOkOa5cdJGjXcdWk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNDUwNTNjY2I0/ZTJkMTA1NjkzNzQ3/Mzg4OGQ4ZDNmZjg0/YTFmYzhhZjBkMTU2/N2ZkNDA4MmZjZTM4/YTI3MTllMS93d3cu/Y2JzbmV3cy5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "cbsnews.com",
+					"hostname": "www.cbsnews.com",
+					"favicon": "https://imgs.search.brave.com/WMJ84WFf8h1hcjjVVUUmzl0nnJIhOkOa5cdJGjXcdWk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNDUwNTNjY2I0/ZTJkMTA1NjkzNzQ3/Mzg4OGQ4ZDNmZjg0/YTFmYzhhZjBkMTU2/N2ZkNDA4MmZjZTM4/YTI3MTllMS93d3cu/Y2JzbmV3cy5jb20v",
+					"path": "  › world  › iran war's \"core strategic objectives are nearing completion,\" trump says"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/Qiap6fAz92FVo_JiAIH_mr0z9WZ1WGogSYtgJZe-pzI/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMyLmNic25ld3Nz/dGF0aWMuY29tL2h1/Yi9pL3IvMjAyNi8w/NC8wMi9kNzAzMWVh/NS1mYzlmLTRmZjct/ODZlNi0zZTE1MDk1/YTVkYjQvdGh1bWJu/YWlsLzEyMDB4NjMw/LzVhN2I1NDcyZDBm/YThlOTU3YjI0YjVj/NWJjOWM0NWI1L2Fw/MjYwOTEyMTc1NzU0/NzEuanBn",
+					"original": "https://assets2.cbsnewsstatic.com/hub/i/r/2026/04/02/d7031ea5-fc9f-4ff7-86e6-3e15095a5db4/thumbnail/1200x630/5a7b5472d0fa8e957b24b5c5bc9c45b5/ap26091217575471.jpg",
+					"logo": false
+				},
+				"age": "11 hours ago",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Tucker  Reals",
+							"url": "https://www.cbsnews.com/team/tucker-reals/"
+						},
+						{
+							"type": "person",
+							"name": "Joe  Walsh",
+							"url": "https://www.cbsnews.com/team/joe-walsh/"
+						},
+						{
+							"type": "person",
+							"name": "Kerry  Breen",
+							"url": "https://www.cbsnews.com/team/kerry-breen/"
+						}
+					],
+					"date": "Apr 01, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "CBS News",
+						"url": "https://www.cbsnews.com/",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/H8-F6pKAlBfbON7B46v499OsPKvwffdYYMd-5ufJ_S4/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/Y2JzbmV3cy5jb20v/YXNzZXRzL3N0YW5k/YWxvbmUvY2JzbmV3/cy1sb2dvLXdoaXRl/LTYwMHg2MC5wbmc",
+							"original": "https://www.cbsnews.com/assets/standalone/cbsnews-logo-white-600x60.png"
+						}
+					}
+				},
+				"extra_snippets": [
+					"Follow updates on the war in the Middle East for Thursday, April 2, here. See earlier developments below. President Trump gave an update on the Iran war Wednesday night, saying the operation's \"core strategic objectives are nearing completion,\" citing the degradation of the country's missiles, drones and navy.",
+					"Trump said, adding that they will hit Iran \"extremely hard\" over the next two to three weeks. Crude oil futures spiked more than 5% after the president's speech while stock futures slid, reversing a drop in oil prices and a stock market rally from earlier in the day amid hopes that the war might conclude soon.",
+					"Mr. Trump has told Britain's Telegraph newspaper he could attempt to pull the U.S. out of the transatlantic NATO alliance it's led for more than seven decades, as he vents frustration at America's closest allies for declining to join the U.S.-Israeli war on Iran.",
+					"Markets have been looking out for signs that the Iran war will end soon. But during his speech, the president didn't offer a more definitive timeline for the war's conclusion, instead warning the U.S. will hit Iran \"extremely hard\" over the next few weeks. He also encouraged countries dependent on oil from the Middle East to \"take\" the Strait of Hormuz without a plan for the U.S."
+				]
+			},
+			{
+				"title": "Iran–Israel war",
+				"url": "https://en.wikipedia.org/wiki/Iran%E2%80%93Israel_war",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Iran–Israel conflict during the Syrian civil war · 2024 Iran–Israel conflict · Twelve-Day War · 2026 <strong>Iran war</strong> · Iranian strikes on Israel · Israeli strikes on Iran · Categories: Conflicts in 2024 · Conflicts in 2025 · Conflicts in 2026 · Set index articles ·",
+				"page_age": "2026-04-01T17:52:57",
+				"profile": {
+					"name": "Wikipedia",
+					"url": "https://en.wikipedia.org/wiki/Iran%E2%80%93Israel_war",
+					"long_name": "en.wikipedia.org",
+					"img": "https://imgs.search.brave.com/m6XxME4ek8DGIUcEPCqjRoDjf2e54EwL9pQzyzogLYk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "generic",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "en.wikipedia.org",
+					"hostname": "en.wikipedia.org",
+					"favicon": "https://imgs.search.brave.com/m6XxME4ek8DGIUcEPCqjRoDjf2e54EwL9pQzyzogLYk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNjQwNGZhZWY0/ZTQ1YWUzYzQ3MDUw/MmMzMGY3NTQ0ZjNj/NDUwMDk5ZTI3MWRk/NWYyNTM4N2UwOTE0/NTI3ZDQzNy9lbi53/aWtpcGVkaWEub3Jn/Lw",
+					"path": "› wiki  › Iran–Israel_war"
+				},
+				"age": "1 day ago"
+			},
+			{
+				"title": "Trump says Iran war is ‘nearing completion’ as he seeks to calm economic worries - The Washington Post",
+				"url": "https://www.washingtonpost.com/politics/2026/04/01/trump-speech-iran-war/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "Facing economic and political headwinds a month after launching a surprise attack on Iran, President Donald Trump defended the increasingly unpopular conflict Wednesday night but assured the nation that the military operation in the Middle East was “nearing completion.”",
+				"page_age": "2026-04-02T14:07:03",
+				"profile": {
+					"name": "Washington Post",
+					"url": "https://www.washingtonpost.com/politics/2026/04/01/trump-speech-iran-war/",
+					"long_name": "The Washington Post",
+					"img": "https://imgs.search.brave.com/4yzTgv9d96amD_EyXMO7bEaNNDnMJkqj9bkTT9KwWRY/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMzU2NWE0M2Ew/NmI2ZTVlN2E2OTEy/NTk0ZWQ0ODFmNDg2/YTNlNjcxNWIyZGIy/OWUwZjdkMTQzNjAx/YTRiYzIwMC93d3cu/d2FzaGluZ3RvbnBv/c3QuY29tLw"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"is_live": false,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "washingtonpost.com",
+					"hostname": "www.washingtonpost.com",
+					"favicon": "https://imgs.search.brave.com/4yzTgv9d96amD_EyXMO7bEaNNDnMJkqj9bkTT9KwWRY/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMzU2NWE0M2Ew/NmI2ZTVlN2E2OTEy/NTk0ZWQ0ODFmNDg2/YTNlNjcxNWIyZGIy/OWUwZjdkMTQzNjAx/YTRiYzIwMC93d3cu/d2FzaGluZ3RvbnBv/c3QuY29tLw",
+					"path": "  › politics  › white house"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/RcJ1ivcMVTX_c_uunrod3ObNTqMiSIBEjvtHtxIbDqA/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hcmMt/YW5nbGVyZmlzaC13/YXNocG9zdC1wcm9k/LXdhc2hwb3N0LnMz/LmFtYXpvbmF3cy5j/b20vcHVibGljL1JK/MkU3RllENDZWR1lG/Q1JMVDVVQjJHWDNB/X3NpemUtbm9ybWFs/aXplZC5qcGc",
+					"original": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/RJ2E7FYD46VGYFCRLT5UB2GX3A_size-normalized.jpg&w=1600&h=900",
+					"logo": false
+				},
+				"age": "48 minutes ago",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Cleve R. Wootson Jr.",
+							"url": "https://www.washingtonpost.com/people/cleve-r-wootson-jr/"
+						},
+						{
+							"type": "person",
+							"name": "Karen DeYoung",
+							"url": "https://www.washingtonpost.com/people/karen-deyoung/"
+						}
+					],
+					"date": "Apr 02, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "The Washington Post"
+					},
+					"isAccessibleForFree": false
+				},
+				"extra_snippets": [
+					"Facing economic and political headwinds a month after launching a surprise attack on Iran, President Donald Trump defended the increasingly unpopular conflict Wednesday night but assured the nation that the military operation in the Middle East was “nearing completion.”"
+				]
+			},
+			{
+				"title": "Live Updates: Trump says Iran war will still take weeks, oil prices rise with no plan to open Strait of Hormuz",
+				"url": "https://www.cbsnews.com/live-updates/iran-war-trump-oil-prices-israel-iranian-president-letter-american-people/",
+				"is_source_local": false,
+				"is_source_both": false,
+				"description": "President Trump repeated his assertions Wednesday night that U.S. objectives are nearly met and Iran&#x27;s offensive capabilities &quot;essentially decimated&quot; after more than a month of war. In a speech, he offered no new information about those objectives, however, or any plan to reopen the Strait of Hormuz to oil tankers, vowing only to continue U.S.",
+				"page_age": "2026-04-02T14:32:05",
+				"profile": {
+					"name": "CBS News",
+					"url": "https://www.cbsnews.com/live-updates/iran-war-trump-oil-prices-israel-iranian-president-letter-american-people/",
+					"long_name": "cbsnews.com",
+					"img": "https://imgs.search.brave.com/WMJ84WFf8h1hcjjVVUUmzl0nnJIhOkOa5cdJGjXcdWk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNDUwNTNjY2I0/ZTJkMTA1NjkzNzQ3/Mzg4OGQ4ZDNmZjg0/YTFmYzhhZjBkMTU2/N2ZkNDA4MmZjZTM4/YTI3MTllMS93d3cu/Y2JzbmV3cy5jb20v"
+				},
+				"language": "en",
+				"family_friendly": true,
+				"type": "search_result",
+				"subtype": "article",
+				"is_live": true,
+				"meta_url": {
+					"scheme": "https",
+					"netloc": "cbsnews.com",
+					"hostname": "www.cbsnews.com",
+					"favicon": "https://imgs.search.brave.com/WMJ84WFf8h1hcjjVVUUmzl0nnJIhOkOa5cdJGjXcdWk/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvNDUwNTNjY2I0/ZTJkMTA1NjkzNzQ3/Mzg4OGQ4ZDNmZjg0/YTFmYzhhZjBkMTU2/N2ZkNDA4MmZjZTM4/YTI3MTllMS93d3cu/Y2JzbmV3cy5jb20v",
+					"path": "  › world  › oil prices rise after trump insists the iran war is going to plan"
+				},
+				"thumbnail": {
+					"src": "https://imgs.search.brave.com/eO8OC2f_Q_ezzh4fTTXvfr751pnYMFlZDG08Fdcyt8o/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMxLmNic25ld3Nz/dGF0aWMuY29tL2h1/Yi9pL3IvMjAyNi8w/NC8wMi9lNzI2NmVl/ZS1kNjY0LTQxMTYt/YTYyOC03OGU4ZTNl/ZWM3ODcvdGh1bWJu/YWlsLzEyMDB4NjMw/L2E4NjczNDdlZWY0/MmM5OTllNzkwNmQ1/Nzg1MDQ4OWNlL3Ry/dW1wLWlyYW4td2Fy/LWFzaWEtbWFya2V0/cy0yMjY4ODMxNjIx/LmpwZw",
+					"original": "https://assets1.cbsnewsstatic.com/hub/i/r/2026/04/02/e7266eee-d664-4116-a628-78e8e3eec787/thumbnail/1200x630/a867347eef42c999e7906d57850489ce/trump-iran-war-asia-markets-2268831621.jpg",
+					"logo": false
+				},
+				"age": "23 minutes ago",
+				"article": {
+					"author": [
+						{
+							"type": "person",
+							"name": "Tucker  Reals",
+							"url": "https://www.cbsnews.com/team/tucker-reals/"
+						}
+					],
+					"date": "Apr 02, 2026",
+					"publisher": {
+						"type": "organization",
+						"name": "CBS News",
+						"url": "https://www.cbsnews.com/",
+						"thumbnail": {
+							"src": "https://imgs.search.brave.com/H8-F6pKAlBfbON7B46v499OsPKvwffdYYMd-5ufJ_S4/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly93d3cu/Y2JzbmV3cy5jb20v/YXNzZXRzL3N0YW5k/YWxvbmUvY2JzbmV3/cy1sb2dvLXdoaXRl/LTYwMHg2MC5wbmc",
+							"original": "https://www.cbsnews.com/assets/standalone/cbsnews-logo-white-600x60.png"
+						}
+					}
+				},
+				"extra_snippets": [
+					"President Trump repeated his assertions Wednesday night that U.S. objectives are nearly met and Iran's offensive capabilities \"essentially decimated\" after more than a month of war. In a speech, he offered no new information about those objectives, however, or any plan to reopen the Strait of Hormuz to oil tankers, vowing only to continue U.S.",
+					"The decline comes after the stock market had rallied 3.5% over the previous two trading days on investor hopes that a clear end point to the war would stabilize the global energy markets. Markets will be closed Friday in observance of the Good Friday holiday. Oil prices jumped following President Trump's speech at the White House on Wednesday. Brent crude, the international standard, rose 8.1% to $109.35 per barrel, while benchmark U.S. crude climbed 12.9% to $113.03. Read more here. ... Iranian officials said Thursday that a medical research center in Tehran has been attacked, with one describing it as \"utterly outrageous.\"",
+					"Alex Plitsas, Kittleson's designated point of contact in the U.S. and a CNN national security analyst, said the U.S. government had warned Kittleson about a specific threat against her by the Iranian-backed paramilitary group Kata'ib Hezbollah, which was allegedly looking to kidnap or kill female journalists.",
+					"Iran's parliamentary speaker issued an impassioned plea on Thursday that appeared aimed squarely at the American public – driving home the incredibly public, real-time propaganda front of modern warfare introduced by social media."
+				]
+			}
+		],
+		"family_friendly": true
+	},
+	"rich": {
+		"type": "rich"
+	}
+}

@@ -27,6 +27,13 @@ public interface TransactionRepository extends JpaRepository<TransactionModel, I
     void deleteBySnIn(@Param("sns") List<Integer> sns);
 
     @Query(value = "SELECT * FROM transaction t " +
+            "WHERE EXTRACT(YEAR FROM t.date) = :year  " +
+            "AND EXTRACT(MONTH FROM t.date) = :month",
+            nativeQuery = true)
+    List<TransactionModel> queryMonthlyRecord(@Param("year") Integer year,
+                                           @Param("month") Integer month);
+
+    @Query(value = "SELECT * FROM transaction t " +
             "WHERE t.user_id = :userId " +
             "AND EXTRACT(YEAR FROM t.date) = :year " +
             "AND EXTRACT(MONTH FROM t.date) = :month",

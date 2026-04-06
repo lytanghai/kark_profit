@@ -300,7 +300,6 @@ public class ReportService {
     }
 
     @Scheduled(cron = "0 5 0 1 * ?") // 5 minutes past midnight on 1st day of month
-//    @Scheduled(cron = "0 * * * * *") //every min for testing
     public void sendMonthlyReports() {
         Date[] dateRange = DateUtils.getPreviousMonthRange();
         Date startDate = dateRange[0];

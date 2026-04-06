@@ -2,7 +2,7 @@ curl --request GET \
   --url 'https://api.search.brave.com/res/v1/web/search?q=Iran%20war&count=20&freshness=pd' \
   --header 'Accept: application/json' \
   --header 'Accept-Encoding: gzip' \
-  --header 'X-Subscription-Token: BSACSthCccR4Rn9EFiOBgODplPd4SpO'
+  --header 'X-Subscription-Token: xxx'
 
 Response:
 

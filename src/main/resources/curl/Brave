@@ -1,3 +1,21 @@
+{
+	"type": "ErrorResponse",
+	"error": {
+		"id": "4daeb864-760e-476f-afd9-d18ff16f5beb",
+		"status": 402,
+		"detail": "Usage limit exceeded.",
+		"meta": {
+			"plan": "Search",
+			"current_spend": 0.01,
+			"usage_limit": 0.01,
+			"usage_limit_type": "monthly",
+			"component": "api"
+		},
+		"code": "USAGE_LIMIT_EXCEEDED"
+	},
+	"time": 1775526378
+}
+
 curl --request GET \
   --url 'https://api.search.brave.com/res/v1/web/search?q=Iran%20war&count=20&freshness=pd' \
   --header 'Accept: application/json' \

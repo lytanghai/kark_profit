@@ -54,7 +54,9 @@ public class RestTemplateHttpClient {
         try {
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-            httpHeaders.setBearerAuth(token);
+
+            if(token != null)
+                httpHeaders.setBearerAuth(token);
 
             HttpEntity<Object> entity = new HttpEntity<>(requestBody, httpHeaders);
 

@@ -18,7 +18,7 @@ public class PolyMarketController {
 
     private final RestTemplateHttpClient restHttp;
 
-    @PostMapping("/demo")
+    @PostMapping("/request")
     public ResponseEntity<?> result(@RequestBody Map<String, Object> request) {
 
         String method = (String) request.get("method");

@@ -118,17 +118,16 @@ public class TransactionService {
                 .size(pageResult.getSize())
                 .totalPage(pageResult.getTotalPages())
                 .content(pageResult.getContent().stream()
-                        .map(m -> {
-                            return TransactionListingResponse.builder()
-                                    .sn(m.getSn())
-                                    .currency(m.getCurrency())
-                                    .date(m.getDate())
-                                    .pnl(m.getPnl()) // transformed value
-                                    .symbol(m.getSymbol())
-                                    .type(m.getType())
-                                    .userId(m.getUserId())
-                                    .build();
-                        })
+                        .sorted(Comparator.comparing(TransactionModel::getDate).reversed())
+                        .map(m -> TransactionListingResponse.builder()
+                                .sn(m.getSn())
+                                .currency(m.getCurrency())
+                                .date(m.getDate())
+                                .pnl(m.getPnl())
+                                .symbol(m.getSymbol())
+                                .type(m.getType())
+                                .userId(m.getUserId())
+                                .build())
                         .collect(Collectors.toList()))
                 .build();
 

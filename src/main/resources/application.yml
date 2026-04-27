@@ -31,7 +31,14 @@ spring:
 mailtrap:
   token: ${mailtrap.token}
 
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
 server:
+  address: 127.0.0.1
   max-http-request-header-size: 1MB
   tomcat:
     max-swallow-size: 10MB

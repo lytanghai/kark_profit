@@ -106,31 +106,6 @@ public class JwtUtils {
     }
 
     /**
-     * Helper method to check if token is expired
-     */
-    public boolean isTokenExpired(String token) {
-        try {
-            if (token != null && token.startsWith("Bearer ")) {
-                token = token.substring(7);
-            }
-
-            Date expiration = Jwts.parserBuilder()
-                    .setSigningKey(getSignKey())
-                    .build()
-                    .parseClaimsJws(token)
-                    .getBody()
-                    .getExpiration();
-
-            return expiration.before(new Date());
-
-        } catch (ExpiredJwtException e) {
-            return true;
-        } catch (JwtException e) {
-            return true;
-        }
-    }
-
-    /**
      * Get expiration date from token
      */
     public Date getExpirationDate(String token) {

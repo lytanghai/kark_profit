@@ -16,6 +16,7 @@ import com.money.kark_profit.transform.request.TableConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -84,7 +85,7 @@ public class BackupVersion2Service {
 
     public void process(String tableName, int previousMonth, int year) {
 
-        TableConfig config = getTableConfig(year, previousMonth).get(tableName);
+        TableConfig<?> config = getTableConfig(year, previousMonth).get(tableName);
 
         if (config == null) {
             throw new DatabaseException(
@@ -106,6 +107,7 @@ public class BackupVersion2Service {
 
         log.info("Email Request Sent for table: {}", tableName);
     }
+
     private void sendEmailWithAttachment(byte[] fileBytes, String tableName) {
 
         String base64 = Base64.getEncoder().encodeToString(fileBytes);
@@ -126,34 +128,37 @@ public class BackupVersion2Service {
         );
     }
 
-    public byte[] buildExcel(List<?> result, String[] fields) {
-        try (Workbook workbook = new XSSFWorkbook();
+    public byte[] buildExcel(List<?> result, List<Field> fields) {
+
+        // keep only 100 rows in memory
+        try (SXSSFWorkbook workbook = new SXSSFWorkbook(100);
              ByteArrayOutputStream out = new ByteArrayOutputStream()) {
 
             Sheet sheet = workbook.createSheet("Report");
 
-            // Header style (bold)
+            // Header style
             CellStyle headerStyle = workbook.createCellStyle();
             Font font = workbook.createFont();
             font.setBold(true);
             headerStyle.setFont(font);
 
-            // Header row
+            // Header
             Row header = sheet.createRow(0);
-            for (int i = 0; i < fields.length; i++) {
+            for (int i = 0; i < fields.size(); i++) {
                 Cell cell = header.createCell(i);
-                cell.setCellValue(fields[i]);
+                cell.setCellValue(fields.get(i).getName());
                 cell.setCellStyle(headerStyle);
             }
 
-            // Data rows
+            // Data rows (NO reflection lookup anymore)
             int rowIdx = 1;
+
             for (Object record : result) {
                 Row row = sheet.createRow(rowIdx++);
 
-                for (int j = 0; j < fields.length; j++) {
-                    Field field = record.getClass().getDeclaredField(fields[j]);
-                    field.setAccessible(true);
+                for (int j = 0; j < fields.size(); j++) {
+                    Field field = fields.get(j);
+
                     Object value = field.get(record);
 
                     Cell cell = row.createCell(j);
@@ -161,13 +166,21 @@ public class BackupVersion2Service {
                 }
             }
 
-            // Auto-size columns
-            for (int i = 0; i < fields.length; i++) {
-                sheet.autoSizeColumn(i);
+            // Avoid autoSizeColumn for large datasets (VERY expensive)
+            // Optional: only for small reports
+            if (result.size() <= 5000) {
+                for (int i = 0; i < fields.size(); i++) {
+                    sheet.autoSizeColumn(i);
+                }
             }
 
             workbook.write(out);
+
+            // Important cleanup for SXSSFWorkbook
+            workbook.dispose();
+
             return out.toByteArray();
+
         } catch (Exception e) {
             throw new RuntimeException("Failed to build Excel file", e);
         }

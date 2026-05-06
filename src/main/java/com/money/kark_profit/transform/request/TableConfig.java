@@ -1,24 +1,26 @@
 package com.money.kark_profit.transform.request;
 
+import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
+public class TableConfig<T> {
 
-import static com.money.kark_profit.service.feature.BackupService.getFieldNames;
+    private final Supplier<List<T>> queryFunction;
+    private final List<Field> fields;
 
-public class TableConfig {
-    private final Supplier<List<?>> queryFunction;
-    private final Class<?> modelClass;
-
-    public TableConfig(Supplier<List<?>> queryFunction, Class<?> modelClass) {
+    public TableConfig(Supplier<List<T>> queryFunction, Class<T> modelClass) {
         this.queryFunction = queryFunction;
-        this.modelClass = modelClass;
+        this.fields = Arrays.stream(modelClass.getDeclaredFields())
+                .peek(f -> f.setAccessible(true))
+                .toList();
     }
 
-    public List<?> fetch() {
+    public List<T> fetch() {
         return queryFunction.get();
     }
 
-    public String[] getFields() {
-        return getFieldNames(modelClass);
+    public List<Field> getFields() {
+        return fields;
     }
 }

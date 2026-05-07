@@ -43,3 +43,58 @@ server:
     max-swallow-size: 10MB
   servlet:
     context-path: /kark-profit
+
+
+# Rest Client Config
+#rest:
+#  client:
+#    # Global defaults
+#    retry:
+#      enabled: true
+#      max-attempts: 3
+#      initial-delay-millis: 1000
+#      retryable-exceptions:
+#        - java.net.SocketTimeoutException
+#        - java.net.ConnectException
+#        - Http5xx
+#    connection:
+#      connectTimeout: 5000
+#      readTimeout: 5000
+#
+#    # Default client config (overrides global)
+#    default-config:
+#      connection:
+#        connectTimeout: 10000
+#        readTimeout: 10000
+#
+#    # Client-specific configurations
+#    clients:
+#      test-application:
+#        connection:
+#          connectTimeout: 35000
+#          readTimeout: 35000
+#        retry:
+#          enabled: true
+#          max-attempts: 5
+#          initial-delay-millis: 2300
+#          retryable-exceptions:
+#            - java.net.SocketTimeoutException
+#            - java.net.ConnectException
+#            - Http5xx
+#            - Http4xx
+#
+#      retail-teller-connector:
+#        connection:
+#          connectTimeout: 40000
+#          readTimeout: 40000
+#        retry:
+#          enabled: true
+#          max-attempts: 3
+#          initial-delay-millis: 1000
+#
+#      ords-connector:
+#        connection:
+#          connectTimeout: 60000
+#          readTimeout: 40000
+#        retry:
+#          enabled: false  # No retry for this API

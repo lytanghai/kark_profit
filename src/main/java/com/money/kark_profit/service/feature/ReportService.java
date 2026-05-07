@@ -2,6 +2,7 @@ package com.money.kark_profit.service.feature;
 
 import com.money.kark_profit.cache.ConfigurationCache;
 import com.money.kark_profit.constants.ApplicationCode;
+import com.money.kark_profit.constants.ApplicationConstant;
 import com.money.kark_profit.exception.DatabaseException;
 import com.money.kark_profit.http.RestTemplateHttpClient;
 import com.money.kark_profit.model.TransactionModel;
@@ -76,14 +77,14 @@ public class ReportService {
          * (not per symbol)
          */
         BigDecimal totalDeposit = transactions.stream()
-                .filter(t -> "DEPOSIT".equalsIgnoreCase(t.getType()))
+                .filter(t -> ApplicationConstant.DEPOSIT.equalsIgnoreCase(t.getType()))
                 .map(t -> Optional.ofNullable(t.getPnl())
                         .map(BigDecimal::valueOf)
                         .orElse(BigDecimal.ZERO))
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         BigDecimal totalWithdrawal = transactions.stream()
-                .filter(t -> "WITHDRAWAL".equalsIgnoreCase(t.getType()))
+                .filter(t -> ApplicationConstant.WITHDRAWAL.equalsIgnoreCase(t.getType()))
                 .map(t -> Optional.ofNullable(t.getPnl())
                         .map(BigDecimal::valueOf)
                         .orElse(BigDecimal.ZERO))
@@ -112,11 +113,11 @@ public class ReportService {
                         .map(BigDecimal::valueOf)
                         .orElse(BigDecimal.ZERO);
 
-                if ("LOSS".equalsIgnoreCase(t.getType())) {
+                if (ApplicationConstant.LOSS.equalsIgnoreCase(t.getType())) {
                     totalLoss = totalLoss.add(pnl);
                     pnl = pnl.negate();
                 }
-                else if ("PROFIT".equalsIgnoreCase(t.getType())) {
+                else if (ApplicationConstant.PROFIT.equalsIgnoreCase(t.getType())) {
                     totalProfit = totalProfit.add(pnl);
                 }
                 else {
@@ -152,7 +153,7 @@ public class ReportService {
             BigDecimal totalWithdrawalDiv = totalWithdrawal.divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP);
             ReportResponse report = ReportResponse.builder()
                     .symbol(symbol)
-                    .currency("USD")
+                    .currency(ApplicationConstant.USD)
                     .totalProfit(totalProfitDiv)
                     .totalLoss(totalLossDiv)
                     .profit(profitDiv)
@@ -193,37 +194,41 @@ public class ReportService {
             return 0;
         }
 
-        if ("USDC".equalsIgnoreCase(t.getCurrency())) {
-            return t.getPnl() * 100; // convert to cents
-        }
-
-        return t.getPnl(); // USD stays the same
+        return t.getPnl();
     }
 
     private void sendReport(List<TransactionModel> transactions, String username, String email) {
-        int totalTransactions = transactions.size();
+        Set<String> supportedCurrencies = Set.of(
+                ApplicationConstant.USD,
+                ApplicationConstant.USDC
+        );
 
-        double totalDeposit = transactions.stream()
-                .filter(t -> "DEPOSIT".equalsIgnoreCase(t.getType()))
-                .mapToDouble(this::normalizeAmount)
-                .sum();
+        Map<String, Double> depositByCurrency =
+                sumByTypeAndCurrency(transactions, ApplicationConstant.DEPOSIT, supportedCurrencies);
 
-        double totalWithdrawal = transactions.stream()
-                .filter(t -> "WITHDRAWAL".equalsIgnoreCase(t.getType()))
-                .mapToDouble(this::normalizeAmount)
-                .sum();
+        Map<String, Double> withdrawalByCurrency =
+                sumByTypeAndCurrency(transactions, ApplicationConstant.WITHDRAWAL, supportedCurrencies);
 
-        double totalProfit = transactions.stream()
-                .filter(t -> t.getPnl() != null && t.getPnl() > 0)
-                .mapToDouble(this::normalizeAmount)
-                .sum();
+        // Deposit
+        double totalDeposit = calculateTotal(depositByCurrency);
 
-        double totalLoss = transactions.stream()
-                .filter(t -> t.getPnl() != null && t.getPnl() < 0)
-                .mapToDouble(this::normalizeAmount)
-                .sum();
+        // Withdrawal
+        double totalWithdrawal = calculateTotal(withdrawalByCurrency);
 
-        double netPnL = totalProfit + totalLoss;
+        // Profit
+        Map<String, Double> profitByCurrency =
+                sumPnLByCurrency(transactions, ApplicationConstant.PROFIT);
+
+        double totalProfit = round(calculateTotal(profitByCurrency));
+
+        // Loss
+        Map<String, Double> lossByCurrency =
+                sumPnLByCurrency(transactions, ApplicationConstant.LOSS);
+
+        double totalLoss = round(calculateTotal(lossByCurrency));
+
+        // Net PnL
+        double netPnL = round(totalProfit - totalLoss);
 
         String mostTradedSymbol = transactions.stream()
                 .collect(Collectors.groupingBy(TransactionModel::getSymbol, Collectors.counting()))
@@ -247,17 +252,17 @@ public class ReportService {
         Total Transactions : %d
         Most Traded Symbol : %s
         
-        Total Deposit      : %.2f
-        Total Withdrawal   : %.2f
+        Total Deposit      : %.2f USD
+        Total Withdrawal   : %.2f USD
         
         
         Trading Performance
         -----------------------------------------
         
-        Total Profit       : %.2f
-        Total Loss         : %.2f
+        Total Profit       : %.2f USD
+        Total Loss         : %.2f USD
         
-        Net P&L            : %.2f
+        Net P&L            : %.2f USD
         
         -----------------------------------------
         
@@ -266,8 +271,8 @@ public class ReportService {
         Best regards,
         Databae Team
         """,
-                username,
-                totalTransactions,
+                username.toUpperCase(),
+                transactions.size(),
                 mostTradedSymbol,
                 totalDeposit,
                 totalWithdrawal,
@@ -322,6 +327,9 @@ public class ReportService {
                 log.info("User {} has {} transactions in this period",
                         user, transactions.size());
 
+                if(transactions.isEmpty())
+                    return;
+
                 // Send email
                 sendReport(transactions, user.getUsername(), user.getEmail());
 
@@ -334,5 +342,46 @@ public class ReportService {
         log.info("Monthly report generation completed");
     }
 
+    //Helper methods
+    private Map<String, Double> sumByTypeAndCurrency(
+            List<TransactionModel> transactions,
+            String type,
+            Set<String> supportedCurrencies
+    ) {
+        return transactions.stream()
+                .filter(t -> type.equalsIgnoreCase(t.getType()))
+                .filter(t -> supportedCurrencies.contains(t.getCurrency().toUpperCase()))
+                .collect(Collectors.groupingBy(
+                        t -> t.getCurrency().toUpperCase(),
+                        Collectors.summingDouble(this::normalizeAmount)
+                ));
+    }
+
+    private Map<String, Double> sumPnLByCurrency(
+            List<TransactionModel> transactions,
+            String type
+    ) {
+        return transactions.stream()
+                .filter(t -> t.getPnl() != null && t.getPnl() > 0)
+                .filter(t -> type.equalsIgnoreCase(t.getType()))
+                .collect(Collectors.groupingBy(
+                        t -> t.getCurrency().toUpperCase(),
+                        Collectors.summingDouble(this::normalizeAmount)
+                ));
+    }
+
+    private double calculateTotal(Map<String, Double> currencyMap) {
+
+        double usd = currencyMap.getOrDefault(ApplicationConstant.USD, 0.0);
+
+        double usdc = currencyMap.getOrDefault(ApplicationConstant.USDC, 0.0);
+
+        // adjust conversion if needed
+        return usd + (usdc / 100.0);
+    }
+
+    private double round(double value) {
+        return Math.round(value * 100.0) / 100.0;
+    }
 
 }

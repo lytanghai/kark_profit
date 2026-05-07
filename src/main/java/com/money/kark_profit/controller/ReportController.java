@@ -1,7 +1,7 @@
 package com.money.kark_profit.controller;
 
 import com.money.kark_profit.service.UserService;
-import com.money.kark_profit.service.feature.BackupVersion2Service;
+import com.money.kark_profit.service.feature.BackupService;
 import com.money.kark_profit.service.feature.ReportService;
 import com.money.kark_profit.transform.request.ReportRequest;
 import com.money.kark_profit.transform.response.ReportResponse;
@@ -25,7 +25,7 @@ public class ReportController {
 
     private final ReportService reportService;
     private final UserService userService;
-    private final BackupVersion2Service backupVersion2Service;
+    private final BackupService backupService;
 
     @PostMapping("/generate")
     private ResponseEntity<ResponseBuilderUtils<List<ReportResponse>>> generateReport(@RequestBody ReportRequest reportRequest, HttpServletRequest httpServletRequest) {
@@ -37,7 +37,12 @@ public class ReportController {
     @SneakyThrows
     @PostMapping("/script/backup")
     public void backup() {
-        backupVersion2Service.backup();
+        backupService.backup();
+    }
+
+    @PostMapping("/monthly")
+    public void checkMonthly() {
+        reportService.sendMonthlyReports();
     }
 
 }

@@ -18,10 +18,9 @@ public class EmailRequest {
     @Data
     public static class Attachment {
         private String filename;
-        private String content;     // Base64 encoded
-        private String contentType; // e.g. text/csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-
-        // getters/setters
+        private String content;
+        private String type;
+        private String disposition;
     }
 
     @Data

@@ -29,9 +29,8 @@ public class AnalysisService {
     public ResponseBuilderUtils<GoldResponse> dailyAnalysis() {
         GoldResponse response = new GoldResponse();
 
-        String mockOpening = "4750";
-        if(mockOpening != null){
-            double openingPrice = NumberUtil.round(Double.parseDouble(Objects.requireNonNull(mockOpening)));
+        if(StringCache.get(CACHE_GOLD_OPENING_PRICE) != null){
+            double openingPrice = NumberUtil.round(Double.parseDouble(Objects.requireNonNull(StringCache.get(CACHE_GOLD_OPENING_PRICE))));
             double currentPrice = NumberUtil.round(restClientHttpProvider.get(ApplicationUrl.goldUrl, GoldResponse.class).getPrice());
 
             double gap;

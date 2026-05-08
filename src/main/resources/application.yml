@@ -50,7 +50,7 @@ rest:
   client:
     # Global defaults
     retry:
-      enabled: true
+      enabled: false
       max-attempts: 3
       initial-delay-millis: 10000
       retryable-exceptions:

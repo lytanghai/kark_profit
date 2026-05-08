@@ -18,6 +18,7 @@ import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -25,6 +26,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class PerformanceService {
@@ -109,6 +111,8 @@ public class PerformanceService {
                 throw new DatabaseException(ApplicationCode.DBE_001, ApplicationCode.DBE_001_MSG);
 
             double totalDebt = Double.parseDouble(debtEntity.getValue().split(" ")[0]);
+            String currency = debtEntity.getValue().split(" ")[1];
+
             Integer currentUserId = userService.extractUserId(request);
 
             // Get all transactions for this user
@@ -141,6 +145,10 @@ public class PerformanceService {
                     .remainingDebt(Math.max(remainingDebt, 0))
                     .recoveryPercentage(Math.min(recoveryPercentage, 100))
                     .build();
+
+            debtEntity.setValue(Math.max(remainingDebt, 0) + " " + currency);
+            log.info("Updating new debt!");
+            configurationRepository.save(debtEntity);
 
             return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, response);
         }

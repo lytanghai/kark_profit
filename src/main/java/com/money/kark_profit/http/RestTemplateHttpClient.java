@@ -9,6 +9,8 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.List;
+
 @Slf4j
 @Component
 public class RestTemplateHttpClient {
@@ -31,6 +33,14 @@ public class RestTemplateHttpClient {
 
             if(httpHeaders == null){
                 httpHeaders = new HttpHeaders();
+                httpHeaders.set(
+                        HttpHeaders.USER_AGENT,
+                        "Mozilla/5.0"
+                );
+
+                httpHeaders.setAccept(
+                        List.of(MediaType.APPLICATION_JSON)
+                );
             }
             HttpEntity<Void> entity = new HttpEntity<>(httpHeaders);
             ResponseEntity<T> response = restTemplate.exchange(

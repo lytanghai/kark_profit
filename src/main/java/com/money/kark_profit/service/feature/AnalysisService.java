@@ -3,7 +3,7 @@ package com.money.kark_profit.service.feature;
 import com.money.kark_profit.cache.StringCache;
 import com.money.kark_profit.constants.ApplicationCode;
 import com.money.kark_profit.constants.ApplicationUrl;
-import com.money.kark_profit.http.RestClientHttpProvider;
+import com.money.kark_profit.http.RestTemplateHttpClient;
 import com.money.kark_profit.transform.response.GoldResponse;
 import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.NumberUtil;
@@ -18,20 +18,21 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class AnalysisService {
 
-    private final RestClientHttpProvider  restClientHttpProvider;
+    private final RestTemplateHttpClient restTemplate;
 
     public static String CACHE_GOLD_OPENING_PRICE = "CACHE_GOLD_OPENING_PRICE";
 
     public void markMarketOpeningHour() {
-        StringCache.put(CACHE_GOLD_OPENING_PRICE, restClientHttpProvider.get(ApplicationUrl.goldUrl, GoldResponse.class).getPrice().toString());
+        StringCache.put(CACHE_GOLD_OPENING_PRICE, restTemplate.get(ApplicationUrl.goldUrl, null, null, GoldResponse.class).getPrice().toString());
     }
 
     public ResponseBuilderUtils<GoldResponse> dailyAnalysis() {
         GoldResponse response = new GoldResponse();
 
-        if(StringCache.get(CACHE_GOLD_OPENING_PRICE) != null){
-            double openingPrice = NumberUtil.round(Double.parseDouble(Objects.requireNonNull(StringCache.get(CACHE_GOLD_OPENING_PRICE))));
-            double currentPrice = NumberUtil.round(restClientHttpProvider.get(ApplicationUrl.goldUrl, GoldResponse.class).getPrice());
+        String mockOpen = "4750";
+        if(mockOpen != null){
+            double openingPrice = NumberUtil.round(Double.parseDouble(Objects.requireNonNull(mockOpen)));
+            double currentPrice = NumberUtil.round(restTemplate.get(ApplicationUrl.goldUrl,null, null, GoldResponse.class).getPrice());
 
             double gap;
             String trend;

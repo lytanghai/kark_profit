@@ -60,4 +60,11 @@ public interface TransactionRepository extends JpaRepository<TransactionModel, I
             @Param("endDate") Date endDate
     );
 
+
+    List<TransactionModel> findByUserId(Integer userId);
+
+    // Optional: Add this for better performance
+    @Query("SELECT COALESCE(SUM(t.pnl), 0) FROM TransactionModel t WHERE t.userId = :userId")
+    double sumPnlByUserId(@Param("userId") Integer userId);
+
 }

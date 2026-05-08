@@ -6,6 +6,7 @@ import com.money.kark_profit.transform.request.CommonRequest;
 import com.money.kark_profit.transform.request.PerformanceRequest;
 import com.money.kark_profit.transform.request.TransactionRequest;
 import com.money.kark_profit.transform.response.MonthlyPnLResponse;
+import com.money.kark_profit.transform.response.RecoveryPhaseResponse;
 import com.money.kark_profit.transform.response.TransactionListingResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,6 +32,11 @@ public class TransactionController {
     @PostMapping("/monthly/performance")
     public ResponseEntity<ResponseBuilderUtils<MonthlyPnLResponse>> get(HttpServletRequest request, @RequestBody PerformanceRequest performanceRequest) {
         return new ResponseEntity<>(performanceService.groupPnLByDay(request, performanceRequest), HttpStatus.OK);
+    }
+
+    @PostMapping("/recovery-debt")
+    public ResponseEntity<ResponseBuilderUtils<RecoveryPhaseResponse>> calculateRecoveryDebt(HttpServletRequest request) {
+        return new ResponseEntity<>(performanceService.calculateRecoveryDebt(request), HttpStatus.OK);
     }
 
     @PostMapping("/fetch")

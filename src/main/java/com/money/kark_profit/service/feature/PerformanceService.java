@@ -1,11 +1,19 @@
 package com.money.kark_profit.service.feature;
 
+import com.money.kark_profit.cache.ConfigurationCache;
+import com.money.kark_profit.constants.ApplicationCache;
 import com.money.kark_profit.constants.ApplicationCode;
+import com.money.kark_profit.exception.DatabaseException;
+import com.money.kark_profit.model.ConfigurationModel;
 import com.money.kark_profit.model.TransactionModel;
+import com.money.kark_profit.model.UserProfileModel;
+import com.money.kark_profit.repository.ConfigurationRepository;
 import com.money.kark_profit.repository.TransactionRepository;
+import com.money.kark_profit.repository.UserProfileRepository;
 import com.money.kark_profit.service.UserService;
 import com.money.kark_profit.transform.request.PerformanceRequest;
 import com.money.kark_profit.transform.response.MonthlyPnLResponse;
+import com.money.kark_profit.transform.response.RecoveryPhaseResponse;
 import com.money.kark_profit.utils.DateUtils;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,6 +30,8 @@ import java.util.*;
 public class PerformanceService {
 
     private final TransactionRepository transactionRepository;
+    private final UserProfileRepository userProfileRepository;
+    private final ConfigurationRepository configurationRepository;
     private final UserService userService;
 
     public List<TransactionModel> getMonthlyTransactions(Integer userId, int year, int month) {
@@ -92,4 +102,63 @@ public class PerformanceService {
         return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, response);
     }
 
+    public ResponseBuilderUtils<RecoveryPhaseResponse> calculateRecoveryDebt(HttpServletRequest request) {
+        if(validatePermission(request)) {
+            ConfigurationModel debtEntity = configurationRepository.findByName("DEBT").get();
+            if(debtEntity == null)
+                throw new DatabaseException(ApplicationCode.DBE_001, ApplicationCode.DBE_001_MSG);
+
+            double totalDebt = Double.parseDouble(debtEntity.getValue().split(" ")[0]);
+            Integer currentUserId = userService.extractUserId(request);
+
+            // Get all transactions for this user
+            List<TransactionModel> transactions = transactionRepository.findByUserId(currentUserId);
+
+            // Calculate total PROFIT and total LOSS separately
+            double totalProfit = transactions.stream()
+                    .filter(t -> "PROFIT".equalsIgnoreCase(t.getType()))
+                    .mapToDouble(TransactionModel::getPnl)
+                    .sum();
+
+            double totalLoss = transactions.stream()
+                    .filter(t -> "LOSS".equalsIgnoreCase(t.getType()))
+                    .mapToDouble(TransactionModel::getPnl)
+                    .sum();
+
+            // Net recovered amount = Total Profit - Total Loss
+            double recoveredAmount = totalProfit - totalLoss;
+
+            // Calculate remaining debt and recovery percentage
+            double remainingDebt = totalDebt - recoveredAmount;
+            double recoveryPercentage = (recoveredAmount / totalDebt) * 100;
+
+            // Create response
+            RecoveryPhaseResponse response = RecoveryPhaseResponse.builder()
+                    .totalDebt(totalDebt)
+                    .totalProfit(totalProfit)
+                    .totalLoss(totalLoss)
+                    .recoveredAmount(recoveredAmount)
+                    .remainingDebt(Math.max(remainingDebt, 0))
+                    .recoveryPercentage(Math.min(recoveryPercentage, 100))
+                    .build();
+
+            return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, response);
+        }
+        throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
+    }
+
+    private boolean validatePermission(HttpServletRequest request) {
+        int userId = userService.extractUserId(request);
+        if(userId == -1)
+            throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
+
+        UserProfileModel userProfileModel = userProfileRepository.findById(userId).get();
+        if(userProfileModel == null)
+            throw new DatabaseException(ApplicationCode.DBE_001 ,ApplicationCode.DBE_001_MSG);
+
+        if(!userProfileModel.getUsername().equals(ConfigurationCache.getByKeyName(ApplicationCache.MASTER_ADMIN_USERNAME).getValue()))
+            throw new DatabaseException(ApplicationCode.DBE_998 ,ApplicationCode.DBE_998_MSG);
+
+        return true;
+    }
 }

@@ -3,6 +3,7 @@ package com.money.kark_profit.service.provider;
 import com.money.kark_profit.cache.EconomicEventsCache;
 import com.money.kark_profit.cache.StringCache;
 import com.money.kark_profit.constants.ApplicationCode;
+import com.money.kark_profit.constants.ApplicationUrl;
 import com.money.kark_profit.http.RestTemplateHttpClient;
 import com.money.kark_profit.transform.request.InsightRequest;
 import com.money.kark_profit.transform.response.EventCalendarResponse;
@@ -31,8 +32,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Slf4j
 public class PublicNewsProvider {
-    private static String GOOGLE_NEWS = "https://news.google.com/rss/search";
-    private static String FOREX_FACTORY = "https://nfs.faireconomy.media/ff_calendar_thisweek.json";
+
     private static String AGENT_HEADER = "Mozilla/5.0";
 
     private final RestTemplateHttpClient restHttp;
@@ -67,7 +67,7 @@ public class PublicNewsProvider {
             headers.add("User-Agent", AGENT_HEADER);
 
             // Fetch from API
-            String xml = restHttp.get(GOOGLE_NEWS, params, headers, String.class);
+            String xml = restHttp.get(ApplicationUrl.GOOGLE_NEWS, params, headers, String.class);
 
             // Cache the result
             StringCache.put(cacheKey, xml);
@@ -132,7 +132,7 @@ public class PublicNewsProvider {
     @CachePut(value = "forexFactory", key = "'fx'")
     public ResponseBuilderUtils<List<EventCalendarResponse>> updateForexFactoryCache() {
 
-        String economicEventsJson = EconomicEventsCache.getEconomicEvents(restHttp, FOREX_FACTORY);
+        String economicEventsJson = EconomicEventsCache.getEconomicEvents(restHttp, ApplicationUrl.FOREX_FACTORY);
 
         List<EventCalendarResponse> events;
         try {

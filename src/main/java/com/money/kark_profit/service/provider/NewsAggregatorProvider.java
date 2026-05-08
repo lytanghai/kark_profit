@@ -1,6 +1,7 @@
 package com.money.kark_profit.service.provider;
 
 import com.money.kark_profit.constants.ApplicationCode;
+import com.money.kark_profit.constants.ApplicationUrl;
 import com.money.kark_profit.exception.SystemException;
 import com.money.kark_profit.transform.request.NewsClassifierRequest;
 import com.money.kark_profit.transform.response.NewsArticleResponse;
@@ -24,10 +25,10 @@ public class NewsAggregatorProvider {
     @Cacheable(value = "newsCache")
     public List<NewsArticleResponse> getAllNews() {
         List<NewsArticleResponse> news = new java.util.ArrayList<>();
-        news.addAll(fetch("https://feeds.bbci.co.uk/news/rss.xml", "BBC"));
-        news.addAll(fetch("https://theguardian.com/us-news/rss", "BBC"));
-//        news.addAll(fetch("https://www.reuters.com/world/rss", "Reuters"));
-        news.addAll(fetch("https://www.aljazeera.com/xml/rss/all.xml", "AlJazeera"));
+        news.addAll(fetch(ApplicationUrl.BBC, "BBC"));
+        news.addAll(fetch(ApplicationUrl.THE_GUARDIAN, "TheGuardian"));
+//        news.addAll(fetch(ApplicationUrl.REUTER, "Reuters"));
+        news.addAll(fetch(ApplicationUrl.AlJazeera, "AlJazeera"));
 
         return news.stream()
                 .sorted((a,b) -> b.getPublishedAt().compareTo(a.getPublishedAt()))

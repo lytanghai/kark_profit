@@ -1,9 +1,11 @@
 package com.money.kark_profit.controller;
 
+import com.money.kark_profit.service.feature.AnalysisService;
 import com.money.kark_profit.service.provider.NewsAggregatorProvider;
 import com.money.kark_profit.service.provider.PublicNewsProvider;
 import com.money.kark_profit.transform.request.InsightRequest;
 import com.money.kark_profit.transform.response.EventCalendarResponse;
+import com.money.kark_profit.transform.response.GoldResponse;
 import com.money.kark_profit.transform.response.InsightResponse;
 import com.money.kark_profit.transform.response.NewsArticleResponse;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
@@ -21,6 +23,7 @@ public class InsightController {
 
     private final PublicNewsProvider provider;
     private final NewsAggregatorProvider newsAggregatorProvider;
+    private final AnalysisService analysisService;
 
     @GetMapping
     public ResponseEntity<ResponseBuilderUtils<List<NewsArticleResponse>>> getNews(
@@ -42,5 +45,10 @@ public class InsightController {
     @GetMapping("/events")
     public ResponseEntity<ResponseBuilderUtils<List<EventCalendarResponse>>> forexFactory() {
         return new ResponseEntity<>(provider.getForexFactoryCache(), HttpStatus.OK);
+    }
+
+    @GetMapping("/daily-analysis")
+    public ResponseEntity<ResponseBuilderUtils<GoldResponse>> dailyAnalysis() {
+     return new ResponseEntity<>(analysisService.dailyAnalysis(), HttpStatus.OK);
     }
 }

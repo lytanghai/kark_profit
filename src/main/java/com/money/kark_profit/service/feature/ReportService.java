@@ -3,6 +3,7 @@ package com.money.kark_profit.service.feature;
 import com.money.kark_profit.cache.ConfigurationCache;
 import com.money.kark_profit.constants.ApplicationCode;
 import com.money.kark_profit.constants.ApplicationConstant;
+import com.money.kark_profit.constants.ApplicationUrl;
 import com.money.kark_profit.exception.DatabaseException;
 import com.money.kark_profit.http.RestTemplateHttpClient;
 import com.money.kark_profit.model.TransactionModel;
@@ -14,6 +15,7 @@ import com.money.kark_profit.transform.request.EmailRequest;
 import com.money.kark_profit.transform.request.ReportRequest;
 import com.money.kark_profit.transform.response.ReportResponse;
 import com.money.kark_profit.utils.DateUtils;
+import com.money.kark_profit.utils.NumberUtil;
 import com.money.kark_profit.utils.ResponseBuilderUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -38,7 +40,6 @@ public class ReportService {
     private final TransactionRepository transactionRepository;
     private final UserProfileRepository userProfileRepository;
     private final RestTemplateHttpClient restTemplateHttpClient;
-    private String mailTrapUrl = "https://send.api.mailtrap.io/api/send";
     private String fromEmail = "Databae@demomailtrap.co";
     private String subject = "Databae Trading Monthly Report";
     private String report = "Databae Trading Monthly Report";
@@ -219,16 +220,16 @@ public class ReportService {
         Map<String, Double> profitByCurrency =
                 sumPnLByCurrency(transactions, ApplicationConstant.PROFIT);
 
-        double totalProfit = round(calculateTotal(profitByCurrency));
+        double totalProfit = NumberUtil.round(calculateTotal(profitByCurrency));
 
         // Loss
         Map<String, Double> lossByCurrency =
                 sumPnLByCurrency(transactions, ApplicationConstant.LOSS);
 
-        double totalLoss = round(calculateTotal(lossByCurrency));
+        double totalLoss = NumberUtil.round(calculateTotal(lossByCurrency));
 
         // Net PnL
-        double netPnL = round(totalProfit - totalLoss);
+        double netPnL = NumberUtil.round(totalProfit - totalLoss);
 
         String mostTradedSymbol = transactions.stream()
                 .collect(Collectors.groupingBy(TransactionModel::getSymbol, Collectors.counting()))
@@ -297,7 +298,7 @@ public class ReportService {
         emailRequest.setText(emailBody);
 
         restTemplateHttpClient.post(
-                mailTrapUrl,
+                ApplicationUrl.MAIL_TRAP_URL,
                 emailRequest,
                 ConfigurationCache.getByKeyName("MAIL_TRAP_TOKEN").getValue(),
                 String.class);
@@ -380,8 +381,6 @@ public class ReportService {
         return usd + (usdc / 100.0);
     }
 
-    private double round(double value) {
-        return Math.round(value * 100.0) / 100.0;
-    }
+
 
 }

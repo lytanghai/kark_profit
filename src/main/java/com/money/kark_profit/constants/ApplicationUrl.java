@@ -1,7 +1,6 @@
 package com.money.kark_profit.constants;
 
 public class ApplicationUrl {
-    public static String goldUrl = "https://api.gold-api.com/price/XAU";
     public static String GOOGLE_NEWS = "https://news.google.com/rss/search";
     public static String FOREX_FACTORY = "https://nfs.faireconomy.media/ff_calendar_thisweek.json";
     public static String BBC = "https://feeds.bbci.co.uk/news/rss.xml";

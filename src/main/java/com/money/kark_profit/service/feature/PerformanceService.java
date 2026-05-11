@@ -106,15 +106,29 @@ public class PerformanceService {
 
     public ResponseBuilderUtils<RecoveryPhaseResponse> calculateRecoveryDebt(HttpServletRequest request) {
         if(validatePermission(request)) {
+            RecoveryPhaseResponse response = RecoveryPhaseResponse.builder().build();
+
             ConfigurationModel debtEntity = configurationRepository.findByName("DEBT").get();
             if(debtEntity == null)
                 throw new DatabaseException(ApplicationCode.DBE_001, ApplicationCode.DBE_001_MSG);
 
             double totalDebt = Double.parseDouble(debtEntity.getValue().split(" ")[0]);
+
             String currency = debtEntity.getValue().split(" ")[1];
 
-            Integer currentUserId = userService.extractUserId(request);
+            if(totalDebt <= 0) {
+                response = RecoveryPhaseResponse.builder()
+                        .totalDebt(totalDebt)
+                        .totalProfit(0)
+                        .totalLoss(0)
+                        .recoveredAmount(0)
+                        .remainingDebt(0)
+                        .recoveryPercentage(100)
+                        .build();
+                return new ResponseBuilderUtils<>(ApplicationCode.HTTP_200, ApplicationCode.CREATED, response);
+            }
 
+            Integer currentUserId = userService.extractUserId(request);
             // Get all transactions for this user
             List<TransactionModel> transactions = transactionRepository.findByUserId(currentUserId);
 
@@ -137,7 +151,7 @@ public class PerformanceService {
             double recoveryPercentage = (recoveredAmount / totalDebt) * 100;
 
             // Create response
-            RecoveryPhaseResponse response = RecoveryPhaseResponse.builder()
+            response = RecoveryPhaseResponse.builder()
                     .totalDebt(totalDebt)
                     .totalProfit(totalProfit)
                     .totalLoss(totalLoss)

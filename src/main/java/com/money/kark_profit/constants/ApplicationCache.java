@@ -6,5 +6,4 @@ public class ApplicationCache {
     public static String MASTER_ADMIN_USERNAME = "MASTER_ADMIN_USERNAME";
     public static String TOKEN_LIFE_SPAN = "TOKEN_LIFE_SPAN";
     public static String MAIL_TRAP_TOKEN = "MAIL_TRAP_TOKEN";
-    public static String MARKET_OPEN_HOUR = "MARKET_OPEN_HOUR";
 }

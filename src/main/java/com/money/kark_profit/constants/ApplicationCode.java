@@ -16,8 +16,6 @@ public class ApplicationCode {
     public static String LOGIN = "LOGIN SUCCESSFULLY";
     public static String MODIFY_USER = "MODIFIED SUCCESSFULLY";
 
-    
-
     /** FAILURE **/
     public static String FAILURE = "FAILURE";
 
@@ -31,7 +29,6 @@ public class ApplicationCode {
     public static String DBE_ERR_001_MSG = "General Database Error!";
 
     public static String DBE_03122 = "DBE_03122";
-    public static String DBE_03122_MSG = "Record already exists!";
 
     public static String DBE_ERR_403 = "DBE_ERR_403";
     public static String DBE_ERR_403_MSG = "Table not found!";

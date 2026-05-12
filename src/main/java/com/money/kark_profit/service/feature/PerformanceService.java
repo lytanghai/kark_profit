@@ -3,6 +3,7 @@ package com.money.kark_profit.service.feature;
 import com.money.kark_profit.cache.ConfigurationCache;
 import com.money.kark_profit.constants.ApplicationCache;
 import com.money.kark_profit.constants.ApplicationCode;
+import com.money.kark_profit.constants.ApplicationConstant;
 import com.money.kark_profit.exception.DatabaseException;
 import com.money.kark_profit.model.ConfigurationModel;
 import com.money.kark_profit.model.TransactionModel;
@@ -58,8 +59,7 @@ public class PerformanceService {
             dailyPnL.put(day, 0.0);
         }
 
-        List<TransactionModel> transactions =
-                getMonthlyTransactions(userService.extractUserId(request), year, month);
+        List<TransactionModel> transactions = getMonthlyTransactions(userService.extractUserId(request), year, month);
 
         for (TransactionModel txn : transactions) {
 
@@ -106,10 +106,10 @@ public class PerformanceService {
 
     public ResponseBuilderUtils<RecoveryPhaseResponse> calculateRecoveryDebt(HttpServletRequest request) {
         if(validatePermission(request)) {
-            RecoveryPhaseResponse response = RecoveryPhaseResponse.builder().build();
+            RecoveryPhaseResponse response;
 
             ConfigurationModel debtEntity = configurationRepository.findByName("DEBT").get();
-            if(debtEntity == null)
+            if(debtEntity.getValue() == null)
                 throw new DatabaseException(ApplicationCode.DBE_001, ApplicationCode.DBE_001_MSG);
 
             double totalDebt = Double.parseDouble(debtEntity.getValue().split(" ")[0]);
@@ -134,12 +134,12 @@ public class PerformanceService {
 
             // Calculate total PROFIT and total LOSS separately
             double totalProfit = transactions.stream()
-                    .filter(t -> "PROFIT".equalsIgnoreCase(t.getType()))
+                    .filter(t -> ApplicationConstant.PROFIT.equalsIgnoreCase(t.getType()))
                     .mapToDouble(TransactionModel::getPnl)
                     .sum();
 
             double totalLoss = transactions.stream()
-                    .filter(t -> "LOSS".equalsIgnoreCase(t.getType()))
+                    .filter(t -> ApplicationConstant.LOSS.equalsIgnoreCase(t.getType()))
                     .mapToDouble(TransactionModel::getPnl)
                     .sum();
 

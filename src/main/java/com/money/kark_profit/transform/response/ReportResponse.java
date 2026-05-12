@@ -1,11 +1,9 @@
 package com.money.kark_profit.transform.response;
 
-import com.money.kark_profit.model.TransactionModel;
 import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Data
 @Builder
